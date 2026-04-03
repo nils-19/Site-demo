@@ -5,2009 +5,644 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoFlow — Sites Web Pour Commerces Locaux</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --gold: #c9a84c;
-  --gold-light: #e8c97a;
-  --dark: #0a0a0a;
-  --dark2: #111111;
-  --dark3: #1a1a1a;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  background: var(--dark);
-  color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  overflow-x: hidden;
-}
-
-/* ===== AUTOFLOW WRAPPER ===== */
-#autoflow-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: rgba(10,10,10,0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px;
-}
-
-.af-logo {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--gold);
-  letter-spacing: 2px;
-}
-
-.af-logo span {
-  color: #fff;
-  font-weight: 300;
-}
-
-.af-badge {
-  background: var(--gold);
-  color: #000;
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 5px 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* ===== HERO ===== */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 24px 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-#hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%);
-}
-
-.hero-eyebrow {
-  font-size: 0.65rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.2s forwards;
-}
-
-.hero-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2.8rem, 10vw, 6rem);
-  font-weight: 300;
-  line-height: 1.05;
-  color: #fff;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.4s forwards;
-}
-
-.hero-title em {
-  font-style: italic;
-  color: var(--gold);
-}
-
-.hero-sub {
-  margin-top: 24px;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 1px;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.6s forwards;
-}
-
-.hero-cta-row {
-  margin-top: 40px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.8s forwards;
-}
-
-.btn-gold {
-  background: var(--gold);
-  color: #000;
-  border: none;
-  padding: 14px 32px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-.btn-outline {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 14px 32px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-.hero-price {
-  margin-top: 48px;
-  opacity: 0;
-  animation: fadeUp 0.8s 1s forwards;
-}
-
-.price-tag {
-  display: inline-block;
-  border: 1px solid rgba(201,168,76,0.4);
-  padding: 16px 32px;
-  position: relative;
-}
-
-.price-tag::before {
-  content: 'OFFRE DE LANCEMENT';
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--dark);
-  padding: 0 12px;
-  font-size: 0.55rem;
-  letter-spacing: 3px;
-  color: var(--gold);
-}
-
-.price-tag .amount {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--gold);
-  line-height: 1;
-}
-
-.price-tag .details {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 2px;
-  margin-top: 4px;
-}
-
-.price-tag .original {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.3);
-  text-decoration: line-through;
-  margin-right: 8px;
-}
-
-/* ===== SECTION TITLE ===== */
-.section-header {
-  text-align: center;
-  padding: 80px 24px 48px;
-}
-
-.section-label {
-  font-size: 0.6rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 300;
-  color: #fff;
-}
-
-/* ===== DEMO SWITCHER ===== */
-#demos-section {
-  padding: 0 0 80px;
-}
-
-.demo-tabs {
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 0 16px;
-  gap: 4px;
-}
-.demo-tabs::-webkit-scrollbar { display: none; }
-
-.demo-tab {
-  flex-shrink: 0;
-  padding: 14px 20px;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-  white-space: nowrap;
-  background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.demo-tab:hover { color: rgba(255,255,255,0.8); }
-.demo-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
-
-.demo-frame {
-  display: none;
-}
-.demo-frame.active { display: block; }
-
-/* ===== DEMO : TATOUEUR ===== */
-.tattoo-demo {
-  background: #080808;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  color: #fff;
-  min-height: 100vh;
-}
-
-.tattoo-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.tattoo-logo {
-  font-family: 'Arial Black', Arial, sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 4px;
-  color: #fff;
-}
-
-.tattoo-nav-links {
-  display: flex;
-  gap: 24px;
-}
-
-.tattoo-nav-links a {
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-
-.tattoo-hero {
-  position: relative;
-  height: 70vh;
-  display: flex;
-  align-items: flex-end;
-  padding: 40px 24px;
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a0a0a 50%, #0d0d0d 100%);
-  overflow: hidden;
-}
-
-.tattoo-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.tattoo-hero-bg-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Arial Black', Arial, sans-serif;
-  font-size: clamp(6rem, 25vw, 14rem);
-  color: rgba(255,255,255,0.03);
-  white-space: nowrap;
-  pointer-events: none;
-  letter-spacing: 8px;
-}
-
-.tattoo-hero-content { position: relative; z-index: 1; }
-
-.tattoo-hero-label {
-  font-size: 0.6rem;
-  letter-spacing: 4px;
-  color: #c0392b;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.tattoo-hero-title {
-  font-family: 'Arial Black', Arial, sans-serif;
-  font-size: clamp(3rem, 12vw, 6rem);
-  line-height: 0.9;
-  letter-spacing: 2px;
-  color: #fff;
-}
-
-.tattoo-hero-title span { color: #c0392b; }
-
-.tattoo-hero-sub {
-  margin-top: 16px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 1px;
-  max-width: 340px;
-}
-
-.tattoo-cta {
-  display: inline-block;
-  margin-top: 24px;
-  background: #c0392b;
-  color: #fff;
-  padding: 14px 32px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.tattoo-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  padding: 3px;
-}
-
-.tattoo-gallery-item {
-  aspect-ratio: 1;
-  background: #1a1a1a;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tattoo-gallery-item::before {
-  content: attr(data-style);
-  font-family: 'Arial Black', Arial, sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  color: rgba(255,255,255,0.15);
-  text-transform: uppercase;
-}
-
-.tattoo-gallery-item:nth-child(1) { background: linear-gradient(135deg, #1a1a1a, #2a1a1a); }
-.tattoo-gallery-item:nth-child(2) { background: linear-gradient(135deg, #1a1a1a, #1a1a2a); }
-.tattoo-gallery-item:nth-child(3) { background: linear-gradient(135deg, #2a1a1a, #1a1a1a); }
-.tattoo-gallery-item:nth-child(4) { background: linear-gradient(135deg, #1a2a1a, #1a1a1a); }
-.tattoo-gallery-item:nth-child(5) { background: linear-gradient(135deg, #1a1a2a, #2a1a1a); aspect-ratio: 2/1; grid-column: span 2; }
-.tattoo-gallery-item:nth-child(6) { background: linear-gradient(135deg, #2a2a1a, #1a1a1a); }
-
-.tattoo-svg {
-  position: absolute;
-  opacity: 0.25;
-}
-
-.tattoo-info {
-  padding: 48px 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.tattoo-info-item {
-  border-left: 2px solid #c0392b;
-  padding-left: 16px;
-}
-
-.tattoo-info-item .num {
-  font-family: 'Arial Black', Arial, sans-serif;
-  font-size: 2.5rem;
-  color: #fff;
-  line-height: 1;
-}
-
-.tattoo-info-item .label {
-  font-size: 0.6rem;
-  letter-spacing: 2px;
-  color: rgba(255,255,255,0.4);
-  text-transform: uppercase;
-}
-
-/* ===== DEMO : BARBIER ===== */
-.barber-demo {
-  background: #f5f0e8;
-  color: #1a1a1a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  min-height: 100vh;
-}
-
-.barber-nav {
-  background: #1a1a1a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 24px;
-}
-
-.barber-logo {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.3rem;
-  color: #c9a84c;
-  letter-spacing: 2px;
-}
-
-.barber-nav-tel {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 1px;
-}
-
-.barber-hero {
-  background: #1a1a1a;
-  padding: 60px 24px 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.barber-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 60px;
-  background: #f5f0e8;
-  clip-path: ellipse(60% 100% at 50% 100%);
-}
-
-.barber-hero-inner {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.barber-badge {
-  width: 80px;
-  height: 80px;
-  border: 2px solid #c9a84c;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.barber-badge span:first-child {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.4rem;
-  color: #c9a84c;
-  line-height: 1;
-}
-
-.barber-badge span:last-child {
-  font-size: 0.45rem;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.barber-hero-text h1 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.8rem, 7vw, 3rem);
-  color: #fff;
-  line-height: 1.1;
-}
-
-.barber-hero-text h1 em {
-  font-style: italic;
-  color: #c9a84c;
-}
-
-.barber-hero-text p {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
-  margin-top: 8px;
-  letter-spacing: 1px;
-}
-
-.barber-services {
-  padding: 48px 24px 32px;
-}
-
-.barber-services-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.5rem;
-  color: #1a1a1a;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.barber-service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.barber-service-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(26,26,26,0.1);
-}
-
-.barber-service-name {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #1a1a1a;
-}
-
-.barber-service-desc {
-  font-size: 0.65rem;
-  color: #888;
-  margin-top: 2px;
-  letter-spacing: 0.5px;
-}
-
-.barber-service-price {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.2rem;
-  color: #c9a84c;
-  font-weight: 700;
-}
-
-.barber-booking {
-  background: #1a1a1a;
-  margin: 24px;
-  padding: 32px 24px;
-  text-align: center;
-}
-
-.barber-booking h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.3rem;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.barber-booking p {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.barber-btn {
-  background: #c9a84c;
-  color: #000;
-  border: none;
-  padding: 14px 36px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 100%;
-}
-
-.barber-hours {
-  padding: 32px 24px;
-  background: #ece7dc;
-}
-
-.barber-hours-title {
-  font-size: 0.6rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.barber-hours-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.barber-hour-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: #444;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.barber-hour-item .day { font-weight: 600; }
-.barber-hour-item .time { color: #888; }
-
-/* ===== DEMO : PLOMBIER ===== */
-.plumber-demo {
-  background: #fff;
-  color: #1a1a1a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  min-height: 100vh;
-}
-
-.plumber-urgency {
-  background: #1e3a5f;
-  color: #fff;
-  text-align: center;
-  padding: 12px 20px;
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.plumber-urgency strong { color: #ffd166; }
-
-.plumber-nav {
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-
-.plumber-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.plumber-logo-icon {
-  width: 36px;
-  height: 36px;
-  background: #1e3a5f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.plumber-logo-icon svg { width: 20px; height: 20px; fill: #fff; }
-
-.plumber-logo-text strong {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #1e3a5f;
-  letter-spacing: 1px;
-}
-
-.plumber-logo-text span {
-  font-size: 0.6rem;
-  color: #888;
-  letter-spacing: 1px;
-}
-
-.plumber-tel {
-  text-align: right;
-}
-
-.plumber-tel .number {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1e3a5f;
-}
-
-.plumber-tel .label {
-  font-size: 0.6rem;
-  color: #e74c3c;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.plumber-hero {
-  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8e 100%);
-  padding: 48px 24px;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-.plumber-hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 300px;
-  height: 300px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 50%;
-}
-
-.plumber-hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.1);
-  padding: 6px 14px;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  color: #ffd166;
-}
-
-.plumber-hero h1 {
-  font-size: clamp(1.8rem, 7vw, 3rem);
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-
-.plumber-hero h1 span { color: #ffd166; }
-
-.plumber-hero p {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-  margin-bottom: 28px;
-}
-
-.plumber-cta {
-  background: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 16px 28px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  justify-content: center;
-}
-
-.plumber-services {
-  padding: 48px 24px;
-}
-
-.plumber-services-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1e3a5f;
-  margin-bottom: 8px;
-}
-
-.plumber-services-sub {
-  font-size: 0.75rem;
-  color: #888;
-  margin-bottom: 28px;
-}
-
-.plumber-service-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.plumber-service-card {
-  border: 1px solid #e8e8e8;
-  padding: 20px 16px;
-  position: relative;
-}
-
-.plumber-service-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px;
-  height: 100%;
-  background: #1e3a5f;
-}
-
-.plumber-service-card .icon {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.plumber-service-card h4 {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #1e3a5f;
-  margin-bottom: 4px;
-}
-
-.plumber-service-card p {
-  font-size: 0.65rem;
-  color: #888;
-  line-height: 1.5;
-}
-
-.plumber-trust {
-  background: #f8f9fa;
-  padding: 32px 24px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  text-align: center;
-}
-
-.plumber-trust-item .num {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1e3a5f;
-  line-height: 1;
-}
-
-.plumber-trust-item .label {
-  font-size: 0.6rem;
-  color: #888;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-top: 4px;
-}
-
-/* ===== DEMO : RESTAURANT ===== */
-.resto-demo {
-  background: #0f0b07;
-  color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  min-height: 100vh;
-}
-
-.resto-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  z-index: 10;
-}
-
-.resto-logo {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 3px;
-}
-
-.resto-nav-reserve {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: #fff;
-  padding: 8px 18px;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  cursor: pointer;
-}
-
-.resto-hero {
-  height: 65vh;
-  background: linear-gradient(to bottom, rgba(15,11,7,0.3) 0%, rgba(15,11,7,0.7) 60%, #0f0b07 100%),
-    repeating-linear-gradient(
-      45deg,
-      #1a1208 0px,
-      #1a1208 2px,
-      transparent 2px,
-      transparent 20px
-    );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 24px 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.resto-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,140,40,0.15) 0%, transparent 70%);
-}
-
-.resto-hero-subtitle {
-  font-size: 0.6rem;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: #c9a84c;
-  margin-bottom: 16px;
-  position: relative;
-}
-
-.resto-hero-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2.5rem, 10vw, 5rem);
-  font-weight: 300;
-  line-height: 1.05;
-  color: #fff;
-  position: relative;
-}
-
-.resto-hero-title em {
-  font-style: italic;
-  color: #c9a84c;
-}
-
-.resto-hero-desc {
-  margin-top: 16px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 1px;
-  position: relative;
-}
-
-.resto-hero-btns {
-  margin-top: 28px;
-  display: flex;
-  gap: 12px;
-  position: relative;
-}
-
-.resto-btn-primary {
-  background: #c9a84c;
-  color: #000;
-  border: none;
-  padding: 13px 28px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.resto-btn-secondary {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  padding: 13px 28px;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.resto-menu-section {
-  padding: 48px 24px;
-}
-
-.resto-menu-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.resto-menu-header .label {
-  font-size: 0.55rem;
-  letter-spacing: 4px;
-  color: #c9a84c;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.resto-menu-header h2 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 2rem;
-  font-weight: 300;
-  color: #fff;
-}
-
-.resto-menu-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.resto-menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  gap: 16px;
-}
-
-.resto-item-info h4 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.1rem;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-.resto-item-info p {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.5;
-}
-
-.resto-item-price {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.2rem;
-  color: #c9a84c;
-  white-space: nowrap;
-}
-
-.resto-reserve {
-  background: #1a1208;
-  margin: 0 24px 48px;
-  padding: 32px 24px;
-  text-align: center;
-  border: 1px solid rgba(201,168,76,0.2);
-}
-
-.resto-reserve h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.resto-reserve p {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 20px;
-}
-
-.resto-reserve-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.resto-reserve-form input,
-.resto-reserve-form select {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #fff;
-  padding: 12px 16px;
-  font-size: 0.75rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  width: 100%;
-  outline: none;
-}
-
-.resto-reserve-form input::placeholder { color: rgba(255,255,255,0.3); }
-.resto-reserve-form select option { background: #1a1208; }
-
-.resto-reserve-btn {
-  background: #c9a84c;
-  color: #000;
-  border: none;
-  padding: 14px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  width: 100%;
-}
-
-/* ===== DEMO : COIFFEUR ===== */
-.hair-demo {
-  background: #faf8f5;
-  color: #1a1a1a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  min-height: 100vh;
-}
-
-.hair-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 24px;
-  background: #fff;
-  border-bottom: 1px solid #ebe8e2;
-}
-
-.hair-logo {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.2rem;
-  color: #1a1a1a;
-  letter-spacing: 1px;
-}
-
-.hair-logo span { color: #9b7653; }
-
-.hair-nav-book {
-  background: #1a1a1a;
-  color: #fff;
-  border: none;
-  padding: 9px 20px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.hair-hero {
-  background: #1a1a1a;
-  padding: 56px 24px 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hair-hero::after {
-  content: '';
-  position: absolute;
-  bottom: -1px; left: 0; right: 0;
-  height: 40px;
-  background: #faf8f5;
-  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 100%, 0 0);
-}
-
-.hair-hero-content {}
-
-.hair-hero-tag {
-  display: inline-block;
-  background: rgba(155,118,83,0.2);
-  color: #9b7653;
-  font-size: 0.6rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  margin-bottom: 16px;
-}
-
-.hair-hero-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2.2rem, 9vw, 4rem);
-  color: #fff;
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-
-.hair-hero-title em {
-  font-style: italic;
-  color: #9b7653;
-}
-
-.hair-hero-sub {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.6;
-}
-
-.hair-before-after {
-  padding: 48px 24px 32px;
-}
-
-.hair-ba-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.5rem;
-  color: #1a1a1a;
-  margin-bottom: 4px;
-}
-
-.hair-ba-sub {
-  font-size: 0.7rem;
-  color: #888;
-  margin-bottom: 24px;
-}
-
-.hair-ba-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-}
-
-.hair-ba-item {
-  position: relative;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-}
-
-.hair-ba-before {
-  background: linear-gradient(to bottom, #3a2e24, #5a4a38);
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
-}
-
-.hair-ba-after {
-  background: linear-gradient(to bottom, #c9b8a0, #9b7653);
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
-}
-
-.hair-ba-label {
-  font-size: 0.55rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  padding: 4px 8px;
-}
-
-.hair-ba-item3 {
-  background: linear-gradient(to bottom, #2a2018, #4a3828);
-  grid-column: 1;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
-}
-
-.hair-ba-item4 {
-  background: linear-gradient(to bottom, #d4c4b0, #b09070);
-  grid-column: 2;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
-}
-
-.hair-services {
-  padding: 32px 24px;
-  background: #fff;
-}
-
-.hair-services-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: #1a1a1a;
-}
-
-.hair-service-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid #ebe8e2;
-}
-
-.hair-service-row:last-child { border: none; }
-
-.hair-service-row .name {
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.hair-service-row .duration {
-  font-size: 0.65rem;
-  color: #9b7653;
-  margin-top: 2px;
-}
-
-.hair-service-row .price {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.1rem;
-  color: #9b7653;
-}
-
-.hair-booking {
-  background: #1a1a1a;
-  margin: 24px;
-  padding: 32px 24px;
-  text-align: center;
-}
-
-.hair-booking h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.3rem;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-.hair-booking p {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 20px;
-}
-
-.hair-booking-btn {
-  background: #9b7653;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  width: 100%;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-}
-
-/* ===== SOCIAL PROOF ===== */
-#social-proof {
-  padding: 80px 24px;
-  text-align: center;
-}
-
-.proof-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 48px;
-}
-
-.proof-item .num {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--gold);
-  line-height: 1;
-}
-
-.proof-item .label {
-  font-size: 0.6rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-top: 8px;
-}
-
-/* ===== HOW IT WORKS ===== */
-#how-it-works {
-  padding: 80px 24px;
-  background: var(--dark2);
-}
-
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 48px;
-}
-
-.step {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.step-num {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 3rem;
-  font-weight: 300;
-  color: rgba(201,168,76,0.2);
-  line-height: 1;
-  flex-shrink: 0;
-  width: 48px;
-}
-
-.step-content h4 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 6px;
-  letter-spacing: 1px;
-}
-
-.step-content p {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.6;
-}
-
-/* ===== FINAL CTA ===== */
-#final-cta {
-  padding: 80px 24px;
-  text-align: center;
-  border-top: 1px solid rgba(201,168,76,0.15);
-}
-
-#final-cta h2 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2rem, 8vw, 4rem);
-  font-weight: 300;
-  color: #fff;
-  margin-bottom: 16px;
-}
-
-#final-cta p {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 40px;
-  letter-spacing: 1px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: #000;
-  padding: 32px 24px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-footer .footer-logo {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.2rem;
-  color: var(--gold);
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-footer p {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 1px;
-}
-
-/* ===== WHATSAPP BTN ===== */
-#wa-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  background: #25d366;
-  color: #fff;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: transform 0.3s;
-}
-#wa-btn:hover { transform: scale(1.1); }
-
-#wa-btn svg { width: 28px; height: 28px; fill: #fff; }
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== DIVIDER ===== */
-.gold-divider {
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
-  margin: 16px auto 0;
-}
+:root{--gold:#C9A84C;--gold-light:#E8C97A;--gold-dim:rgba(201,168,76,0.15);--dark:#0A0A0B;--dark2:#111113;--dark3:#18181C;--light:#F5F2EC;--muted:#888890;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(10,10,11,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.12);}
+.nav-logo{font-family:'DM Mono',monospace;font-size:1.1rem;letter-spacing:.2em;color:var(--gold);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .25s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;padding:.65rem 1.6rem;border:1px solid var(--gold);background:transparent;color:var(--gold);text-decoration:none;transition:all .25s;}
+.nav-cta:hover{background:var(--gold);color:var(--dark);}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%);}
+.hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,black 30%,transparent 80%);}
+.hero-badge{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:.45rem 1.4rem;margin-bottom:2.5rem;position:relative;z-index:1;animation:fadeUp .8s ease both;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,8vw,7.5rem);line-height:1.0;font-weight:900;position:relative;z-index:1;animation:fadeUp .9s ease .1s both;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:var(--muted);max-width:520px;margin:1.8rem auto 0;line-height:1.7;position:relative;z-index:1;animation:fadeUp 1s ease .2s both;}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;position:relative;z-index:1;animation:fadeUp 1s ease .35s both;}
+.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--dark);font-weight:600;font-size:.9rem;padding:1rem 2.2rem;text-decoration:none;transition:all .25s;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,168,76,0.3);}
+.btn-outline{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(201,168,76,0.4);color:var(--light);font-size:.9rem;padding:1rem 2.2rem;text-decoration:none;transition:all .25s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-price{position:relative;z-index:1;margin-top:3.5rem;display:flex;align-items:center;gap:1.5rem;justify-content:center;animation:fadeUp 1s ease .5s both;}
+.price-old{font-size:1.4rem;color:var(--muted);text-decoration:line-through;}
+.price-new{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:var(--gold);line-height:1;}
+.price-label{font-size:.8rem;color:var(--muted);text-align:left;line-height:1.5;}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.4;}
+.hero-scroll span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:scrollPulse 2s ease infinite;}
+.stats-bar{background:var(--dark3);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);padding:2.5rem 0;}
+.stats-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.stat{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);}
+.stat-label{font-size:.78rem;color:var(--muted);margin-top:.3rem;}
+section{padding:7rem 2rem;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-tag{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.15;}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:540px;margin-top:1rem;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4rem;}
+.service-card{background:var(--dark3);padding:3rem 2.5rem;position:relative;overflow:hidden;transition:all .35s;}
+.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-dim) 0%,transparent 60%);opacity:0;transition:opacity .35s;}
+.service-card:hover::before{opacity:1;}
+.service-card:hover{transform:translateY(-4px);}
+.service-num{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.2em;color:var(--gold);margin-bottom:2rem;}
+.service-icon{font-size:2.5rem;margin-bottom:1.5rem;display:block;}
+.service-card h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem;}
+.service-card p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+.service-price{font-family:'DM Mono',monospace;font-size:1rem;color:var(--gold);margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,0.15);}
+.service-features{margin-top:1.2rem;list-style:none;}
+.service-features li{font-size:.82rem;color:var(--muted);padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:.6rem;}
+.service-features li::before{content:'—';color:var(--gold);font-size:.7rem;}
+.pack-highlight{background:var(--dark3);border:1px solid var(--gold-dim);padding:4rem;margin-top:3rem;position:relative;overflow:hidden;}
+.pack-highlight::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.1) 0%,transparent 70%);}
+.pack-badge{display:inline-block;background:var(--gold);color:var(--dark);font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.15em;padding:.4rem 1rem;margin-bottom:2rem;text-transform:uppercase;}
+.pack-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.pack-title{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1.2;margin-bottom:1rem;}
+.pack-title em{font-style:italic;color:var(--gold);}
+.pack-list{list-style:none;margin-top:1.5rem;}
+.pack-list li{padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:1rem;font-size:.9rem;}
+.pack-check{color:var(--gold);font-weight:700;}
+.pack-price-box{text-align:center;}
+.pack-old{font-size:1.2rem;color:var(--muted);text-decoration:line-through;margin-bottom:.5rem;}
+.pack-new{font-family:'Playfair Display',serif;font-size:5.5rem;font-weight:900;color:var(--gold);line-height:1;}
+.pack-new sup{font-size:2rem;vertical-align:top;margin-top:.8rem;display:inline-block;}
+.pack-save{display:inline-block;background:rgba(201,168,76,0.15);color:var(--gold);font-size:.8rem;padding:.4rem 1rem;margin-top:1rem;}
+.pack-cta{display:block;background:var(--gold);color:var(--dark);font-weight:700;font-size:1rem;padding:1.2rem 2rem;text-align:center;text-decoration:none;margin-top:2rem;transition:all .25s;}
+.pack-cta:hover{background:var(--gold-light);transform:translateY(-2px);}
+.pack-note{font-size:.78rem;color:var(--muted);margin-top:1rem;text-align:center;}
+.demos-section{background:var(--dark2);}
+.demos-tabs{display:flex;margin-top:3rem;border-bottom:1px solid rgba(201,168,76,0.15);overflow-x:auto;}
+.demo-tab{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:1rem 1.8rem;cursor:pointer;border:none;background:transparent;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;white-space:nowrap;}
+.demo-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.demo-tab:hover:not(.active){color:var(--light);}
+.demo-panel{display:none;}
+.demo-panel.active{display:block;}
+.demo-osteo{background:#F4F7F4;color:#1A2B1A;font-family:'DM Sans',sans-serif;}
+.osteo-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;background:#fff;border-bottom:1px solid #E0EAE0;}
+.osteo-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#1A2B1A;}
+.osteo-logo span{color:#3D8B5E;}
+.osteo-rdv{background:#3D8B5E;color:#fff;padding:.65rem 1.5rem;font-size:.8rem;text-decoration:none;}
+.osteo-hero{display:grid;grid-template-columns:1.2fr 1fr;min-height:360px;}
+.osteo-hero-text{padding:4rem 3rem;background:#1A2B1A;display:flex;flex-direction:column;justify-content:center;}
+.osteo-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#6DBF8A;margin-bottom:1rem;display:block;}
+.osteo-h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1.15;}
+.osteo-h1 em{font-style:italic;color:#6DBF8A;}
+.osteo-sub{color:rgba(255,255,255,.45);font-size:.85rem;margin-top:1rem;line-height:1.7;max-width:360px;}
+.osteo-cta{display:inline-block;margin-top:2rem;background:#3D8B5E;color:#fff;padding:.9rem 2rem;font-weight:600;font-size:.85rem;text-decoration:none;width:fit-content;}
+.osteo-visual{background:#E8F2EA;display:flex;align-items:center;justify-content:center;font-size:7rem;opacity:.25;}
+.osteo-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#D8EAD8;}
+.osteo-svc{background:#F4F7F4;padding:1.8rem 1.5rem;}
+.osteo-svc-name{font-weight:700;font-size:.85rem;color:#1A2B1A;margin-bottom:.4rem;}
+.osteo-svc-desc{font-size:.75rem;color:#7A9A7A;line-height:1.5;}
+.osteo-svc-price{font-family:'DM Mono',monospace;font-size:1rem;color:#3D8B5E;margin-top:.8rem;font-weight:600;}
+.osteo-bar{padding:1.2rem 3rem;background:#1A2B1A;display:flex;gap:2rem;flex-wrap:wrap;align-items:center;}
+.osteo-bar span{font-size:.8rem;color:rgba(255,255,255,.4);}
+.osteo-bar a{color:#6DBF8A;text-decoration:none;}
+.demo-auto{background:#0D1520;color:#E8F0FF;font-family:'DM Sans',sans-serif;}
+.auto-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:#0A1018;border-bottom:1px solid rgba(255,208,0,0.1);}
+.auto-logo{font-family:'DM Sans',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;}
+.auto-logo span{color:#FFD000;}
+.auto-phone{background:#FFD000;color:#0A1018;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
+.auto-banner{background:#FFD000;padding:.7rem 3rem;}
+.auto-banner-text{font-size:.82rem;color:#0A1018;font-weight:600;}
+.auto-hero{padding:3.5rem 3rem;background:linear-gradient(135deg,#0D1520 0%,#162035 100%);}
+.auto-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#FFD000;margin-bottom:1rem;display:block;}
+.auto-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;line-height:1.1;max-width:600px;}
+.auto-h1 span{color:#FFD000;}
+.auto-sub{color:rgba(232,240,255,.5);font-size:.9rem;margin-top:1rem;max-width:500px;line-height:1.6;}
+.auto-btns{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
+.auto-btn-main{background:#FFD000;color:#0A1018;padding:.9rem 2rem;font-weight:700;text-decoration:none;font-size:.85rem;display:inline-block;}
+.auto-btn-sec{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:.9rem 2rem;font-size:.85rem;text-decoration:none;display:inline-block;}
+.auto-stats{display:flex;gap:3rem;margin-top:2.5rem;flex-wrap:wrap;}
+.auto-stat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#FFD000;}
+.auto-stat-l{font-size:.7rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem;}
+.auto-formules{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#162035;}
+.auto-form{background:#0D1520;padding:2rem 1.5rem;}
+.auto-form-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.auto-form-price{font-family:'DM Mono',monospace;font-size:1.6rem;color:#FFD000;font-weight:700;}
+.auto-form-desc{font-size:.75rem;color:rgba(232,240,255,.4);margin-top:.5rem;line-height:1.5;}
+.auto-form-badge{display:inline-block;background:rgba(255,208,0,0.15);color:#FFD000;font-size:.65rem;padding:.25rem .6rem;margin-top:.8rem;letter-spacing:.1em;text-transform:uppercase;}
+.auto-bar{padding:1.2rem 3rem;background:#0A1018;display:flex;gap:2rem;flex-wrap:wrap;align-items:center;}
+.auto-bar a{color:#FFD000;text-decoration:none;font-size:.8rem;}
+.auto-bar span{font-size:.8rem;color:rgba(255,255,255,.35);}
+.demo-traiteur{background:#0E0A06;color:#F5EDD8;font-family:'DM Sans',sans-serif;}
+.traiteur-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:1px solid rgba(201,168,76,0.1);}
+.traiteur-logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:#F5EDD8;letter-spacing:.08em;font-style:italic;}
+.traiteur-contact{border:1px solid rgba(201,168,76,.35);color:#C9A84C;padding:.6rem 1.5rem;font-size:.8rem;text-decoration:none;letter-spacing:.1em;}
+.traiteur-hero{padding:4rem 3rem;background:linear-gradient(160deg,#0E0A06 0%,#1E1208 60%,#0E0A06 100%);position:relative;overflow:hidden;}
+.traiteur-hero::before{content:'';position:absolute;right:-50px;top:-50px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);}
+.traiteur-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;display:block;}
+.traiteur-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,4rem);color:#F5EDD8;line-height:1.1;max-width:600px;}
+.traiteur-h1 em{font-style:italic;color:#C9A84C;}
+.traiteur-sub{color:rgba(245,237,216,.45);font-size:.9rem;margin-top:1rem;max-width:450px;line-height:1.7;}
+.traiteur-cta{display:inline-block;margin-top:2rem;background:#C9A84C;color:#0E0A06;padding:.9rem 2.2rem;font-weight:700;font-size:.85rem;text-decoration:none;}
+.traiteur-prests{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#1A1208;}
+.traiteur-prest{background:#0E0A06;padding:2rem 1.5rem;}
+.traiteur-prest-icon{font-size:1.8rem;margin-bottom:1rem;}
+.traiteur-prest-name{font-family:'Playfair Display',serif;font-size:1rem;color:#F5EDD8;margin-bottom:.4rem;}
+.traiteur-prest-desc{font-size:.75rem;color:rgba(245,237,216,.35);line-height:1.6;}
+.traiteur-quote{background:rgba(201,168,76,0.07);border-top:1px solid rgba(201,168,76,.12);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.traiteur-quote strong{color:#C9A84C;display:block;font-family:'Playfair Display',serif;font-size:1.1rem;}
+.traiteur-quote span{font-size:.8rem;color:rgba(245,237,216,.4);}
+.traiteur-quote-btn{background:#C9A84C;color:#0E0A06;padding:.8rem 2rem;font-weight:700;font-size:.82rem;text-decoration:none;display:inline-block;}
+.traiteur-bar{padding:1rem 3rem;background:#0A0806;display:flex;gap:2rem;flex-wrap:wrap;}
+.traiteur-bar a{color:#C9A84C;text-decoration:none;font-size:.78rem;}
+.traiteur-bar span{font-size:.78rem;color:rgba(245,237,216,.25);}
+.demo-garage{background:#141414;color:#E8E8E8;font-family:'DM Sans',sans-serif;}
+.garage-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:#0A0A0A;border-bottom:1px solid rgba(255,80,0,0.15);}
+.garage-logo{font-family:'DM Sans',sans-serif;font-weight:900;font-size:1.4rem;color:#fff;letter-spacing:.1em;text-transform:uppercase;}
+.garage-logo span{color:#FF5000;}
+.garage-phone{background:#FF5000;color:#fff;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
+.garage-banner{background:#FF5000;padding:.8rem 3rem;}
+.garage-banner span{font-size:.82rem;color:#fff;font-weight:600;}
+.garage-hero{padding:3.5rem 3rem;background:linear-gradient(135deg,#141414 0%,#1E1A14 100%);}
+.garage-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#FF5000;margin-bottom:1rem;display:block;}
+.garage-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;line-height:1.1;max-width:580px;}
+.garage-h1 span{color:#FF5000;}
+.garage-sub{color:rgba(232,232,232,.45);font-size:.9rem;margin-top:1rem;max-width:450px;line-height:1.6;}
+.garage-btns{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
+.garage-btn-main{background:#FF5000;color:#fff;padding:.9rem 2rem;font-weight:700;text-decoration:none;font-size:.85rem;display:inline-block;}
+.garage-btn-sec{border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);padding:.9rem 2rem;font-size:.85rem;text-decoration:none;display:inline-block;}
+.garage-trust{display:flex;gap:2.5rem;margin-top:2.5rem;flex-wrap:wrap;}
+.garage-trust-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#FF5000;}
+.garage-trust-l{font-size:.7rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem;}
+.garage-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#222;}
+.garage-svc{background:#141414;padding:2rem 1.5rem;}
+.garage-svc-icon{font-size:1.8rem;margin-bottom:1rem;}
+.garage-svc-name{font-weight:700;font-size:.85rem;color:#E8E8E8;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em;}
+.garage-svc-desc{font-size:.75rem;color:#666;line-height:1.5;}
+.garage-bar{padding:1.2rem 3rem;background:#0A0A0A;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.garage-bar-l strong{color:#FF5000;font-size:1.2rem;display:block;}
+.garage-bar-l span{font-size:.78rem;color:rgba(255,255,255,.35);}
+.garage-bar-r{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.garage-bar-r a{color:rgba(255,255,255,.4);text-decoration:none;font-size:.78rem;}
+.demo-immo{background:#F8F6F2;color:#1C1812;font-family:'DM Sans',sans-serif;}
+.immo-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;background:#1C1812;}
+.immo-logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;letter-spacing:.05em;}
+.immo-logo span{color:#C9A84C;}
+.immo-nav-right{display:flex;gap:1rem;align-items:center;}
+.immo-nav-link{font-size:.78rem;color:rgba(255,255,255,.5);text-decoration:none;}
+.immo-nav-btn{background:#C9A84C;color:#1C1812;padding:.6rem 1.4rem;font-size:.8rem;font-weight:700;text-decoration:none;}
+.immo-hero{display:grid;grid-template-columns:1fr 1fr;min-height:380px;}
+.immo-hero-text{padding:4rem 3rem;background:#1C1812;display:flex;flex-direction:column;justify-content:center;}
+.immo-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;display:block;}
+.immo-h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3.2rem);color:#fff;line-height:1.15;}
+.immo-h1 em{font-style:italic;color:#C9A84C;}
+.immo-sub{color:rgba(255,255,255,.45);font-size:.85rem;margin-top:1rem;line-height:1.7;max-width:360px;}
+.immo-search{display:flex;gap:0;margin-top:2rem;}
+.immo-search input{flex:1;padding:.9rem 1.2rem;border:none;background:rgba(255,255,255,.08);color:#fff;font-size:.85rem;outline:none;}
+.immo-search input::placeholder{color:rgba(255,255,255,.3);}
+.immo-search button{background:#C9A84C;color:#1C1812;padding:.9rem 1.5rem;border:none;font-weight:700;font-size:.82rem;cursor:pointer;white-space:nowrap;}
+.immo-stats{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;}
+.immo-stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#C9A84C;}
+.immo-stat-l{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em;}
+.immo-visual{background:#E8E2D4;display:flex;align-items:center;justify-content:center;font-size:8rem;opacity:.2;}
+.immo-biens{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E8E2D4;}
+.immo-bien{background:#F8F6F2;padding:2rem 1.5rem;}
+.immo-bien-type{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:.5rem;}
+.immo-bien-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1C1812;margin-bottom:.3rem;}
+.immo-bien-desc{font-size:.75rem;color:#888;line-height:1.5;}
+.immo-bien-price{font-family:'DM Mono',monospace;font-size:1.1rem;color:#C9A84C;margin-top:.8rem;font-weight:600;}
+.immo-bar{padding:1.5rem 3rem;background:#1C1812;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.immo-bar-l span{font-size:.78rem;color:rgba(255,255,255,.35);display:block;}
+.immo-bar-l strong{color:#C9A84C;font-size:1.1rem;}
+.immo-bar-r{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.immo-bar-r a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.78rem;}
+.process-section{background:var(--dark3);}
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:4rem;}
+.process-step{padding:3rem 2.5rem;border-right:1px solid rgba(201,168,76,0.1);position:relative;}
+.process-step:last-child{border-right:none;}
+.step-num{font-family:'Playfair Display',serif;font-size:6rem;font-weight:900;color:rgba(201,168,76,0.07);line-height:1;position:absolute;top:1.5rem;right:1.5rem;}
+.step-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--gold);margin-bottom:1.5rem;display:block;}
+.step-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:1rem;}
+.step-desc{font-size:.88rem;color:var(--muted);line-height:1.7;}
+.step-time{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--gold);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,0.1);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4rem;}
+.testimonial{background:var(--dark3);padding:2.5rem;}
+.stars{color:var(--gold);font-size:1rem;margin-bottom:1.5rem;}
+.testimonial-text{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;line-height:1.7;margin-bottom:1.5rem;}
+.testimonial-author{font-size:.78rem;color:var(--muted);}
+.testimonial-author strong{color:var(--gold);display:block;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.1em;margin-bottom:.2rem;font-style:normal;}
+.faq-list{margin-top:3rem;max-width:750px;}
+.faq-item{border-bottom:1px solid rgba(201,168,76,0.1);}
+.faq-q{padding:1.8rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:1rem;font-weight:500;user-select:none;transition:color .25s;}
+.faq-q:hover{color:var(--gold);}
+.faq-icon{color:var(--gold);font-size:1.3rem;transition:transform .3s;}
+.faq-a{display:none;padding-bottom:1.8rem;font-size:.88rem;color:var(--muted);line-height:1.8;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.cta-section{background:var(--dark2);padding:8rem 2rem;position:relative;overflow:hidden;text-align:center;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);}
+.cta-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.1;position:relative;z-index:1;}
+.cta-title em{font-style:italic;color:var(--gold);}
+.cta-sub{color:var(--muted);font-size:1rem;margin-top:1.5rem;position:relative;z-index:1;}
+.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:3rem;position:relative;z-index:1;}
+.cta-guarantee{font-size:.78rem;color:var(--muted);margin-top:2rem;position:relative;z-index:1;}
+.cta-guarantee span{color:var(--gold);}
+footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:3rem 2rem;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:'DM Mono',monospace;font-size:1rem;letter-spacing:.2em;color:var(--gold);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.2);}
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:9999;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all .3s;animation:waPulse 2s ease infinite;}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.6);}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.7);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes scrollPulse{0%,100%{opacity:.4;}50%{opacity:.8;}}
+@media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.services-grid,.pack-content,.process-steps,.testimonials-grid{grid-template-columns:1fr;}.stats-inner{grid-template-columns:repeat(2,1fr);}.osteo-hero,.immo-hero{grid-template-columns:1fr;}.osteo-svcs,.garage-svcs,.traiteur-prests,.auto-formules,.immo-biens{grid-template-columns:repeat(2,1fr);}.pack-highlight{padding:2rem;}}
 </style>
-
 </head>
 <body>
 
-<!-- AUTOFLOW BAR -->
+<nav>
+  <a href="#" class="nav-logo">AUTOFLOW</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#demos">Démos</a></li>
+    <li><a href="#process">Processus</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/33632505509" class="nav-cta">Démarrer →</a>
+</nav>
 
-<div id="autoflow-bar">
-  <div class="af-logo">AUTO<span>FLOW</span></div>
-  <div class="af-badge">97€ • 5 jours</div>
-</div>
-
-<!-- HERO -->
-
-<section id="hero">
-  <div class="hero-eyebrow">Agence Web • Paris</div>
-  <h1 class="hero-title">Des sites qui<br><em>convertissent</em></h1>
-  <p class="hero-sub">Pour artisans & commerces locaux parisiens</p>
-  <div class="hero-cta-row">
-    <button class="btn-gold" onclick="document.getElementById('demos-section').scrollIntoView({behavior:'smooth'})">Voir les démos</button>
-    <a href="https://wa.me/33632505509" class="btn-outline" style="text-decoration:none;display:inline-block;line-height:1">Nous contacter</a>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <span class="hero-badge">Agence Web · Paris · Livraison 5 jours</span>
+  <h1>Des sites qui font<br><em>rentrer des clients</em></h1>
+  <p class="hero-sub">Pour artisans et commerces locaux parisiens. Votre vitrine professionnelle, votre fiche Google, votre système de contact — tout inclus.</p>
+  <div class="hero-actions">
+    <a href="https://wa.me/33632505509" class="btn-primary">💬 Démarrer sur WhatsApp</a>
+    <a href="#demos" class="btn-outline">Voir les démos</a>
   </div>
   <div class="hero-price">
-    <div class="price-tag">
-      <div>
-        <span class="original">2 500€</span>
-        <span class="amount">97€</span>
-      </div>
-      <div class="details">LIVRÉ EN 5 JOURS • HÉBERGEMENT INCLUS</div>
-    </div>
+    <span class="price-old">2 500€</span>
+    <span class="price-new"><sup style="font-size:2rem;vertical-align:top;margin-top:.6rem;display:inline-block;">€</sup>97</span>
+    <div class="price-label">Offre de lancement<br>Prix garanti · Livré en 5 jours</div>
   </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Découvrir</span></div>
 </section>
 
-<!-- DEMOS SECTION -->
-
-<section id="demos-section">
-  <div class="section-header">
-    <div class="section-label">Exemples de réalisations</div>
-    <h2 class="section-title">Choisissez votre secteur</h2>
-    <div class="gold-divider"></div>
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">97€</div><div class="stat-label">Prix fixe, sans surprise</div></div>
+    <div class="stat"><div class="stat-num">5J</div><div class="stat-label">Délai de livraison</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Services inclus</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Modifications offertes</div></div>
   </div>
+</div>
 
-  <div class="demo-tabs">
-    <button class="demo-tab active" onclick="switchDemo('tattoo', this)">⚡ Tatoueur</button>
-    <button class="demo-tab" onclick="switchDemo('barber', this)">✂️ Barbier</button>
-    <button class="demo-tab" onclick="switchDemo('plumber', this)">🔧 Plombier</button>
-    <button class="demo-tab" onclick="switchDemo('resto', this)">🍽️ Restaurant</button>
-    <button class="demo-tab" onclick="switchDemo('hair', this)">💇 Coiffeur</button>
-  </div>
-
-  <!-- TATOUEUR -->
-
-  <div class="demo-frame active" id="demo-tattoo">
-    <div class="tattoo-demo">
-      <nav class="tattoo-nav">
-        <div class="tattoo-logo">INK & SOUL</div>
-        <div class="tattoo-nav-links">
-          <a href="#">Studio</a>
-          <a href="#">Galerie</a>
-          <a href="#">Contact</a>
-        </div>
-      </nav>
-      <div class="tattoo-hero">
-        <div class="tattoo-hero-bg-text">INK</div>
-        <div class="tattoo-hero-content">
-          <div class="tattoo-hero-label">Studio de tatouage • Paris 11e</div>
-          <h1 class="tattoo-hero-title">YOUR SKIN<br><span>YOUR STORY</span></h1>
-          <p class="tattoo-hero-sub">Art permanent réalisé avec précision. Chaque tatouage est une œuvre unique.</p>
-          <button class="tattoo-cta">Prendre rendez-vous</button>
-        </div>
+<section id="services">
+  <div class="section-inner">
+    <span class="section-tag">// Ce qu'on livre</span>
+    <h2 class="section-title">Tout ce dont votre<br>commerce a <em>besoin</em></h2>
+    <p class="section-sub">Trois services pensés pour les PME locales. Visibilité, crédibilité, clients.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01 / 03</div>
+        <span class="service-icon">🌐</span>
+        <h3>Site Vitrine Professionnel</h3>
+        <p>Un site rapide, beau et adapté à votre métier. Vos clients vous trouvent, vous font confiance, vous contactent.</p>
+        <ul class="service-features">
+          <li>Design sur mesure à votre image</li>
+          <li>100% mobile & rapide</li>
+          <li>Formulaire de contact intégré</li>
+          <li>Hébergement inclus 1 an</li>
+          <li>Nom de domaine configuré</li>
+        </ul>
+        <div class="service-price">Inclus — 97€</div>
       </div>
-      <div class="tattoo-gallery">
-        <div class="tattoo-gallery-item" data-style="Blackwork">
-          <svg class="tattoo-svg" viewBox="0 0 100 100" width="60" height="60">
-            <path d="M50 10 L90 80 L10 80 Z" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-            <circle cx="50" cy="55" r="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="tattoo-gallery-item" data-style="Fineline">
-          <svg class="tattoo-svg" viewBox="0 0 100 100" width="50" height="50">
-            <path d="M50 5 L50 95 M5 50 L95 50 M20 20 L80 80 M80 20 L20 80" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" fill="none"/>
-            <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="tattoo-gallery-item" data-style="Néo-trad">
-          <svg class="tattoo-svg" viewBox="0 0 100 100" width="55" height="55">
-            <polygon points="50,10 61,35 90,35 68,57 79,82 50,65 21,82 32,57 10,35 39,35" fill="rgba(192,57,43,0.15)" stroke="rgba(192,57,43,0.3)" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="tattoo-gallery-item" data-style="Géométrique">
-          <svg class="tattoo-svg" viewBox="0 0 100 100" width="55" height="55">
-            <rect x="20" y="20" width="60" height="60" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" transform="rotate(45 50 50)"/>
-            <rect x="30" y="30" width="40" height="40" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" transform="rotate(45 50 50)"/>
-          </svg>
-        </div>
-        <div class="tattoo-gallery-item" data-style="Réalisme">
-          <svg class="tattoo-svg" viewBox="0 0 200 100" width="120" height="60">
-            <path d="M20 50 Q60 20 100 50 Q140 80 180 50" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
-            <circle cx="100" cy="50" r="25" fill="none" stroke="rgba(192,57,43,0.25)" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="tattoo-gallery-item" data-style="Japonais">
-          <svg class="tattoo-svg" viewBox="0 0 100 100" width="55" height="55">
-            <path d="M50 10 Q80 30 80 60 Q80 85 50 90 Q20 85 20 60 Q20 30 50 10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          </svg>
-        </div>
+      <div class="service-card">
+        <div class="service-num">02 / 03</div>
+        <span class="service-icon">📍</span>
+        <h3>Fiche Google Business</h3>
+        <p>Apparaissez sur Google Maps quand un client cherche votre métier près de chez lui. Le levier local le plus puissant.</p>
+        <ul class="service-features">
+          <li>Création & optimisation complète</li>
+          <li>Photos, horaires, catégories</li>
+          <li>Apparition sur Google Maps</li>
+          <li>Configuration SEO local</li>
+          <li>Lien vers votre site</li>
+        </ul>
+        <div class="service-price">Option — +49€</div>
       </div>
-      <div class="tattoo-info">
-        <div class="tattoo-info-item">
-          <div class="num">800+</div>
-          <div class="label">Tattoos réalisés</div>
-        </div>
-        <div class="tattoo-info-item">
-          <div class="num">8 ans</div>
-          <div class="label">D'expérience</div>
-        </div>
-        <div class="tattoo-info-item">
-          <div class="num">4.9★</div>
-          <div class="label">Google Reviews</div>
-        </div>
-        <div class="tattoo-info-item">
-          <div class="num">100%</div>
-          <div class="label">Sur mesure</div>
-        </div>
+      <div class="service-card">
+        <div class="service-num">03 / 03</div>
+        <span class="service-icon">📅</span>
+        <h3>Système de Contact & Réservation</h3>
+        <p>Ne perdez plus de clients. Formulaire optimisé, bouton WhatsApp, prise de RDV directement depuis votre site.</p>
+        <ul class="service-features">
+          <li>Formulaire de contact optimisé</li>
+          <li>Bouton WhatsApp direct</li>
+          <li>Réservation en ligne</li>
+          <li>Notifications en temps réel</li>
+          <li>Confirmation automatique client</li>
+        </ul>
+        <div class="service-price">Option — +30€</div>
       </div>
     </div>
-  </div>
-
-  <!-- BARBIER -->
-
-  <div class="demo-frame" id="demo-barber">
-    <div class="barber-demo">
-      <nav class="barber-nav">
-        <div class="barber-logo">Le Grand Rasoir</div>
-        <div class="barber-nav-tel">📞 01 42 XX XX XX</div>
-      </nav>
-      <div class="barber-hero">
-        <div class="barber-hero-inner">
-          <div class="barber-badge">
-            <span>15</span>
-            <span>ans d'art</span>
-          </div>
-          <div class="barber-hero-text">
-            <h1>L'art du<br><em>rasage</em><br>traditionnel</h1>
-            <p>Barbier classique • Paris 9e</p>
-          </div>
+    <div class="pack-highlight">
+      <span class="pack-badge">⭐ Offre la plus choisie</span>
+      <div class="pack-content">
+        <div>
+          <h3 class="pack-title">Le Pack <em>Complet</em><br>à 176€</h3>
+          <p style="color:var(--muted);font-size:.9rem;">Tout ce qu'il faut pour exister en ligne, attirer des clients et ne plus en rater un seul.</p>
+          <ul class="pack-list">
+            <li><span class="pack-check">✓</span> Site vitrine professionnel (97€)</li>
+            <li><span class="pack-check">✓</span> Fiche Google Business optimisée (+49€)</li>
+            <li><span class="pack-check">✓</span> Système de réservation/contact (+30€)</li>
+            <li><span class="pack-check">✓</span> Hébergement & domaine inclus 1 an</li>
+            <li><span class="pack-check">✓</span> Modifications illimitées</li>
+            <li><span class="pack-check">✓</span> Support WhatsApp inclus</li>
+          </ul>
         </div>
-      </div>
-      <div class="barber-services">
-        <h3 class="barber-services-title">Nos prestations</h3>
-        <div class="barber-service-list">
-          <div class="barber-service-item">
-            <div>
-              <div class="barber-service-name">Coupe Homme</div>
-              <div class="barber-service-desc">Coupe + shampoing + coiffage</div>
-            </div>
-            <div class="barber-service-price">28€</div>
-          </div>
-          <div class="barber-service-item">
-            <div>
-              <div class="barber-service-name">Rasage au couteau</div>
-              <div class="barber-service-desc">Rasage traditionnel à la serviette chaude</div>
-            </div>
-            <div class="barber-service-price">35€</div>
-          </div>
-          <div class="barber-service-item">
-            <div>
-              <div class="barber-service-name">Coupe + Barbe</div>
-              <div class="barber-service-desc">Le duo signature de la maison</div>
-            </div>
-            <div class="barber-service-price">55€</div>
-          </div>
-          <div class="barber-service-item">
-            <div>
-              <div class="barber-service-name">Taille de barbe</div>
-              <div class="barber-service-desc">Modelage + soin à l'huile d'argan</div>
-            </div>
-            <div class="barber-service-price">22€</div>
-          </div>
+        <div class="pack-price-box">
+          <div class="pack-old">Valeur réelle : 2 800€</div>
+          <div class="pack-new"><sup>€</sup>176</div>
+          <div class="pack-save">Économie de 2 624€</div>
+          <a href="https://wa.me/33632505509" class="pack-cta">Démarrer maintenant →</a>
+          <p class="pack-note">💬 Un message WhatsApp suffit pour commencer</p>
         </div>
-      </div>
-      <div class="barber-booking">
-        <h3>Réserver en ligne</h3>
-        <p>Disponible 7j/7 • Résultats immédiats</p>
-        <button class="barber-btn">Prendre rendez-vous →</button>
-      </div>
-      <div class="barber-hours">
-        <div class="barber-hours-title">Horaires d'ouverture</div>
-        <div class="barber-hours-grid">
-          <div class="barber-hour-item"><span class="day">Lun – Mer</span><span class="time">9h – 19h</span></div>
-          <div class="barber-hour-item"><span class="day">Jeudi</span><span class="time">9h – 20h</span></div>
-          <div class="barber-hour-item"><span class="day">Vendredi</span><span class="time">9h – 20h</span></div>
-          <div class="barber-hour-item"><span class="day">Samedi</span><span class="time">9h – 18h</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PLOMBIER -->
-
-  <div class="demo-frame" id="demo-plumber">
-    <div class="plumber-demo">
-      <div class="plumber-urgency">
-        <strong>⚡ Urgence 24h/7j</strong> — Intervention en moins de <strong>2h</strong> à Paris
-      </div>
-      <nav class="plumber-nav">
-        <div class="plumber-logo">
-          <div class="plumber-logo-icon">
-            <svg viewBox="0 0 24 24"><path d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42-1.39zM11 18a7 7 0 1 1 7-7 7 7 0 0 1-7 7z"/></svg>
-          </div>
-          <div class="plumber-logo-text">
-            <strong>DEPANN PARIS</strong>
-            <span>Plomberie • Chauffage</span>
-          </div>
-        </div>
-        <div class="plumber-tel">
-          <div class="number">01 80 XX XX XX</div>
-          <div class="label">Urgence 24h</div>
-        </div>
-      </nav>
-      <div class="plumber-hero">
-        <div class="plumber-hero-tag">🛡️ Certifié RGE • Garantie 2 ans</div>
-        <h1>Votre plombier<br><span>de confiance</span><br>à Paris</h1>
-        <p>Fuite, canalisation bouchée, chauffe-eau en panne ? Notre équipe intervient rapidement et proprement chez vous.</p>
-        <button class="plumber-cta">📞 Appeler maintenant — Devis gratuit</button>
-      </div>
-      <div class="plumber-services">
-        <h2 class="plumber-services-title">Nos interventions</h2>
-        <p class="plumber-services-sub">Devis gratuit • Sans engagement</p>
-        <div class="plumber-service-grid">
-          <div class="plumber-service-card">
-            <div class="icon">💧</div>
-            <h4>Fuites & Canalisations</h4>
-            <p>Détection et réparation de fuites, débouchage</p>
-          </div>
-          <div class="plumber-service-card">
-            <div class="icon">🔥</div>
-            <h4>Chauffe-eau</h4>
-            <p>Installation, dépannage, remplacement</p>
-          </div>
-          <div class="plumber-service-card">
-            <div class="icon">🚿</div>
-            <h4>Salle de bain</h4>
-            <p>Rénovation complète, robinetterie, WC</p>
-          </div>
-          <div class="plumber-service-card">
-            <div class="icon">♨️</div>
-            <h4>Chauffage</h4>
-            <p>Entretien chaudière, radiateurs, plancher chauffant</p>
-          </div>
-        </div>
-      </div>
-      <div class="plumber-trust">
-        <div class="plumber-trust-item">
-          <div class="num">2 000+</div>
-          <div class="label">Clients</div>
-        </div>
-        <div class="plumber-trust-item">
-          <div class="num">4.8★</div>
-          <div class="label">Google</div>
-        </div>
-        <div class="plumber-trust-item">
-          <div class="num">12 ans</div>
-          <div class="label">Paris</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RESTAURANT -->
-
-  <div class="demo-frame" id="demo-resto">
-    <div class="resto-demo">
-      <nav class="resto-nav">
-        <div class="resto-logo">MAISON AURORE</div>
-        <button class="resto-nav-reserve">Réserver</button>
-      </nav>
-      <div class="resto-hero">
-        <div class="resto-hero-subtitle">Cuisine française contemporaine • Paris 6e</div>
-        <h1 class="resto-hero-title">Une table,<br>une <em>histoire</em></h1>
-        <p class="resto-hero-desc">Ouvert du mardi au dimanche • Déjeuner & Dîner</p>
-        <div class="resto-hero-btns">
-          <button class="resto-btn-primary">Réserver une table</button>
-          <button class="resto-btn-secondary">Voir la carte</button>
-        </div>
-      </div>
-      <div class="resto-menu-section">
-        <div class="resto-menu-header">
-          <div class="label">Carte du moment</div>
-          <h2>Nos plats signature</h2>
-        </div>
-        <div class="resto-menu-items">
-          <div class="resto-menu-item">
-            <div class="resto-item-info">
-              <h4>Tartare de bœuf Wagyu</h4>
-              <p>Câpres, jaune d'œuf confit, tuile de parmesan</p>
-            </div>
-            <div class="resto-item-price">26€</div>
-          </div>
-          <div class="resto-menu-item">
-            <div class="resto-item-info">
-              <h4>Saint-Jacques poêlées</h4>
-              <p>Velouté de butternut, noisettes torréfiées</p>
-            </div>
-            <div class="resto-item-price">32€</div>
-          </div>
-          <div class="resto-menu-item">
-            <div class="resto-item-info">
-              <h4>Magret de canard rôti</h4>
-              <p>Jus aux cerises, gratin dauphinois</p>
-            </div>
-            <div class="resto-item-price">29€</div>
-          </div>
-          <div class="resto-menu-item">
-            <div class="resto-item-info">
-              <h4>Soufflé au Grand Marnier</h4>
-              <p>Crème anglaise à la vanille Bourbon</p>
-            </div>
-            <div class="resto-item-price">14€</div>
-          </div>
-        </div>
-      </div>
-      <div class="resto-reserve">
-        <h3>Réserver une table</h3>
-        <p>Confirmation immédiate par SMS</p>
-        <div class="resto-reserve-form">
-          <input type="text" placeholder="Votre nom">
-          <input type="tel" placeholder="Téléphone">
-          <input type="date">
-          <select>
-            <option>Nombre de personnes</option>
-            <option>1 personne</option>
-            <option>2 personnes</option>
-            <option>3-4 personnes</option>
-            <option>5+ personnes</option>
-          </select>
-          <button class="resto-reserve-btn">Confirmer la réservation</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- COIFFEUR -->
-
-  <div class="demo-frame" id="demo-hair">
-    <div class="hair-demo">
-      <nav class="hair-nav">
-        <div class="hair-logo">Studio <span>Lumière</span></div>
-        <button class="hair-nav-book">Réserver</button>
-      </nav>
-      <div class="hair-hero">
-        <div class="hair-hero-tag">Salon de coiffure • Paris 17e</div>
-        <h1 class="hair-hero-title">L'art de<br>sublimer<br><em>vos cheveux</em></h1>
-        <p class="hair-hero-sub">Coupes, colorations, soins — par des coiffeurs passionnés depuis 2009.</p>
-      </div>
-      <div class="hair-before-after">
-        <h3 class="hair-ba-title">Avant / Après</h3>
-        <p class="hair-ba-sub">Nos transformations parlent d'elles-mêmes</p>
-        <div class="hair-ba-grid">
-          <div class="hair-ba-item hair-ba-before">
-            <span class="hair-ba-label">Avant</span>
-          </div>
-          <div class="hair-ba-item hair-ba-after">
-            <span class="hair-ba-label">Après</span>
-          </div>
-          <div class="hair-ba-item hair-ba-item3">
-            <span class="hair-ba-label">Avant</span>
-          </div>
-          <div class="hair-ba-item hair-ba-item4">
-            <span class="hair-ba-label">Après</span>
-          </div>
-        </div>
-      </div>
-      <div class="hair-services">
-        <h3 class="hair-services-title">Tarifs</h3>
-        <div class="hair-service-row">
-          <div>
-            <div class="name">Coupe Femme</div>
-            <div class="duration">45 min</div>
-          </div>
-          <div class="price">55€</div>
-        </div>
-        <div class="hair-service-row">
-          <div>
-            <div class="name">Coloration complète</div>
-            <div class="duration">2h30</div>
-          </div>
-          <div class="price">95€</div>
-        </div>
-        <div class="hair-service-row">
-          <div>
-            <div class="name">Balayage / Mèches</div>
-            <div class="duration">3h</div>
-          </div>
-          <div class="price">120€</div>
-        </div>
-        <div class="hair-service-row">
-          <div>
-            <div class="name">Soin kératine</div>
-            <div class="duration">2h</div>
-          </div>
-          <div class="price">80€</div>
-        </div>
-        <div class="hair-service-row">
-          <div>
-            <div class="name">Coupe Homme</div>
-            <div class="duration">30 min</div>
-          </div>
-          <div class="price">35€</div>
-        </div>
-      </div>
-      <div class="hair-booking">
-        <h3>Prendre rendez-vous</h3>
-        <p>Lundi au samedi • 9h – 19h</p>
-        <button class="hair-booking-btn">Réserver en ligne →</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
+<section id="demos" class="demos-section">
+  <div class="section-inner">
+    <span class="section-tag">// Exemples réels</span>
+    <h2 class="section-title">Votre site pourrait<br>ressembler à <em>ça</em></h2>
+    <p class="section-sub">5 démos sur mesure. Chaque design est pensé pour son secteur.</p>
+    <div class="demos-tabs">
+      <button class="demo-tab active" onclick="switchDemo('osteo',this)">🧘 Ostéo / Kiné</button>
+      <button class="demo-tab" onclick="switchDemo('auto',this)">🚗 Auto-école</button>
+      <button class="demo-tab" onclick="switchDemo('traiteur',this)">🍽️ Traiteur</button>
+      <button class="demo-tab" onclick="switchDemo('garage',this)">🔧 Garage</button>
+      <button class="demo-tab" onclick="switchDemo('immo',this)">🏠 Agence Immo</button>
+    </div>
+    <div class="demo-panels">
 
-<section id="social-proof">
-  <div class="section-label">Chiffres clés</div>
-  <h2 class="section-title">Ce qu'on livre</h2>
-  <div class="gold-divider"></div>
-  <div class="proof-grid">
-    <div class="proof-item">
-      <div class="num">97€</div>
-      <div class="label">Prix fixe</div>
+```
+  <div class="demo-panel active" id="panel-osteo">
+    <div class="demo-osteo">
+      <nav class="osteo-nav">
+        <span class="osteo-logo">Cabinet <span>Équilibre</span></span>
+        <a href="#" onclick="openMail();return false;" class="osteo-rdv">Prendre rendez-vous</a>
+      </nav>
+      <div class="osteo-hero">
+        <div class="osteo-hero-text">
+          <span class="osteo-tag">Ostéopathie & Kinésithérapie · Paris 15e</span>
+          <h2 class="osteo-h1">Retrouvez<br><em>l'équilibre</em><br>de votre corps.</h2>
+          <p class="osteo-sub">Prise en charge personnalisée de vos douleurs. Dos, articulations, sport — nous traitons à la source.</p>
+          <a href="#" onclick="openMail();return false;" class="osteo-cta">Réserver une séance →</a>
+        </div>
+        <div class="osteo-visual">🧘</div>
+      </div>
+      <div class="osteo-svcs">
+        <div class="osteo-svc"><div class="osteo-svc-name">Ostéopathie</div><div class="osteo-svc-desc">Manipulation douce des structures du corps</div><div class="osteo-svc-price">70€ / séance</div></div>
+        <div class="osteo-svc"><div class="osteo-svc-name">Kinésithérapie</div><div class="osteo-svc-desc">Rééducation fonctionnelle & sportive</div><div class="osteo-svc-price">45€ / séance</div></div>
+        <div class="osteo-svc"><div class="osteo-svc-name">Massage thérapeutique</div><div class="osteo-svc-desc">Détente musculaire profonde</div><div class="osteo-svc-price">60€ / 1h</div></div>
+        <div class="osteo-svc"><div class="osteo-svc-name">Bilan posture</div><div class="osteo-svc-desc">Analyse complète & programme sur mesure</div><div class="osteo-svc-price">80€ / bilan</div></div>
+      </div>
+      <div class="osteo-bar">
+        <span>📍 Paris 15e</span>
+        <span><a href="https://wa.me/33632505509">💬 WhatsApp</a></span>
+        <span style="margin-left:auto;">Lun–Sam 8h–19h</span>
+      </div>
     </div>
-    <div class="proof-item">
-      <div class="num">5J</div>
-      <div class="label">Délai livraison</div>
+  </div>
+
+  <div class="demo-panel" id="panel-auto">
+    <div class="demo-auto">
+      <nav class="auto-nav">
+        <div class="auto-logo">CONDUITE<span>PLUS</span></div>
+        <a href="https://wa.me/33632505509" class="auto-phone">💬 Nous contacter</a>
+      </nav>
+      <div class="auto-banner"><span class="auto-banner-text">🎯 Places disponibles cette semaine — Inscrivez-vous maintenant</span></div>
+      <div class="auto-hero">
+        <span class="auto-tag">Auto-école · Paris 18e · Agréée depuis 2005</span>
+        <h2 class="auto-h1">Votre permis,<br><span>notre priorité.</span></h2>
+        <p class="auto-sub">Formation au permis B, conduite accompagnée et code de la route. Moniteurs certifiés, taux de réussite élevé.</p>
+        <div class="auto-btns">
+          <a href="#" onclick="openMail();return false;" class="auto-btn-main">S'inscrire maintenant</a>
+          <a href="https://wa.me/33632505509" class="auto-btn-sec">💬 WhatsApp</a>
+        </div>
+        <div class="auto-stats">
+          <div><div class="auto-stat-n">87%</div><div class="auto-stat-l">Taux de réussite</div></div>
+          <div><div class="auto-stat-n">20 ans</div><div class="auto-stat-l">D'expérience</div></div>
+          <div><div class="auto-stat-n">4.8★</div><div class="auto-stat-l">Google</div></div>
+        </div>
+      </div>
+      <div class="auto-formules">
+        <div class="auto-form"><div class="auto-form-name">Permis B</div><div class="auto-form-price">1 490€</div><div class="auto-form-desc">20h de conduite + code inclus + examen</div><div class="auto-form-badge">Le plus populaire</div></div>
+        <div class="auto-form"><div class="auto-form-name">Conduite Accompagnée</div><div class="auto-form-price">990€</div><div class="auto-form-desc">Dès 15 ans · Formation complète AAC</div></div>
+        <div class="auto-form"><div class="auto-form-name">Code en ligne</div><div class="auto-form-price">30€</div><div class="auto-form-desc">Accès illimité 3 mois · Résultats rapides</div></div>
+      </div>
+      <div class="auto-bar">
+        <a href="https://wa.me/33632505509">💬 WhatsApp direct</a>
+        <span style="margin-left:auto;">Lun–Sam 9h–19h</span>
+      </div>
     </div>
-    <div class="proof-item">
-      <div class="num">∞</div>
-      <div class="label">Modifications</div>
+  </div>
+
+  <div class="demo-panel" id="panel-traiteur">
+    <div class="demo-traiteur">
+      <nav class="traiteur-nav">
+        <span class="traiteur-logo">Saveurs & Prestige</span>
+        <a href="#" onclick="openMail();return false;" class="traiteur-contact">Demander un devis</a>
+      </nav>
+      <div class="traiteur-hero">
+        <span class="traiteur-tag">Traiteur & Chef à domicile · Paris & Île-de-France</span>
+        <h2 class="traiteur-h1">L'excellence culinaire<br>à votre <em>service.</em></h2>
+        <p class="traiteur-sub">Mariages, événements d'entreprise, dîners privés. Nous créons des expériences gastronomiques sur mesure.</p>
+        <a href="#" onclick="openMail();return false;" class="traiteur-cta">Obtenir un devis gratuit →</a>
+      </div>
+      <div class="traiteur-prests">
+        <div class="traiteur-prest"><div class="traiteur-prest-icon">💍</div><div class="traiteur-prest-name">Mariages</div><div class="traiteur-prest-desc">Menu sur mesure, service complet</div></div>
+        <div class="traiteur-prest"><div class="traiteur-prest-icon">🏢</div><div class="traiteur-prest-name">Événements d'entreprise</div><div class="traiteur-prest-desc">Cocktails, buffets, séminaires</div></div>
+        <div class="traiteur-prest"><div class="traiteur-prest-icon">🍽️</div><div class="traiteur-prest-name">Dîners privés</div><div class="traiteur-prest-desc">Chef à domicile, expérience unique</div></div>
+        <div class="traiteur-prest"><div class="traiteur-prest-icon">🎉</div><div class="traiteur-prest-name">Fêtes & anniversaires</div><div class="traiteur-prest-desc">Cocktail dînatoire & buffet</div></div>
+      </div>
+      <div class="traiteur-quote">
+        <div><strong>Devis gratuit en 24h</strong><span>Décrivez votre événement · On s'adapte à votre budget</span></div>
+        <a href="#" onclick="openMail();return false;" class="traiteur-quote-btn">Demander un devis →</a>
+      </div>
+      <div class="traiteur-bar">
+        <span>📍 Paris & IDF</span>
+        <a href="https://wa.me/33632505509">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-panel" id="panel-garage">
+    <div class="demo-garage">
+      <nav class="garage-nav">
+        <div class="garage-logo">GARAGE<span> MARTIN</span></div>
+        <a href="https://wa.me/33632505509" class="garage-phone">💬 Contact rapide</a>
+      </nav>
+      <div class="garage-banner"><span>⚡ Dépannage & remorquage 7j/7 — Intervention rapide Paris & banlieue</span></div>
+      <div class="garage-hero">
+        <span class="garage-tag">Mécanique auto · Paris 20e · Depuis 1998</span>
+        <h2 class="garage-h1">Votre voiture<br>entre <span>de bonnes mains.</span></h2>
+        <p class="garage-sub">Révision, réparation, contrôle technique. Diagnostic gratuit sur rendez-vous. Devis transparent sans surprise.</p>
+        <div class="garage-btns">
+          <a href="#" onclick="openMail();return false;" class="garage-btn-main">📅 Prendre rendez-vous</a>
+          <a href="https://wa.me/33632505509" class="garage-btn-sec">💬 WhatsApp</a>
+        </div>
+        <div class="garage-trust">
+          <div><div class="garage-trust-n">2500+</div><div class="garage-trust-l">Véhicules réparés</div></div>
+          <div><div class="garage-trust-n">25 ans</div><div class="garage-trust-l">D'expérience</div></div>
+          <div><div class="garage-trust-n">4.7★</div><div class="garage-trust-l">Google</div></div>
+        </div>
+      </div>
+      <div class="garage-svcs">
+        <div class="garage-svc"><div class="garage-svc-icon">🔧</div><div class="garage-svc-name">Révision</div><div class="garage-svc-desc">Vidange, filtres, contrôle complet</div></div>
+        <div class="garage-svc"><div class="garage-svc-icon">🛞</div><div class="garage-svc-name">Pneumatiques</div><div class="garage-svc-desc">Montage, équilibrage, géométrie</div></div>
+        <div class="garage-svc"><div class="garage-svc-icon">⚡</div><div class="garage-svc-name">Diagnostic</div><div class="garage-svc-desc">Lecture de codes, électronique</div></div>
+        <div class="garage-svc"><div class="garage-svc-icon">🚗</div><div class="garage-svc-name">Carrosserie</div><div class="garage-svc-desc">Débosselage, peinture, vitrage</div></div>
+      </div>
+      <div class="garage-bar">
+        <div class="garage-bar-l"><span>Contactez-nous</span><strong>06 32 50 55 09</strong></div>
+        <div class="garage-bar-r">
+          <a href="https://wa.me/33632505509">💬 WhatsApp</a>
+          <span>Lun–Sam 8h–18h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-panel" id="panel-immo">
+    <div class="demo-immo">
+      <nav class="immo-nav">
+        <span class="immo-logo">Prestige <span>Immobilier</span></span>
+        <div class="immo-nav-right">
+          <a href="#" class="immo-nav-link">Vendre</a>
+          <a href="#" class="immo-nav-link">Acheter</a>
+          <a href="#" class="immo-nav-link">Louer</a>
+          <a href="#" onclick="openMail();return false;" class="immo-nav-btn">Estimation gratuite</a>
+        </div>
+      </nav>
+      <div class="immo-hero">
+        <div class="immo-hero-text">
+          <span class="immo-tag">Agence immobilière · Paris & Île-de-France</span>
+          <h2 class="immo-h1">Trouvez le bien<br>qui vous <em>ressemble.</em></h2>
+          <p class="immo-sub">Achat, vente, location. Nos conseillers vous accompagnent à chaque étape de votre projet immobilier.</p>
+          <div class="immo-search">
+            <input type="text" placeholder="Quartier, ville, code postal...">
+            <button>Rechercher</button>
+          </div>
+          <div class="immo-stats">
+            <div><div class="immo-stat-n">850+</div><div class="immo-stat-l">Biens vendus</div></div>
+            <div><div class="immo-stat-n">15 ans</div><div class="immo-stat-l">D'expérience</div></div>
+            <div><div class="immo-stat-n">4.9★</div><div class="immo-stat-l">Avis Google</div></div>
+          </div>
+        </div>
+        <div class="immo-visual">🏠</div>
+      </div>
+      <div class="immo-biens">
+        <div class="immo-bien"><div class="immo-bien-type">Vente</div><div class="immo-bien-name">Appartement 3P · Paris 11e</div><div class="immo-bien-desc">65m² · 2e étage · Lumineux · Parquet</div><div class="immo-bien-price">485 000€</div></div>
+        <div class="immo-bien"><div class="immo-bien-type">Location</div><div class="immo-bien-name">Studio meublé · Paris 5e</div><div class="immo-bien-desc">28m² · Refait à neuf · Proche métro</div><div class="immo-bien-price">950€ / mois</div></div>
+        <div class="immo-bien"><div class="immo-bien-type">Vente</div><div class="immo-bien-name">Maison 5P · Vincennes</div><div class="immo-bien-desc">120m² · Jardin · Garage · Calme</div><div class="immo-bien-price">680 000€</div></div>
+      </div>
+      <div class="immo-bar">
+        <div class="immo-bar-l"><span>Contactez-nous</span><strong>06 32 50 55 09</strong></div>
+        <div class="immo-bar-r">
+          <a href="https://wa.me/33632505509">💬 WhatsApp</a>
+          <span>Lun–Sam 9h–19h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div style="text-align:center;margin-top:3rem;">
+  <a href="https://wa.me/33632505509" class="btn-primary">💬 Je veux un site comme ça</a>
+</div>
+```
+
+  </div>
+</section>
+
+<section id="process" class="process-section">
+  <div class="section-inner">
+    <span class="section-tag">// Comment ça marche</span>
+    <h2 class="section-title">Simple, rapide,<br><em>sans prise de tête</em></h2>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">01</div><span class="step-tag">Étape 01</span><h3 class="step-title">Vous nous contactez</h3><p class="step-desc">Un message WhatsApp suffit. On discute de votre activité, vos besoins, vos couleurs. 15 minutes max.</p><div class="step-time">Durée : 15 min</div></div>
+      <div class="process-step"><div class="step-num">02</div><span class="step-tag">Étape 02</span><h3 class="step-title">On crée votre site</h3><p class="step-desc">Design sur mesure à votre image. Textes, photos, tarifs, formulaire de contact — on s'occupe de tout.</p><div class="step-time">Durée : 3–4 jours</div></div>
+      <div class="process-step"><div class="step-num">03</div><span class="step-tag">Étape 03</span><h3 class="step-title">Livraison en 5 jours</h3><p class="step-desc">Site en ligne, domaine configuré, fiche Google activée. Vous recevez vos premières demandes dès la mise en ligne.</p><div class="step-time">Durée : 1 jour</div></div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-
-<section id="how-it-works">
-  <div class="section-header" style="padding-top:0">
-    <div class="section-label">Processus</div>
-    <h2 class="section-title">Comment ça marche</h2>
-    <div class="gold-divider"></div>
-  </div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-content">
-        <h4>Vous nous contactez</h4>
-        <p>Un message WhatsApp suffit. On discute de votre activité en 15 minutes.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-content">
-        <h4>On crée votre site</h4>
-        <p>Design sur mesure à votre image. Textes, photos, couleurs — on s'occupe de tout.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-content">
-        <h4>Livraison en 5 jours</h4>
-        <p>Site en ligne, nom de domaine configuré, prêt à recevoir vos clients.</p>
-      </div>
+<section>
+  <div class="section-inner">
+    <span class="section-tag">// Ils nous font confiance</span>
+    <h2 class="section-title">Ce que disent<br>nos <em>clients</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"Mon cabinet n'apparaissait nulle part sur Google. Depuis la mise en ligne, je reçois des demandes de nouveaux patients chaque semaine."</p><div class="testimonial-author"><strong>DR. SOPHIE M.</strong>Ostéopathe · Paris 15e</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"Le formulaire de devis en ligne nous fait gagner un temps fou — les clients arrivent déjà informés. Livré en 4 jours, exactement comme promis."</p><div class="testimonial-author"><strong>THOMAS G.</strong>Traiteur · Paris & IDF</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"97€ pour un résultat pareil, je pensais que c'était trop beau pour être vrai. Le site est pro, rapide, et mes clients le trouvent facilement sur Google."</p><div class="testimonial-author"><strong>RACHID B.</strong>Garagiste · Paris 20e</div></div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-
-<section id="final-cta">
-  <h2>Votre site<br><em style="font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif">en 5 jours</em></h2>
-  <p>Offre de lancement • Seulement 97€ • Prix garanti</p>
-  <a href="https://wa.me/33632505509" class="btn-gold" style="text-decoration:none;display:inline-block">
-    Démarrer maintenant sur WhatsApp
-  </a>
+<section id="faq" style="background:var(--dark3);">
+  <div class="section-inner">
+    <span class="section-tag">// Questions fréquentes</span>
+    <h2 class="section-title">Vous avez des<br><em>questions ?</em></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Pourquoi seulement 97€ ? C'est vraiment professionnel ?<span class="faq-icon">+</span></div><div class="faq-a">Oui, 100% professionnel. On travaille vite, en direct, sans intermédiaire. C'est une offre de lancement — le prix passera à 197€ puis 297€ avec les prochains clients.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Combien de temps ça prend vraiment ?<span class="faq-icon">+</span></div><div class="faq-a">5 jours ouvrés maximum. Dans la plupart des cas, on livre en 3–4 jours.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Qu'est-ce qui est inclus dans les 97€ ?<span class="faq-icon">+</span></div><div class="faq-a">Le site vitrine complet, l'hébergement 1 an, la configuration du nom de domaine, le formulaire de contact et les modifications illimitées.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">La fiche Google, c'est quoi exactement ?<span class="faq-icon">+</span></div><div class="faq-a">Votre fiche Google Business Profile — ce qui apparaît sur Google Maps quand quelqu'un cherche votre métier près de chez vous. On la crée et optimise pour 49€ en option.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Et après la livraison, si j'ai besoin de modifier des infos ?<span class="faq-icon">+</span></div><div class="faq-a">On gère les modifications par WhatsApp, sans frais. Nouveau tarif, photo, horaire — un message et c'est réglé sous 24h.</div></div>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<section class="cta-section">
+  <h2 class="cta-title">Vos clients vous cherchent.<br><em>Soyez là.</em></h2>
+  <p class="cta-sub">97€ · Livré en 5 jours · Hébergement inclus · Modifications illimitées</p>
+  <div class="cta-actions">
+    <a href="https://wa.me/33632505509" class="btn-primary" style="font-size:1rem;padding:1.2rem 2.8rem;">💬 Démarrer sur WhatsApp</a>
+    <a href="#" onclick="openMail();return false;" class="btn-outline" style="font-size:1rem;padding:1.2rem 2.8rem;">✉️ Envoyer un mail</a>
+  </div>
+  <p class="cta-guarantee">🔒 Satisfait ou remboursé · <span>Aucun engagement</span> · Réponse sous 2h</p>
+</section>
 
 <footer>
-  <div class="footer-logo">AUTOFLOW</div>
-  <p>Sites web pour commerces locaux parisiens<br>© 2025 AutoFlow</p>
+  <div class="footer-inner">
+    <div class="footer-logo">AUTOFLOW</div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#demos">Démos</a>
+      <a href="https://wa.me/33632505509">WhatsApp</a>
+      <a href="#" onclick="openMail();return false;">nils.autoflow&#64;gmail.com</a>
+    </div>
+    <div class="footer-copy">© 2025 AutoFlow · Sites web Paris</div>
+  </div>
 </footer>
 
-<!-- WHATSAPP BTN -->
-
-<a id="wa-btn" href="https://wa.me/33632505509" target="_blank">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-  </svg>
-</a>
+<a href="https://wa.me/33632505509" class="wa-float" target="_blank">💬</a>
 
 <script>
-function switchDemo(name, btn) {
-  document.querySelectorAll('.demo-frame').forEach(f => f.classList.remove('active'));
-  document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('demo-' + name).classList.add('active');
-  btn.classList.add('active');
-}
+function switchDemo(id,btn){document.querySelectorAll('.demo-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.demo-tab').forEach(t=>t.classList.remove('active'));document.getElementById('panel-'+id).classList.add('active');btn.classList.add('active');}
+function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1});
+document.querySelectorAll('.service-card,.testimonial,.process-step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el);});
+function openMail(){var u="nils.autoflow";var d="gmail.com";window.location="mailto:"+u+"@"+d;}
+
 </script>
 
 </body>
