@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoFlow — Sites Web Pour Commerces Locaux</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,500&family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --gold: #c9a84c;
@@ -15,391 +15,391 @@
   --dark3: #1a1a1a;
 }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-background: var(–dark);
-color: #fff;
-font-family: ‘Montserrat’, sans-serif;
-overflow-x: hidden;
+  background: var(--dark);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /* ===== AUTOFLOW WRAPPER ===== */
 #autoflow-bar {
-position: fixed;
-top: 0; left: 0; right: 0;
-z-index: 1000;
-background: rgba(10,10,10,0.97);
-backdrop-filter: blur(10px);
-border-bottom: 1px solid rgba(201,168,76,0.2);
-padding: 0 20px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-height: 56px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
 }
 
 .af-logo {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.4rem;
-font-weight: 600;
-color: var(–gold);
-letter-spacing: 2px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 2px;
 }
 
 .af-logo span {
-color: #fff;
-font-weight: 300;
+  color: #fff;
+  font-weight: 300;
 }
 
 .af-badge {
-background: var(–gold);
-color: #000;
-font-size: 0.65rem;
-font-weight: 700;
-padding: 5px 12px;
-letter-spacing: 1px;
-text-transform: uppercase;
+  background: var(--gold);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* ===== HERO ===== */
 #hero {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 80px 24px 40px;
-position: relative;
-overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 40px;
+  position: relative;
+  overflow: hidden;
 }
 
 #hero::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%);
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%);
 }
 
 .hero-eyebrow {
-font-size: 0.65rem;
-letter-spacing: 4px;
-text-transform: uppercase;
-color: var(–gold);
-margin-bottom: 20px;
-opacity: 0;
-animation: fadeUp 0.8s 0.2s forwards;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
 }
 
 .hero-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(2.8rem, 10vw, 6rem);
-font-weight: 300;
-line-height: 1.05;
-color: #fff;
-opacity: 0;
-animation: fadeUp 0.8s 0.4s forwards;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 10vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: #fff;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
 }
 
 .hero-title em {
-font-style: italic;
-color: var(–gold);
+  font-style: italic;
+  color: var(--gold);
 }
 
 .hero-sub {
-margin-top: 24px;
-font-size: 0.9rem;
-color: rgba(255,255,255,0.5);
-letter-spacing: 1px;
-opacity: 0;
-animation: fadeUp 0.8s 0.6s forwards;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
 }
 
 .hero-cta-row {
-margin-top: 40px;
-display: flex;
-gap: 16px;
-flex-wrap: wrap;
-justify-content: center;
-opacity: 0;
-animation: fadeUp 0.8s 0.8s forwards;
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
 }
 
 .btn-gold {
-background: var(–gold);
-color: #000;
-border: none;
-padding: 14px 32px;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 0.75rem;
-font-weight: 700;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: pointer;
-transition: all 0.3s;
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 14px 32px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-.btn-gold:hover { background: var(–gold-light); transform: translateY(-2px); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
 .btn-outline {
-background: transparent;
-color: #fff;
-border: 1px solid rgba(255,255,255,0.3);
-padding: 14px 32px;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 0.75rem;
-font-weight: 500;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: pointer;
-transition: all 0.3s;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 14px 32px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-.btn-outline:hover { border-color: var(–gold); color: var(–gold); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
 .hero-price {
-margin-top: 48px;
-opacity: 0;
-animation: fadeUp 0.8s 1s forwards;
+  margin-top: 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s 1s forwards;
 }
 
 .price-tag {
-display: inline-block;
-border: 1px solid rgba(201,168,76,0.4);
-padding: 16px 32px;
-position: relative;
+  display: inline-block;
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 16px 32px;
+  position: relative;
 }
 
 .price-tag::before {
-content: ‘OFFRE DE LANCEMENT’;
-position: absolute;
-top: -8px;
-left: 50%;
-transform: translateX(-50%);
-background: var(–dark);
-padding: 0 12px;
-font-size: 0.55rem;
-letter-spacing: 3px;
-color: var(–gold);
+  content: 'OFFRE DE LANCEMENT';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  padding: 0 12px;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  color: var(--gold);
 }
 
 .price-tag .amount {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 3rem;
-font-weight: 600;
-color: var(–gold);
-line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
 }
 
 .price-tag .details {
-font-size: 0.65rem;
-color: rgba(255,255,255,0.4);
-letter-spacing: 2px;
-margin-top: 4px;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+  margin-top: 4px;
 }
 
 .price-tag .original {
-font-size: 0.75rem;
-color: rgba(255,255,255,0.3);
-text-decoration: line-through;
-margin-right: 8px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: line-through;
+  margin-right: 8px;
 }
 
 /* ===== SECTION TITLE ===== */
 .section-header {
-text-align: center;
-padding: 80px 24px 48px;
+  text-align: center;
+  padding: 80px 24px 48px;
 }
 
 .section-label {
-font-size: 0.6rem;
-letter-spacing: 4px;
-text-transform: uppercase;
-color: var(–gold);
-margin-bottom: 12px;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
 }
 
 .section-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(2rem, 6vw, 3.5rem);
-font-weight: 300;
-color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 300;
+  color: #fff;
 }
 
 /* ===== DEMO SWITCHER ===== */
 #demos-section {
-padding: 0 0 80px;
+  padding: 0 0 80px;
 }
 
 .demo-tabs {
-display: flex;
-overflow-x: auto;
-scrollbar-width: none;
-border-bottom: 1px solid rgba(255,255,255,0.08);
-padding: 0 16px;
-gap: 4px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 16px;
+  gap: 4px;
 }
 .demo-tabs::-webkit-scrollbar { display: none; }
 
 .demo-tab {
-flex-shrink: 0;
-padding: 14px 20px;
-font-size: 0.7rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.4);
-cursor: pointer;
-border-bottom: 2px solid transparent;
-transition: all 0.3s;
-white-space: nowrap;
-background: none;
-border-top: none;
-border-left: none;
-border-right: none;
-font-family: ‘Montserrat’, sans-serif;
+  flex-shrink: 0;
+  padding: 14px 20px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  white-space: nowrap;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .demo-tab:hover { color: rgba(255,255,255,0.8); }
-.demo-tab.active { color: var(–gold); border-bottom-color: var(–gold); }
+.demo-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
 
 .demo-frame {
-display: none;
+  display: none;
 }
 .demo-frame.active { display: block; }
 
 /* ===== DEMO : TATOUEUR ===== */
 .tattoo-demo {
-background: #080808;
-font-family: ‘Montserrat’, sans-serif;
-color: #fff;
-min-height: 100vh;
+  background: #080808;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  color: #fff;
+  min-height: 100vh;
 }
 
 .tattoo-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px 24px;
-border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .tattoo-logo {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 1.5rem;
-letter-spacing: 4px;
-color: #fff;
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  color: #fff;
 }
 
 .tattoo-nav-links {
-display: flex;
-gap: 24px;
+  display: flex;
+  gap: 24px;
 }
 
 .tattoo-nav-links a {
-color: rgba(255,255,255,0.5);
-text-decoration: none;
-font-size: 0.65rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-transition: color 0.3s;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
 }
 
 .tattoo-hero {
-position: relative;
-height: 70vh;
-display: flex;
-align-items: flex-end;
-padding: 40px 24px;
-background: linear-gradient(135deg, #0d0d0d 0%, #1a0a0a 50%, #0d0d0d 100%);
-overflow: hidden;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px 24px;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0a0a 50%, #0d0d0d 100%);
+  overflow: hidden;
 }
 
 .tattoo-hero::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: url(“data:image/svg+xml,%3Csvg width=‘60’ height=‘60’ viewBox=‘0 0 60 60’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg fill=‘none’ fill-rule=‘evenodd’%3E%3Cg fill=’%23ffffff’ fill-opacity=‘0.02’%3E%3Cpath d=‘M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z’/%3E%3C/g%3E%3C/g%3E%3C/svg%3E”);
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .tattoo-hero-bg-text {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: clamp(6rem, 25vw, 14rem);
-color: rgba(255,255,255,0.03);
-white-space: nowrap;
-pointer-events: none;
-letter-spacing: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: clamp(6rem, 25vw, 14rem);
+  color: rgba(255,255,255,0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 8px;
 }
 
 .tattoo-hero-content { position: relative; z-index: 1; }
 
 .tattoo-hero-label {
-font-size: 0.6rem;
-letter-spacing: 4px;
-color: #c0392b;
-text-transform: uppercase;
-margin-bottom: 12px;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  color: #c0392b;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .tattoo-hero-title {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: clamp(3rem, 12vw, 6rem);
-line-height: 0.9;
-letter-spacing: 2px;
-color: #fff;
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: clamp(3rem, 12vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
 .tattoo-hero-title span { color: #c0392b; }
 
 .tattoo-hero-sub {
-margin-top: 16px;
-font-size: 0.75rem;
-color: rgba(255,255,255,0.4);
-letter-spacing: 1px;
-max-width: 340px;
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+  max-width: 340px;
 }
 
 .tattoo-cta {
-display: inline-block;
-margin-top: 24px;
-background: #c0392b;
-color: #fff;
-padding: 14px 32px;
-font-size: 0.7rem;
-font-weight: 700;
-letter-spacing: 3px;
-text-transform: uppercase;
-cursor: pointer;
-border: none;
-font-family: ‘Montserrat’, sans-serif;
+  display: inline-block;
+  margin-top: 24px;
+  background: #c0392b;
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .tattoo-gallery {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 3px;
-padding: 3px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 3px;
 }
 
 .tattoo-gallery-item {
-aspect-ratio: 1;
-background: #1a1a1a;
-position: relative;
-overflow: hidden;
-display: flex;
-align-items: center;
-justify-content: center;
+  aspect-ratio: 1;
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tattoo-gallery-item::before {
-content: attr(data-style);
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 0.8rem;
-letter-spacing: 2px;
-color: rgba(255,255,255,0.15);
-text-transform: uppercase;
+  content: attr(data-style);
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.15);
+  text-transform: uppercase;
 }
 
 .tattoo-gallery-item:nth-child(1) { background: linear-gradient(135deg, #1a1a1a, #2a1a1a); }
@@ -410,240 +410,240 @@ text-transform: uppercase;
 .tattoo-gallery-item:nth-child(6) { background: linear-gradient(135deg, #2a2a1a, #1a1a1a); }
 
 .tattoo-svg {
-position: absolute;
-opacity: 0.25;
+  position: absolute;
+  opacity: 0.25;
 }
 
 .tattoo-info {
-padding: 48px 24px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 24px;
+  padding: 48px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 .tattoo-info-item {
-border-left: 2px solid #c0392b;
-padding-left: 16px;
+  border-left: 2px solid #c0392b;
+  padding-left: 16px;
 }
 
 .tattoo-info-item .num {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 2.5rem;
-color: #fff;
-line-height: 1;
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  line-height: 1;
 }
 
 .tattoo-info-item .label {
-font-size: 0.6rem;
-letter-spacing: 2px;
-color: rgba(255,255,255,0.4);
-text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
 }
 
 /* ===== DEMO : BARBIER ===== */
 .barber-demo {
-background: #f5f0e8;
-color: #1a1a1a;
-font-family: ‘Montserrat’, sans-serif;
-min-height: 100vh;
+  background: #f5f0e8;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
 }
 
 .barber-nav {
-background: #1a1a1a;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 18px 24px;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
 }
 
 .barber-logo {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.3rem;
-color: #c9a84c;
-letter-spacing: 2px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: #c9a84c;
+  letter-spacing: 2px;
 }
 
 .barber-nav-tel {
-font-size: 0.7rem;
-color: rgba(255,255,255,0.6);
-letter-spacing: 1px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1px;
 }
 
 .barber-hero {
-background: #1a1a1a;
-padding: 60px 24px 40px;
-position: relative;
-overflow: hidden;
+  background: #1a1a1a;
+  padding: 60px 24px 40px;
+  position: relative;
+  overflow: hidden;
 }
 
 .barber-hero::after {
-content: ‘’;
-position: absolute;
-bottom: 0; left: 0; right: 0;
-height: 60px;
-background: #f5f0e8;
-clip-path: ellipse(60% 100% at 50% 100%);
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: #f5f0e8;
+  clip-path: ellipse(60% 100% at 50% 100%);
 }
 
 .barber-hero-inner {
-display: flex;
-align-items: center;
-gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .barber-badge {
-width: 80px;
-height: 80px;
-border: 2px solid #c9a84c;
-border-radius: 50%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #c9a84c;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .barber-badge span:first-child {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.4rem;
-color: #c9a84c;
-line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  color: #c9a84c;
+  line-height: 1;
 }
 
 .barber-badge span:last-child {
-font-size: 0.45rem;
-color: rgba(255,255,255,0.5);
-letter-spacing: 2px;
-text-transform: uppercase;
+  font-size: 0.45rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .barber-hero-text h1 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(1.8rem, 7vw, 3rem);
-color: #fff;
-line-height: 1.1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  color: #fff;
+  line-height: 1.1;
 }
 
 .barber-hero-text h1 em {
-font-style: italic;
-color: #c9a84c;
+  font-style: italic;
+  color: #c9a84c;
 }
 
 .barber-hero-text p {
-font-size: 0.75rem;
-color: rgba(255,255,255,0.5);
-margin-top: 8px;
-letter-spacing: 1px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+  letter-spacing: 1px;
 }
 
 .barber-services {
-padding: 48px 24px 32px;
+  padding: 48px 24px 32px;
 }
 
 .barber-services-title {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.5rem;
-color: #1a1a1a;
-margin-bottom: 24px;
-text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .barber-service-list {
-display: flex;
-flex-direction: column;
-gap: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .barber-service-item {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 16px 0;
-border-bottom: 1px solid rgba(26,26,26,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(26,26,26,0.1);
 }
 
 .barber-service-name {
-font-size: 0.85rem;
-font-weight: 500;
-color: #1a1a1a;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a1a1a;
 }
 
 .barber-service-desc {
-font-size: 0.65rem;
-color: #888;
-margin-top: 2px;
-letter-spacing: 0.5px;
+  font-size: 0.65rem;
+  color: #888;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
 }
 
 .barber-service-price {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.2rem;
-color: #c9a84c;
-font-weight: 700;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  color: #c9a84c;
+  font-weight: 700;
 }
 
 .barber-booking {
-background: #1a1a1a;
-margin: 24px;
-padding: 32px 24px;
-text-align: center;
+  background: #1a1a1a;
+  margin: 24px;
+  padding: 32px 24px;
+  text-align: center;
 }
 
 .barber-booking h3 {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.3rem;
-color: #fff;
-margin-bottom: 8px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 8px;
 }
 
 .barber-booking p {
-font-size: 0.7rem;
-color: rgba(255,255,255,0.4);
-margin-bottom: 20px;
-letter-spacing: 1px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .barber-btn {
-background: #c9a84c;
-color: #000;
-border: none;
-padding: 14px 36px;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 0.7rem;
-font-weight: 700;
-letter-spacing: 3px;
-text-transform: uppercase;
-cursor: pointer;
-width: 100%;
+  background: #c9a84c;
+  color: #000;
+  border: none;
+  padding: 14px 36px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
 }
 
 .barber-hours {
-padding: 32px 24px;
-background: #ece7dc;
+  padding: 32px 24px;
+  background: #ece7dc;
 }
 
 .barber-hours-title {
-font-size: 0.6rem;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: #888;
-margin-bottom: 16px;
-text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .barber-hours-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
 .barber-hour-item {
-display: flex;
-justify-content: space-between;
-font-size: 0.75rem;
-color: #444;
-padding: 8px 0;
-border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .barber-hour-item .day { font-weight: 600; }
@@ -651,838 +651,838 @@ border-bottom: 1px solid rgba(0,0,0,0.08);
 
 /* ===== DEMO : PLOMBIER ===== */
 .plumber-demo {
-background: #fff;
-color: #1a1a1a;
-font-family: ‘Montserrat’, sans-serif;
-min-height: 100vh;
+  background: #fff;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
 }
 
 .plumber-urgency {
-background: #1e3a5f;
-color: #fff;
-text-align: center;
-padding: 12px 20px;
-font-size: 0.7rem;
-letter-spacing: 1px;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 12px;
+  background: #1e3a5f;
+  color: #fff;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .plumber-urgency strong { color: #ffd166; }
 
 .plumber-nav {
-background: #fff;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 16px 24px;
-box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .plumber-logo {
-display: flex;
-align-items: center;
-gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .plumber-logo-icon {
-width: 36px;
-height: 36px;
-background: #1e3a5f;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #1e3a5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .plumber-logo-icon svg { width: 20px; height: 20px; fill: #fff; }
 
 .plumber-logo-text strong {
-display: block;
-font-size: 0.85rem;
-font-weight: 700;
-color: #1e3a5f;
-letter-spacing: 1px;
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  letter-spacing: 1px;
 }
 
 .plumber-logo-text span {
-font-size: 0.6rem;
-color: #888;
-letter-spacing: 1px;
+  font-size: 0.6rem;
+  color: #888;
+  letter-spacing: 1px;
 }
 
 .plumber-tel {
-text-align: right;
+  text-align: right;
 }
 
 .plumber-tel .number {
-font-size: 1rem;
-font-weight: 700;
-color: #1e3a5f;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e3a5f;
 }
 
 .plumber-tel .label {
-font-size: 0.6rem;
-color: #e74c3c;
-text-transform: uppercase;
-letter-spacing: 1px;
+  font-size: 0.6rem;
+  color: #e74c3c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .plumber-hero {
-background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8e 100%);
-padding: 48px 24px;
-color: #fff;
-position: relative;
-overflow: hidden;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8e 100%);
+  padding: 48px 24px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .plumber-hero::before {
-content: ‘’;
-position: absolute;
-top: -50%;
-right: -20%;
-width: 300px;
-height: 300px;
-background: rgba(255,255,255,0.04);
-border-radius: 50%;
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
 }
 
 .plumber-hero-tag {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-background: rgba(255,255,255,0.1);
-padding: 6px 14px;
-font-size: 0.65rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-margin-bottom: 20px;
-color: #ffd166;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  padding: 6px 14px;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ffd166;
 }
 
 .plumber-hero h1 {
-font-size: clamp(1.8rem, 7vw, 3rem);
-font-weight: 700;
-line-height: 1.15;
-margin-bottom: 16px;
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
 }
 
 .plumber-hero h1 span { color: #ffd166; }
 
 .plumber-hero p {
-font-size: 0.8rem;
-color: rgba(255,255,255,0.7);
-line-height: 1.6;
-margin-bottom: 28px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-bottom: 28px;
 }
 
 .plumber-cta {
-background: #e74c3c;
-color: #fff;
-border: none;
-padding: 16px 28px;
-font-size: 0.8rem;
-font-weight: 700;
-letter-spacing: 1px;
-cursor: pointer;
-font-family: ‘Montserrat’, sans-serif;
-display: flex;
-align-items: center;
-gap: 8px;
-width: 100%;
-justify-content: center;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 16px 28px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 .plumber-services {
-padding: 48px 24px;
+  padding: 48px 24px;
 }
 
 .plumber-services-title {
-font-size: 1.3rem;
-font-weight: 700;
-color: #1e3a5f;
-margin-bottom: 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin-bottom: 8px;
 }
 
 .plumber-services-sub {
-font-size: 0.75rem;
-color: #888;
-margin-bottom: 28px;
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 28px;
 }
 
 .plumber-service-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .plumber-service-card {
-border: 1px solid #e8e8e8;
-padding: 20px 16px;
-position: relative;
+  border: 1px solid #e8e8e8;
+  padding: 20px 16px;
+  position: relative;
 }
 
 .plumber-service-card::before {
-content: ‘’;
-position: absolute;
-top: 0; left: 0;
-width: 3px;
-height: 100%;
-background: #1e3a5f;
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: #1e3a5f;
 }
 
 .plumber-service-card .icon {
-font-size: 1.5rem;
-margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .plumber-service-card h4 {
-font-size: 0.75rem;
-font-weight: 700;
-color: #1e3a5f;
-margin-bottom: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin-bottom: 4px;
 }
 
 .plumber-service-card p {
-font-size: 0.65rem;
-color: #888;
-line-height: 1.5;
+  font-size: 0.65rem;
+  color: #888;
+  line-height: 1.5;
 }
 
 .plumber-trust {
-background: #f8f9fa;
-padding: 32px 24px;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 16px;
-text-align: center;
+  background: #f8f9fa;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  text-align: center;
 }
 
 .plumber-trust-item .num {
-font-size: 1.8rem;
-font-weight: 700;
-color: #1e3a5f;
-line-height: 1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  line-height: 1;
 }
 
 .plumber-trust-item .label {
-font-size: 0.6rem;
-color: #888;
-letter-spacing: 1px;
-text-transform: uppercase;
-margin-top: 4px;
+  font-size: 0.6rem;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
 /* ===== DEMO : RESTAURANT ===== */
 .resto-demo {
-background: #0f0b07;
-color: #fff;
-font-family: ‘Montserrat’, sans-serif;
-min-height: 100vh;
+  background: #0f0b07;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
 }
 
 .resto-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px 24px;
-position: absolute;
-top: 0; left: 0; right: 0;
-z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
 }
 
 .resto-logo {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.4rem;
-font-weight: 600;
-color: #fff;
-letter-spacing: 3px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 3px;
 }
 
 .resto-nav-reserve {
-background: transparent;
-border: 1px solid rgba(255,255,255,0.4);
-color: #fff;
-padding: 8px 18px;
-font-size: 0.65rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-font-family: ‘Montserrat’, sans-serif;
-cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
 }
 
 .resto-hero {
-height: 65vh;
-background: linear-gradient(to bottom, rgba(15,11,7,0.3) 0%, rgba(15,11,7,0.7) 60%, #0f0b07 100%),
-repeating-linear-gradient(
-45deg,
-#1a1208 0px,
-#1a1208 2px,
-transparent 2px,
-transparent 20px
-);
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 80px 24px 40px;
-position: relative;
-overflow: hidden;
+  height: 65vh;
+  background: linear-gradient(to bottom, rgba(15,11,7,0.3) 0%, rgba(15,11,7,0.7) 60%, #0f0b07 100%),
+    repeating-linear-gradient(
+      45deg,
+      #1a1208 0px,
+      #1a1208 2px,
+      transparent 2px,
+      transparent 20px
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 40px;
+  position: relative;
+  overflow: hidden;
 }
 
 .resto-hero::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,140,40,0.15) 0%, transparent 70%);
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,140,40,0.15) 0%, transparent 70%);
 }
 
 .resto-hero-subtitle {
-font-size: 0.6rem;
-letter-spacing: 5px;
-text-transform: uppercase;
-color: #c9a84c;
-margin-bottom: 16px;
-position: relative;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 16px;
+  position: relative;
 }
 
 .resto-hero-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(2.5rem, 10vw, 5rem);
-font-weight: 300;
-line-height: 1.05;
-color: #fff;
-position: relative;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: #fff;
+  position: relative;
 }
 
 .resto-hero-title em {
-font-style: italic;
-color: #c9a84c;
+  font-style: italic;
+  color: #c9a84c;
 }
 
 .resto-hero-desc {
-margin-top: 16px;
-font-size: 0.75rem;
-color: rgba(255,255,255,0.5);
-letter-spacing: 1px;
-position: relative;
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  position: relative;
 }
 
 .resto-hero-btns {
-margin-top: 28px;
-display: flex;
-gap: 12px;
-position: relative;
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  position: relative;
 }
 
 .resto-btn-primary {
-background: #c9a84c;
-color: #000;
-border: none;
-padding: 13px 28px;
-font-size: 0.65rem;
-font-weight: 700;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: pointer;
-font-family: ‘Montserrat’, sans-serif;
+  background: #c9a84c;
+  color: #000;
+  border: none;
+  padding: 13px 28px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .resto-btn-secondary {
-background: transparent;
-border: 1px solid rgba(255,255,255,0.3);
-color: #fff;
-padding: 13px 28px;
-font-size: 0.65rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: pointer;
-font-family: ‘Montserrat’, sans-serif;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 13px 28px;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .resto-menu-section {
-padding: 48px 24px;
+  padding: 48px 24px;
 }
 
 .resto-menu-header {
-text-align: center;
-margin-bottom: 32px;
+  text-align: center;
+  margin-bottom: 32px;
 }
 
 .resto-menu-header .label {
-font-size: 0.55rem;
-letter-spacing: 4px;
-color: #c9a84c;
-text-transform: uppercase;
-margin-bottom: 8px;
+  font-size: 0.55rem;
+  letter-spacing: 4px;
+  color: #c9a84c;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .resto-menu-header h2 {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 2rem;
-font-weight: 300;
-color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #fff;
 }
 
 .resto-menu-items {
-display: flex;
-flex-direction: column;
-gap: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .resto-menu-item {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-padding: 18px 0;
-border-bottom: 1px solid rgba(255,255,255,0.06);
-gap: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  gap: 16px;
 }
 
 .resto-item-info h4 {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.1rem;
-color: #fff;
-margin-bottom: 4px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 4px;
 }
 
 .resto-item-info p {
-font-size: 0.65rem;
-color: rgba(255,255,255,0.4);
-line-height: 1.5;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
 }
 
 .resto-item-price {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.2rem;
-color: #c9a84c;
-white-space: nowrap;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  color: #c9a84c;
+  white-space: nowrap;
 }
 
 .resto-reserve {
-background: #1a1208;
-margin: 0 24px 48px;
-padding: 32px 24px;
-text-align: center;
-border: 1px solid rgba(201,168,76,0.2);
+  background: #1a1208;
+  margin: 0 24px 48px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 1px solid rgba(201,168,76,0.2);
 }
 
 .resto-reserve h3 {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.5rem;
-color: #fff;
-margin-bottom: 8px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 8px;
 }
 
 .resto-reserve p {
-font-size: 0.7rem;
-color: rgba(255,255,255,0.4);
-margin-bottom: 20px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
 }
 
 .resto-reserve-form {
-display: flex;
-flex-direction: column;
-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .resto-reserve-form input,
 .resto-reserve-form select {
-background: rgba(255,255,255,0.05);
-border: 1px solid rgba(255,255,255,0.1);
-color: #fff;
-padding: 12px 16px;
-font-size: 0.75rem;
-font-family: ‘Montserrat’, sans-serif;
-width: 100%;
-outline: none;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  outline: none;
 }
 
 .resto-reserve-form input::placeholder { color: rgba(255,255,255,0.3); }
 .resto-reserve-form select option { background: #1a1208; }
 
 .resto-reserve-btn {
-background: #c9a84c;
-color: #000;
-border: none;
-padding: 14px;
-font-size: 0.7rem;
-font-weight: 700;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: pointer;
-font-family: ‘Montserrat’, sans-serif;
-width: 100%;
+  background: #c9a84c;
+  color: #000;
+  border: none;
+  padding: 14px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
 }
 
 /* ===== DEMO : COIFFEUR ===== */
 .hair-demo {
-background: #faf8f5;
-color: #1a1a1a;
-font-family: ‘Montserrat’, sans-serif;
-min-height: 100vh;
+  background: #faf8f5;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
 }
 
 .hair-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 18px 24px;
-background: #fff;
-border-bottom: 1px solid #ebe8e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #fff;
+  border-bottom: 1px solid #ebe8e2;
 }
 
 .hair-logo {
-font-family: ‘DM Serif Display’, serif;
-font-size: 1.2rem;
-color: #1a1a1a;
-letter-spacing: 1px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  letter-spacing: 1px;
 }
 
 .hair-logo span { color: #9b7653; }
 
 .hair-nav-book {
-background: #1a1a1a;
-color: #fff;
-border: none;
-padding: 9px 20px;
-font-size: 0.65rem;
-font-weight: 600;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: pointer;
-font-family: ‘Montserrat’, sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 9px 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .hair-hero {
-background: #1a1a1a;
-padding: 56px 24px 48px;
-display: flex;
-flex-direction: column;
-gap: 24px;
-position: relative;
-overflow: hidden;
+  background: #1a1a1a;
+  padding: 56px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hair-hero::after {
-content: ‘’;
-position: absolute;
-bottom: -1px; left: 0; right: 0;
-height: 40px;
-background: #faf8f5;
-clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 100%, 0 0);
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 40px;
+  background: #faf8f5;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 100%, 0 0);
 }
 
 .hair-hero-content {}
 
 .hair-hero-tag {
-display: inline-block;
-background: rgba(155,118,83,0.2);
-color: #9b7653;
-font-size: 0.6rem;
-letter-spacing: 3px;
-text-transform: uppercase;
-padding: 5px 12px;
-margin-bottom: 16px;
+  display: inline-block;
+  background: rgba(155,118,83,0.2);
+  color: #9b7653;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  margin-bottom: 16px;
 }
 
 .hair-hero-title {
-font-family: ‘DM Serif Display’, serif;
-font-size: clamp(2.2rem, 9vw, 4rem);
-color: #fff;
-line-height: 1.1;
-margin-bottom: 12px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 9vw, 4rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 12px;
 }
 
 .hair-hero-title em {
-font-style: italic;
-color: #9b7653;
+  font-style: italic;
+  color: #9b7653;
 }
 
 .hair-hero-sub {
-font-size: 0.75rem;
-color: rgba(255,255,255,0.5);
-line-height: 1.6;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
 }
 
 .hair-before-after {
-padding: 48px 24px 32px;
+  padding: 48px 24px 32px;
 }
 
 .hair-ba-title {
-font-family: ‘DM Serif Display’, serif;
-font-size: 1.5rem;
-color: #1a1a1a;
-margin-bottom: 4px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 4px;
 }
 
 .hair-ba-sub {
-font-size: 0.7rem;
-color: #888;
-margin-bottom: 24px;
+  font-size: 0.7rem;
+  color: #888;
+  margin-bottom: 24px;
 }
 
 .hair-ba-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
 }
 
 .hair-ba-item {
-position: relative;
-aspect-ratio: 3/4;
-overflow: hidden;
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
 }
 
 .hair-ba-before {
-background: linear-gradient(to bottom, #3a2e24, #5a4a38);
-display: flex;
-align-items: flex-end;
-padding: 12px;
+  background: linear-gradient(to bottom, #3a2e24, #5a4a38);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
 }
 
 .hair-ba-after {
-background: linear-gradient(to bottom, #c9b8a0, #9b7653);
-display: flex;
-align-items: flex-end;
-padding: 12px;
+  background: linear-gradient(to bottom, #c9b8a0, #9b7653);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
 }
 
 .hair-ba-label {
-font-size: 0.55rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-background: rgba(0,0,0,0.5);
-color: #fff;
-padding: 4px 8px;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 4px 8px;
 }
 
 .hair-ba-item3 {
-background: linear-gradient(to bottom, #2a2018, #4a3828);
-grid-column: 1;
-aspect-ratio: 1;
-display: flex;
-align-items: flex-end;
-padding: 12px;
+  background: linear-gradient(to bottom, #2a2018, #4a3828);
+  grid-column: 1;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
 }
 
 .hair-ba-item4 {
-background: linear-gradient(to bottom, #d4c4b0, #b09070);
-grid-column: 2;
-aspect-ratio: 1;
-display: flex;
-align-items: flex-end;
-padding: 12px;
+  background: linear-gradient(to bottom, #d4c4b0, #b09070);
+  grid-column: 2;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
 }
 
 .hair-services {
-padding: 32px 24px;
-background: #fff;
+  padding: 32px 24px;
+  background: #fff;
 }
 
 .hair-services-title {
-font-family: ‘DM Serif Display’, serif;
-font-size: 1.3rem;
-margin-bottom: 20px;
-color: #1a1a1a;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
 }
 
 .hair-service-row {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 14px 0;
-border-bottom: 1px solid #ebe8e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #ebe8e2;
 }
 
 .hair-service-row:last-child { border: none; }
 
 .hair-service-row .name {
-font-size: 0.85rem;
-font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .hair-service-row .duration {
-font-size: 0.65rem;
-color: #9b7653;
-margin-top: 2px;
+  font-size: 0.65rem;
+  color: #9b7653;
+  margin-top: 2px;
 }
 
 .hair-service-row .price {
-font-family: ‘DM Serif Display’, serif;
-font-size: 1.1rem;
-color: #9b7653;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.1rem;
+  color: #9b7653;
 }
 
 .hair-booking {
-background: #1a1a1a;
-margin: 24px;
-padding: 32px 24px;
-text-align: center;
+  background: #1a1a1a;
+  margin: 24px;
+  padding: 32px 24px;
+  text-align: center;
 }
 
 .hair-booking h3 {
-font-family: ‘DM Serif Display’, serif;
-font-size: 1.3rem;
-color: #fff;
-margin-bottom: 4px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 4px;
 }
 
 .hair-booking p {
-font-size: 0.7rem;
-color: rgba(255,255,255,0.4);
-margin-bottom: 20px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
 }
 
 .hair-booking-btn {
-background: #9b7653;
-color: #fff;
-border: none;
-padding: 14px;
-width: 100%;
-font-size: 0.7rem;
-font-weight: 700;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: pointer;
-font-family: ‘Montserrat’, sans-serif;
+  background: #9b7653;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* ===== SOCIAL PROOF ===== */
 #social-proof {
-padding: 80px 24px;
-text-align: center;
+  padding: 80px 24px;
+  text-align: center;
 }
 
 .proof-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 32px;
-margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
 }
 
 .proof-item .num {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 3rem;
-font-weight: 600;
-color: var(–gold);
-line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
 }
 
 .proof-item .label {
-font-size: 0.6rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.4);
-margin-top: 8px;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 8px;
 }
 
 /* ===== HOW IT WORKS ===== */
 #how-it-works {
-padding: 80px 24px;
-background: var(–dark2);
+  padding: 80px 24px;
+  background: var(--dark2);
 }
 
 .steps {
-display: flex;
-flex-direction: column;
-gap: 32px;
-margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
 }
 
 .step {
-display: flex;
-gap: 20px;
-align-items: flex-start;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .step-num {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 3rem;
-font-weight: 300;
-color: rgba(201,168,76,0.2);
-line-height: 1;
-flex-shrink: 0;
-width: 48px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(201,168,76,0.2);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 48px;
 }
 
 .step-content h4 {
-font-size: 0.85rem;
-font-weight: 600;
-color: #fff;
-margin-bottom: 6px;
-letter-spacing: 1px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
 }
 
 .step-content p {
-font-size: 0.75rem;
-color: rgba(255,255,255,0.4);
-line-height: 1.6;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
 }
 
 /* ===== FINAL CTA ===== */
 #final-cta {
-padding: 80px 24px;
-text-align: center;
-border-top: 1px solid rgba(201,168,76,0.15);
+  padding: 80px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.15);
 }
 
 #final-cta h2 {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(2rem, 8vw, 4rem);
-font-weight: 300;
-color: #fff;
-margin-bottom: 16px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 16px;
 }
 
 #final-cta p {
-font-size: 0.8rem;
-color: rgba(255,255,255,0.4);
-margin-bottom: 40px;
-letter-spacing: 1px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
 }
 
 /* ===== FOOTER ===== */
 footer {
-background: #000;
-padding: 32px 24px;
-text-align: center;
-border-top: 1px solid rgba(255,255,255,0.05);
+  background: #000;
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 footer .footer-logo {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.2rem;
-color: var(–gold);
-letter-spacing: 2px;
-margin-bottom: 12px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
 footer p {
-font-size: 0.65rem;
-color: rgba(255,255,255,0.2);
-letter-spacing: 1px;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
 }
 
 /* ===== WHATSAPP BTN ===== */
 #wa-btn {
-position: fixed;
-bottom: 24px;
-right: 24px;
-z-index: 999;
-background: #25d366;
-color: #fff;
-width: 56px;
-height: 56px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-text-decoration: none;
-box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-transition: transform 0.3s;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background: #25d366;
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.3s;
 }
 #wa-btn:hover { transform: scale(1.1); }
 
@@ -1490,16 +1490,16 @@ transition: transform 0.3s;
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== DIVIDER ===== */
 .gold-divider {
-width: 40px;
-height: 1px;
-background: var(–gold);
-margin: 16px auto 0;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 16px auto 0;
 }
 </style>
 
