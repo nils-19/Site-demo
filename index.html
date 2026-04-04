@@ -5,12 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoFlow — Sites Web Pour Commerces Locaux</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#C9A84C;--gold-light:#E8C97A;--gold-dim:rgba(201,168,76,0.15);--dark:#0A0A0B;--dark2:#111113;--dark3:#18181C;--light:#F5F2EC;--muted:#888890;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(10,10,11,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.12);}
 .nav-logo{font-family:'DM Mono',monospace;font-size:1.1rem;letter-spacing:.2em;color:var(--gold);text-decoration:none;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
@@ -21,255 +21,230 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%);}
 .hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,black 30%,transparent 80%);}
-.hero-badge{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:.45rem 1.4rem;margin-bottom:2.5rem;position:relative;z-index:1;animation:fadeUp .8s ease both;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,8vw,7.5rem);line-height:1.0;font-weight:900;position:relative;z-index:1;animation:fadeUp .9s ease .1s both;}
+.hero-badge{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:.45rem 1.4rem;margin-bottom:2.5rem;position:relative;z-index:1;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,8vw,7.5rem);line-height:1.0;font-weight:700;position:relative;z-index:1;}
 .hero h1 em{font-style:italic;color:var(--gold);}
-.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:var(--muted);max-width:520px;margin:1.8rem auto 0;line-height:1.7;position:relative;z-index:1;animation:fadeUp 1s ease .2s both;}
-.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;position:relative;z-index:1;animation:fadeUp 1s ease .35s both;}
+.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:var(--muted);max-width:520px;margin:1.8rem auto 0;line-height:1.7;position:relative;z-index:1;}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;position:relative;z-index:1;}
 .btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--dark);font-weight:600;font-size:.9rem;padding:1rem 2.2rem;text-decoration:none;transition:all .25s;}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,168,76,0.3);}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
 .btn-outline{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(201,168,76,0.4);color:var(--light);font-size:.9rem;padding:1rem 2.2rem;text-decoration:none;transition:all .25s;}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
-.hero-price{position:relative;z-index:1;margin-top:3.5rem;display:flex;align-items:center;gap:1.5rem;justify-content:center;animation:fadeUp 1s ease .5s both;}
+.hero-price{position:relative;z-index:1;margin-top:3.5rem;display:flex;align-items:center;gap:1.5rem;justify-content:center;}
 .price-old{font-size:1.4rem;color:var(--muted);text-decoration:line-through;}
-.price-new{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:var(--gold);line-height:1;}
+.price-new{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:var(--gold);line-height:1;}
 .price-label{font-size:.8rem;color:var(--muted);text-align:left;line-height:1.5;}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.4;}
-.hero-scroll span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;}
-.scroll-line{width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:scrollPulse 2s ease infinite;}
 .stats-bar{background:var(--dark3);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);padding:2.5rem 0;}
 .stats-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
 .stat{text-align:center;}
-.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--gold);}
 .stat-label{font-size:.78rem;color:var(--muted);margin-top:.3rem;}
 section{padding:7rem 2rem;}
 .section-inner{max-width:1100px;margin:0 auto;}
 .section-tag{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.15;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.15;}
 .section-title em{font-style:italic;color:var(--gold);}
-.section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:540px;margin-top:1rem;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4rem;}
 .service-card{background:var(--dark3);padding:3rem 2.5rem;position:relative;overflow:hidden;transition:all .35s;}
-.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-dim) 0%,transparent 60%);opacity:0;transition:opacity .35s;}
-.service-card:hover::before{opacity:1;}
 .service-card:hover{transform:translateY(-4px);}
 .service-num{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.2em;color:var(--gold);margin-bottom:2rem;}
 .service-icon{font-size:2.5rem;margin-bottom:1.5rem;display:block;}
-.service-card h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem;}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem;}
 .service-card p{font-size:.9rem;color:var(--muted);line-height:1.7;}
 .service-price{font-family:'DM Mono',monospace;font-size:1rem;color:var(--gold);margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,0.15);}
 .service-features{margin-top:1.2rem;list-style:none;}
 .service-features li{font-size:.82rem;color:var(--muted);padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:.6rem;}
 .service-features li::before{content:'—';color:var(--gold);font-size:.7rem;}
 .pack-highlight{background:var(--dark3);border:1px solid var(--gold-dim);padding:4rem;margin-top:3rem;position:relative;overflow:hidden;}
-.pack-highlight::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.1) 0%,transparent 70%);}
 .pack-badge{display:inline-block;background:var(--gold);color:var(--dark);font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.15em;padding:.4rem 1rem;margin-bottom:2rem;text-transform:uppercase;}
 .pack-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.pack-title{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1.2;margin-bottom:1rem;}
+.pack-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;line-height:1.2;margin-bottom:1rem;}
 .pack-title em{font-style:italic;color:var(--gold);}
 .pack-list{list-style:none;margin-top:1.5rem;}
 .pack-list li{padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:1rem;font-size:.9rem;}
 .pack-check{color:var(--gold);font-weight:700;}
 .pack-price-box{text-align:center;}
 .pack-old{font-size:1.2rem;color:var(--muted);text-decoration:line-through;margin-bottom:.5rem;}
-.pack-new{font-family:'Playfair Display',serif;font-size:5.5rem;font-weight:900;color:var(--gold);line-height:1;}
-.pack-new sup{font-size:2rem;vertical-align:top;margin-top:.8rem;display:inline-block;}
+.pack-new{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:700;color:var(--gold);line-height:1;}
 .pack-save{display:inline-block;background:rgba(201,168,76,0.15);color:var(--gold);font-size:.8rem;padding:.4rem 1rem;margin-top:1rem;}
-.pack-cta{display:block;background:var(--gold);color:var(--dark);font-weight:700;font-size:1rem;padding:1.2rem 2rem;text-align:center;text-decoration:none;margin-top:2rem;transition:all .25s;}
-.pack-cta:hover{background:var(--gold-light);transform:translateY(-2px);}
+.pack-cta{display:block;background:var(--gold);color:var(--dark);font-weight:700;font-size:1rem;padding:1.2rem 2rem;text-align:center;text-decoration:none;margin-top:2rem;}
 .pack-note{font-size:.78rem;color:var(--muted);margin-top:1rem;text-align:center;}
 .demos-section{background:var(--dark2);}
 .demos-tabs{display:flex;margin-top:3rem;border-bottom:1px solid rgba(201,168,76,0.15);overflow-x:auto;}
 .demo-tab{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:1rem 1.8rem;cursor:pointer;border:none;background:transparent;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;white-space:nowrap;}
 .demo-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.demo-tab:hover:not(.active){color:var(--light);}
 .demo-panel{display:none;}
 .demo-panel.active{display:block;}
-.demo-osteo{background:#F4F7F4;color:#1A2B1A;font-family:'DM Sans',sans-serif;}
-.osteo-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;background:#fff;border-bottom:1px solid #E0EAE0;}
-.osteo-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#1A2B1A;}
-.osteo-logo span{color:#3D8B5E;}
-.osteo-rdv{background:#3D8B5E;color:#fff;padding:.65rem 1.5rem;font-size:.8rem;text-decoration:none;}
-.osteo-hero{display:grid;grid-template-columns:1.2fr 1fr;min-height:360px;}
-.osteo-hero-text{padding:4rem 3rem;background:#1A2B1A;display:flex;flex-direction:column;justify-content:center;}
-.osteo-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#6DBF8A;margin-bottom:1rem;display:block;}
-.osteo-h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1.15;}
-.osteo-h1 em{font-style:italic;color:#6DBF8A;}
-.osteo-sub{color:rgba(255,255,255,.45);font-size:.85rem;margin-top:1rem;line-height:1.7;max-width:360px;}
-.osteo-cta{display:inline-block;margin-top:2rem;background:#3D8B5E;color:#fff;padding:.9rem 2rem;font-weight:600;font-size:.85rem;text-decoration:none;width:fit-content;}
-.osteo-visual{background:#E8F2EA;display:flex;align-items:center;justify-content:center;font-size:7rem;opacity:.25;}
-.osteo-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#D8EAD8;}
-.osteo-svc{background:#F4F7F4;padding:1.8rem 1.5rem;}
-.osteo-svc-name{font-weight:700;font-size:.85rem;color:#1A2B1A;margin-bottom:.4rem;}
-.osteo-svc-desc{font-size:.75rem;color:#7A9A7A;line-height:1.5;}
-.osteo-svc-price{font-family:'DM Mono',monospace;font-size:1rem;color:#3D8B5E;margin-top:.8rem;font-weight:600;}
-.osteo-bar{padding:1.2rem 3rem;background:#1A2B1A;display:flex;gap:2rem;flex-wrap:wrap;align-items:center;}
-.osteo-bar span{font-size:.8rem;color:rgba(255,255,255,.4);}
-.osteo-bar a{color:#6DBF8A;text-decoration:none;}
-.demo-auto{background:#0D1520;color:#E8F0FF;font-family:'DM Sans',sans-serif;}
-.auto-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:#0A1018;border-bottom:1px solid rgba(255,208,0,0.1);}
-.auto-logo{font-family:'DM Sans',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;}
-.auto-logo span{color:#FFD000;}
-.auto-phone{background:#FFD000;color:#0A1018;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
-.auto-banner{background:#FFD000;padding:.7rem 3rem;}
-.auto-banner-text{font-size:.82rem;color:#0A1018;font-weight:600;}
-.auto-hero{padding:3.5rem 3rem;background:linear-gradient(135deg,#0D1520 0%,#162035 100%);}
-.auto-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#FFD000;margin-bottom:1rem;display:block;}
-.auto-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;line-height:1.1;max-width:600px;}
-.auto-h1 span{color:#FFD000;}
-.auto-sub{color:rgba(232,240,255,.5);font-size:.9rem;margin-top:1rem;max-width:500px;line-height:1.6;}
-.auto-btns{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
-.auto-btn-main{background:#FFD000;color:#0A1018;padding:.9rem 2rem;font-weight:700;text-decoration:none;font-size:.85rem;display:inline-block;}
-.auto-btn-sec{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:.9rem 2rem;font-size:.85rem;text-decoration:none;display:inline-block;}
-.auto-stats{display:flex;gap:3rem;margin-top:2.5rem;flex-wrap:wrap;}
-.auto-stat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#FFD000;}
-.auto-stat-l{font-size:.7rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem;}
-.auto-formules{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#162035;}
-.auto-form{background:#0D1520;padding:2rem 1.5rem;}
-.auto-form-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
-.auto-form-price{font-family:'DM Mono',monospace;font-size:1.6rem;color:#FFD000;font-weight:700;}
-.auto-form-desc{font-size:.75rem;color:rgba(232,240,255,.4);margin-top:.5rem;line-height:1.5;}
-.auto-form-badge{display:inline-block;background:rgba(255,208,0,0.15);color:#FFD000;font-size:.65rem;padding:.25rem .6rem;margin-top:.8rem;letter-spacing:.1em;text-transform:uppercase;}
-.auto-bar{padding:1.2rem 3rem;background:#0A1018;display:flex;gap:2rem;flex-wrap:wrap;align-items:center;}
-.auto-bar a{color:#FFD000;text-decoration:none;font-size:.8rem;}
-.auto-bar span{font-size:.8rem;color:rgba(255,255,255,.35);}
-.demo-traiteur{background:#0E0A06;color:#F5EDD8;font-family:'DM Sans',sans-serif;}
-.traiteur-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:1px solid rgba(201,168,76,0.1);}
-.traiteur-logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:#F5EDD8;letter-spacing:.08em;font-style:italic;}
-.traiteur-contact{border:1px solid rgba(201,168,76,.35);color:#C9A84C;padding:.6rem 1.5rem;font-size:.8rem;text-decoration:none;letter-spacing:.1em;}
-.traiteur-hero{padding:4rem 3rem;background:linear-gradient(160deg,#0E0A06 0%,#1E1208 60%,#0E0A06 100%);position:relative;overflow:hidden;}
-.traiteur-hero::before{content:'';position:absolute;right:-50px;top:-50px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);}
-.traiteur-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;display:block;}
-.traiteur-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,4rem);color:#F5EDD8;line-height:1.1;max-width:600px;}
-.traiteur-h1 em{font-style:italic;color:#C9A84C;}
-.traiteur-sub{color:rgba(245,237,216,.45);font-size:.9rem;margin-top:1rem;max-width:450px;line-height:1.7;}
-.traiteur-cta{display:inline-block;margin-top:2rem;background:#C9A84C;color:#0E0A06;padding:.9rem 2.2rem;font-weight:700;font-size:.85rem;text-decoration:none;}
-.traiteur-prests{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#1A1208;}
-.traiteur-prest{background:#0E0A06;padding:2rem 1.5rem;}
-.traiteur-prest-icon{font-size:1.8rem;margin-bottom:1rem;}
-.traiteur-prest-name{font-family:'Playfair Display',serif;font-size:1rem;color:#F5EDD8;margin-bottom:.4rem;}
-.traiteur-prest-desc{font-size:.75rem;color:rgba(245,237,216,.35);line-height:1.6;}
-.traiteur-quote{background:rgba(201,168,76,0.07);border-top:1px solid rgba(201,168,76,.12);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.traiteur-quote strong{color:#C9A84C;display:block;font-family:'Playfair Display',serif;font-size:1.1rem;}
-.traiteur-quote span{font-size:.8rem;color:rgba(245,237,216,.4);}
-.traiteur-quote-btn{background:#C9A84C;color:#0E0A06;padding:.8rem 2rem;font-weight:700;font-size:.82rem;text-decoration:none;display:inline-block;}
-.traiteur-bar{padding:1rem 3rem;background:#0A0806;display:flex;gap:2rem;flex-wrap:wrap;}
-.traiteur-bar a{color:#C9A84C;text-decoration:none;font-size:.78rem;}
-.traiteur-bar span{font-size:.78rem;color:rgba(245,237,216,.25);}
-.demo-garage{background:#141414;color:#E8E8E8;font-family:'DM Sans',sans-serif;}
-.garage-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:#0A0A0A;border-bottom:1px solid rgba(255,80,0,0.15);}
-.garage-logo{font-family:'DM Sans',sans-serif;font-weight:900;font-size:1.4rem;color:#fff;letter-spacing:.1em;text-transform:uppercase;}
-.garage-logo span{color:#FF5000;}
-.garage-phone{background:#FF5000;color:#fff;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
-.garage-banner{background:#FF5000;padding:.8rem 3rem;}
-.garage-banner span{font-size:.82rem;color:#fff;font-weight:600;}
-.garage-hero{padding:3.5rem 3rem;background:linear-gradient(135deg,#141414 0%,#1E1A14 100%);}
-.garage-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#FF5000;margin-bottom:1rem;display:block;}
-.garage-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;line-height:1.1;max-width:580px;}
-.garage-h1 span{color:#FF5000;}
-.garage-sub{color:rgba(232,232,232,.45);font-size:.9rem;margin-top:1rem;max-width:450px;line-height:1.6;}
-.garage-btns{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
-.garage-btn-main{background:#FF5000;color:#fff;padding:.9rem 2rem;font-weight:700;text-decoration:none;font-size:.85rem;display:inline-block;}
-.garage-btn-sec{border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);padding:.9rem 2rem;font-size:.85rem;text-decoration:none;display:inline-block;}
-.garage-trust{display:flex;gap:2.5rem;margin-top:2.5rem;flex-wrap:wrap;}
-.garage-trust-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#FF5000;}
-.garage-trust-l{font-size:.7rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem;}
-.garage-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#222;}
-.garage-svc{background:#141414;padding:2rem 1.5rem;}
-.garage-svc-icon{font-size:1.8rem;margin-bottom:1rem;}
-.garage-svc-name{font-weight:700;font-size:.85rem;color:#E8E8E8;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em;}
-.garage-svc-desc{font-size:.75rem;color:#666;line-height:1.5;}
-.garage-bar{padding:1.2rem 3rem;background:#0A0A0A;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.garage-bar-l strong{color:#FF5000;font-size:1.2rem;display:block;}
-.garage-bar-l span{font-size:.78rem;color:rgba(255,255,255,.35);}
-.garage-bar-r{display:flex;gap:1.5rem;flex-wrap:wrap;}
-.garage-bar-r a{color:rgba(255,255,255,.4);text-decoration:none;font-size:.78rem;}
-.demo-immo{background:#F8F6F2;color:#1C1812;font-family:'DM Sans',sans-serif;}
-.immo-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;background:#1C1812;}
-.immo-logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;letter-spacing:.05em;}
-.immo-logo span{color:#C9A84C;}
-.immo-nav-right{display:flex;gap:1rem;align-items:center;}
-.immo-nav-link{font-size:.78rem;color:rgba(255,255,255,.5);text-decoration:none;}
-.immo-nav-btn{background:#C9A84C;color:#1C1812;padding:.6rem 1.4rem;font-size:.8rem;font-weight:700;text-decoration:none;}
-.immo-hero{display:grid;grid-template-columns:1fr 1fr;min-height:380px;}
-.immo-hero-text{padding:4rem 3rem;background:#1C1812;display:flex;flex-direction:column;justify-content:center;}
-.immo-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;display:block;}
-.immo-h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3.2rem);color:#fff;line-height:1.15;}
-.immo-h1 em{font-style:italic;color:#C9A84C;}
-.immo-sub{color:rgba(255,255,255,.45);font-size:.85rem;margin-top:1rem;line-height:1.7;max-width:360px;}
-.immo-search{display:flex;gap:0;margin-top:2rem;}
-.immo-search input{flex:1;padding:.9rem 1.2rem;border:none;background:rgba(255,255,255,.08);color:#fff;font-size:.85rem;outline:none;}
-.immo-search input::placeholder{color:rgba(255,255,255,.3);}
-.immo-search button{background:#C9A84C;color:#1C1812;padding:.9rem 1.5rem;border:none;font-weight:700;font-size:.82rem;cursor:pointer;white-space:nowrap;}
-.immo-stats{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;}
-.immo-stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#C9A84C;}
-.immo-stat-l{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em;}
-.immo-visual{background:#E8E2D4;display:flex;align-items:center;justify-content:center;font-size:8rem;opacity:.2;}
-.immo-biens{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E8E2D4;}
-.immo-bien{background:#F8F6F2;padding:2rem 1.5rem;}
-.immo-bien-type{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:.5rem;}
-.immo-bien-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1C1812;margin-bottom:.3rem;}
-.immo-bien-desc{font-size:.75rem;color:#888;line-height:1.5;}
-.immo-bien-price{font-family:'DM Mono',monospace;font-size:1.1rem;color:#C9A84C;margin-top:.8rem;font-weight:600;}
-.immo-bar{padding:1.5rem 3rem;background:#1C1812;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.immo-bar-l span{font-size:.78rem;color:rgba(255,255,255,.35);display:block;}
-.immo-bar-l strong{color:#C9A84C;font-size:1.1rem;}
-.immo-bar-r{display:flex;gap:1.5rem;flex-wrap:wrap;}
-.immo-bar-r a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.78rem;}
-.process-section{background:var(--dark3);}
+
+/* DÉMÉNAGEUR */
+.demo-demen{background:#F7F5F0;font-family:‘Outfit’,sans-serif;}
+.demen-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:#1C2B1A;border-bottom:2px solid #4A7C3F;}
+.demen-logo{font-family:‘Outfit’,sans-serif;font-weight:800;font-size:1.3rem;color:#fff;text-transform:uppercase;letter-spacing:.1em;}
+.demen-logo span{color:#7EC86E;}
+.demen-cta{background:#7EC86E;color:#1C2B1A;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
+.demen-hero{display:grid;grid-template-columns:1fr 1fr;min-height:320px;}
+.demen-hero-text{padding:3rem 2.5rem;background:#1C2B1A;display:flex;flex-direction:column;justify-content:center;}
+.demen-tag{font-family:‘DM Mono’,monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#7EC86E;margin-bottom:1rem;display:block;}
+.demen-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;line-height:1.15;}
+.demen-h1 em{font-style:italic;color:#7EC86E;}
+.demen-sub{color:rgba(255,255,255,.45);font-size:.82rem;margin-top:1rem;line-height:1.7;}
+.demen-btn{display:inline-block;margin-top:1.5rem;background:#7EC86E;color:#1C2B1A;padding:.8rem 1.8rem;font-weight:700;font-size:.82rem;text-decoration:none;width:fit-content;}
+.demen-visual{background:#253B22;display:flex;align-items:center;justify-content:center;font-size:7rem;opacity:.2;}
+.demen-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#D8E8D4;}
+.demen-svc{background:#F7F5F0;padding:1.5rem;text-align:center;}
+.demen-svc-icon{font-size:1.6rem;margin-bottom:.6rem;}
+.demen-svc-name{font-weight:700;font-size:.82rem;color:#1C2B1A;margin-bottom:.2rem;}
+.demen-svc-desc{font-size:.7rem;color:#6B8A67;}
+.demen-bar{padding:1rem 3rem;background:#1C2B1A;display:flex;gap:2rem;flex-wrap:wrap;align-items:center;}
+.demen-bar span{font-size:.78rem;color:rgba(255,255,255,.4);}
+.demen-bar a{color:#7EC86E;text-decoration:none;font-size:.78rem;}
+
+/* EXPERT-COMPTABLE */
+.demo-compta{background:#F8F9FC;font-family:‘Outfit’,sans-serif;}
+.compta-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:#0F1F3D;border-bottom:1px solid rgba(90,140,220,0.2);}
+.compta-logo{font-family:‘Cormorant Garamond’,serif;font-size:1.4rem;color:#fff;}
+.compta-logo span{color:#5A8CDC;}
+.compta-rdv{background:#5A8CDC;color:#fff;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
+.compta-hero{padding:3rem 2.5rem;background:linear-gradient(135deg,#0F1F3D 0%,#162B52 100%);}
+.compta-tag{font-family:‘DM Mono’,monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#5A8CDC;margin-bottom:1rem;display:block;}
+.compta-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1.15;max-width:600px;}
+.compta-h1 span{color:#5A8CDC;}
+.compta-sub{color:rgba(255,255,255,.45);font-size:.85rem;margin-top:1rem;max-width:500px;line-height:1.7;}
+.compta-btns{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
+.compta-btn-main{background:#5A8CDC;color:#fff;padding:.8rem 1.8rem;font-weight:700;text-decoration:none;font-size:.82rem;display:inline-block;}
+.compta-btn-sec{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:.8rem 1.8rem;font-size:.82rem;text-decoration:none;display:inline-block;}
+.compta-trust{display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap;}
+.compta-trust-n{font-family:‘Cormorant Garamond’,serif;font-size:1.8rem;font-weight:700;color:#5A8CDC;}
+.compta-trust-l{font-size:.68rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem;}
+.compta-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#D8E0F0;}
+.compta-svc{background:#F8F9FC;padding:1.5rem;}
+.compta-svc-icon{font-size:1.6rem;margin-bottom:.8rem;}
+.compta-svc-name{font-weight:700;font-size:.82rem;color:#0F1F3D;margin-bottom:.3rem;}
+.compta-svc-desc{font-size:.72rem;color:#6B7E9A;line-height:1.5;}
+.compta-bar{padding:1rem 3rem;background:#0F1F3D;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.compta-bar a{color:rgba(255,255,255,.4);text-decoration:none;font-size:.75rem;}
+.compta-bar strong{color:#5A8CDC;display:block;font-size:.9rem;}
+.compta-bar span{font-size:.75rem;color:rgba(255,255,255,.3);}
+
+/* ARCHITECTE D’INTÉRIEUR */
+.demo-archi{background:#FAF8F5;font-family:‘Outfit’,sans-serif;}
+.archi-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;border-bottom:1px solid rgba(180,140,100,0.15);background:#FAF8F5;}
+.archi-logo{font-family:‘Cormorant Garamond’,serif;font-size:1.5rem;color:#2A2018;font-style:italic;}
+.archi-logo span{color:#B48C64;}
+.archi-rdv{border:1px solid #B48C64;color:#B48C64;padding:.6rem 1.4rem;font-size:.75rem;text-decoration:none;}
+.archi-hero{padding:3.5rem 2.5rem;background:#2A2018;min-height:320px;display:flex;align-items:center;}
+.archi-tag{font-family:‘DM Mono’,monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#B48C64;margin-bottom:1rem;display:block;}
+.archi-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(1.8rem,4vw,3.5rem);color:#FAF8F5;line-height:1.1;max-width:580px;}
+.archi-h1 em{font-style:italic;color:#B48C64;}
+.archi-sub{color:rgba(250,248,245,.4);font-size:.85rem;margin-top:1rem;max-width:450px;line-height:1.7;}
+.archi-btn{display:inline-block;margin-top:1.8rem;background:#B48C64;color:#FAF8F5;padding:.85rem 2rem;font-weight:600;font-size:.82rem;text-decoration:none;}
+.archi-reals{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#E8E0D4;}
+.archi-real{background:#FAF8F5;padding:1.5rem;}
+.archi-real-icon{font-size:1.6rem;margin-bottom:.8rem;}
+.archi-real-name{font-family:‘Cormorant Garamond’,serif;font-size:.95rem;color:#2A2018;margin-bottom:.3rem;font-weight:700;}
+.archi-real-desc{font-size:.72rem;color:#8A7A68;line-height:1.5;}
+.archi-bar{padding:1rem 2.5rem;background:#2A2018;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.archi-bar-l strong{color:#B48C64;display:block;}
+.archi-bar-l span{font-size:.75rem;color:rgba(250,248,245,.3);}
+.archi-bar-r a{color:rgba(250,248,245,.4);text-decoration:none;font-size:.75rem;margin-left:1.5rem;}
+
+/* AGENCE DE COMMUNICATION */
+.demo-com{background:#0A0A0F;font-family:‘Outfit’,sans-serif;}
+.com-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;border-bottom:1px solid rgba(255,80,180,0.12);}
+.com-logo{font-family:‘Outfit’,sans-serif;font-weight:900;font-size:1.3rem;color:#fff;letter-spacing:.15em;text-transform:uppercase;}
+.com-logo span{color:#FF50B4;}
+.com-cta{background:#FF50B4;color:#fff;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
+.com-hero{padding:3.5rem 2.5rem;background:linear-gradient(160deg,#0A0A0F 0%,#150A1A 60%,#0A0A0F 100%);min-height:320px;display:flex;align-items:center;position:relative;overflow:hidden;}
+.com-hero::before{content:’’;position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,80,180,0.08) 0%,transparent 70%);}
+.com-tag{font-family:‘DM Mono’,monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#FF50B4;margin-bottom:1rem;display:block;}
+.com-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(1.8rem,4vw,3.5rem);color:#fff;line-height:1.1;max-width:600px;}
+.com-h1 em{font-style:italic;color:#FF50B4;}
+.com-sub{color:rgba(255,255,255,.4);font-size:.85rem;margin-top:1rem;max-width:450px;line-height:1.7;}
+.com-btn{display:inline-block;margin-top:1.8rem;background:#FF50B4;color:#fff;padding:.85rem 2rem;font-weight:700;font-size:.82rem;text-decoration:none;}
+.com-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#150A1A;}
+.com-svc{background:#0A0A0F;padding:1.5rem;}
+.com-svc-icon{font-size:1.6rem;margin-bottom:.8rem;}
+.com-svc-name{font-weight:700;font-size:.82rem;color:#fff;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.04em;}
+.com-svc-desc{font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.5;}
+.com-bar{padding:1rem 2.5rem;background:#050508;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.com-bar-l strong{color:#FF50B4;display:block;}
+.com-bar-l span{font-size:.75rem;color:rgba(255,255,255,.3);}
+.com-bar-r a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.75rem;margin-left:1.5rem;}
+
+/* AIDE À DOMICILE */
+.demo-aide{background:#F5F8F5;font-family:‘Outfit’,sans-serif;}
+.aide-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:#1A3828;border-bottom:1px solid rgba(80,180,130,0.15);}
+.aide-logo{font-family:‘Cormorant Garamond’,serif;font-size:1.4rem;color:#fff;}
+.aide-logo span{color:#50B482;}
+.aide-rdv{background:#50B482;color:#1A3828;padding:.65rem 1.5rem;font-weight:700;font-size:.82rem;text-decoration:none;}
+.aide-hero{padding:3rem 2.5rem;background:linear-gradient(135deg,#1A3828 0%,#223D30 100%);}
+.aide-tag{font-family:‘DM Mono’,monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#50B482;margin-bottom:1rem;display:block;}
+.aide-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1.15;max-width:600px;}
+.aide-h1 span{color:#50B482;}
+.aide-sub{color:rgba(255,255,255,.45);font-size:.85rem;margin-top:1rem;max-width:500px;line-height:1.7;}
+.aide-btns{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
+.aide-btn-main{background:#50B482;color:#1A3828;padding:.8rem 1.8rem;font-weight:700;text-decoration:none;font-size:.82rem;display:inline-block;}
+.aide-btn-sec{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:.8rem 1.8rem;font-size:.82rem;text-decoration:none;display:inline-block;}
+.aide-trust{display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap;}
+.aide-trust-n{font-family:‘Cormorant Garamond’,serif;font-size:1.8rem;font-weight:700;color:#50B482;}
+.aide-trust-l{font-size:.68rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem;}
+.aide-svcs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#C8E0D4;}
+.aide-svc{background:#F5F8F5;padding:1.5rem;}
+.aide-svc-icon{font-size:1.6rem;margin-bottom:.8rem;}
+.aide-svc-name{font-weight:700;font-size:.82rem;color:#1A3828;margin-bottom:.3rem;}
+.aide-svc-desc{font-size:.72rem;color:#5A7A68;line-height:1.5;}
+.aide-bar{padding:1rem 2.5rem;background:#1A3828;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.aide-bar-l strong{color:#50B482;display:block;}
+.aide-bar-l span{font-size:.75rem;color:rgba(255,255,255,.3);}
+.aide-bar-r a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.75rem;margin-left:1.5rem;}
+
 .process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:4rem;}
 .process-step{padding:3rem 2.5rem;border-right:1px solid rgba(201,168,76,0.1);position:relative;}
 .process-step:last-child{border-right:none;}
-.step-num{font-family:'Playfair Display',serif;font-size:6rem;font-weight:900;color:rgba(201,168,76,0.07);line-height:1;position:absolute;top:1.5rem;right:1.5rem;}
-.step-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--gold);margin-bottom:1.5rem;display:block;}
-.step-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:1rem;}
-.step-desc{font-size:.88rem;color:var(--muted);line-height:1.7;}
-.step-time{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--gold);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,0.1);}
+.step-num{font-family:‘Cormorant Garamond’,serif;font-size:6rem;font-weight:700;color:rgba(201,168,76,0.07);line-height:1;position:absolute;top:1.5rem;right:1.5rem;}
+.step-tag{font-family:‘DM Mono’,monospace;font-size:.65rem;letter-spacing:.2em;color:var(–gold);margin-bottom:1.5rem;display:block;}
+.step-title{font-family:‘Cormorant Garamond’,serif;font-size:1.4rem;font-weight:700;margin-bottom:1rem;}
+.step-desc{font-size:.88rem;color:var(–muted);line-height:1.7;}
+.step-time{font-family:‘DM Mono’,monospace;font-size:.7rem;color:var(–gold);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,0.1);}
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4rem;}
-.testimonial{background:var(--dark3);padding:2.5rem;}
-.stars{color:var(--gold);font-size:1rem;margin-bottom:1.5rem;}
-.testimonial-text{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;line-height:1.7;margin-bottom:1.5rem;}
-.testimonial-author{font-size:.78rem;color:var(--muted);}
-.testimonial-author strong{color:var(--gold);display:block;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.1em;margin-bottom:.2rem;font-style:normal;}
+.testimonial{background:var(–dark3);padding:2.5rem;}
+.stars{color:var(–gold);font-size:1rem;margin-bottom:1.5rem;}
+.testimonial-text{font-family:‘Cormorant Garamond’,serif;font-size:1rem;font-style:italic;line-height:1.7;margin-bottom:1.5rem;}
+.testimonial-author{font-size:.78rem;color:var(–muted);}
+.testimonial-author strong{color:var(–gold);display:block;font-family:‘DM Mono’,monospace;font-size:.72rem;letter-spacing:.1em;margin-bottom:.2rem;font-style:normal;}
 .faq-list{margin-top:3rem;max-width:750px;}
 .faq-item{border-bottom:1px solid rgba(201,168,76,0.1);}
-.faq-q{padding:1.8rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:1rem;font-weight:500;user-select:none;transition:color .25s;}
-.faq-q:hover{color:var(--gold);}
-.faq-icon{color:var(--gold);font-size:1.3rem;transition:transform .3s;}
-.faq-a{display:none;padding-bottom:1.8rem;font-size:.88rem;color:var(--muted);line-height:1.8;}
+.faq-q{padding:1.8rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:1rem;font-weight:500;user-select:none;}
+.faq-icon{color:var(–gold);font-size:1.3rem;transition:transform .3s;}
+.faq-a{display:none;padding-bottom:1.8rem;font-size:.88rem;color:var(–muted);line-height:1.8;}
 .faq-item.open .faq-a{display:block;}
 .faq-item.open .faq-icon{transform:rotate(45deg);}
-.cta-section{background:var(--dark2);padding:8rem 2rem;position:relative;overflow:hidden;text-align:center;}
-.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);}
-.cta-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.1;position:relative;z-index:1;}
-.cta-title em{font-style:italic;color:var(--gold);}
-.cta-sub{color:var(--muted);font-size:1rem;margin-top:1.5rem;position:relative;z-index:1;}
+.cta-section{background:var(–dark2);padding:8rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);}
+.cta-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1.1;position:relative;z-index:1;}
+.cta-title em{font-style:italic;color:var(–gold);}
+.cta-sub{color:var(–muted);font-size:1rem;margin-top:1.5rem;position:relative;z-index:1;}
 .cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:3rem;position:relative;z-index:1;}
-.cta-guarantee{font-size:.78rem;color:var(--muted);margin-top:2rem;position:relative;z-index:1;}
-.cta-guarantee span{color:var(--gold);}
-footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:3rem 2rem;}
+.cta-guarantee{font-size:.78rem;color:var(–muted);margin-top:2rem;position:relative;z-index:1;}
+.cta-guarantee span{color:var(–gold);}
+footer{background:var(–dark);border-top:1px solid rgba(201,168,76,0.1);padding:3rem 2rem;}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-family:'DM Mono',monospace;font-size:1rem;letter-spacing:.2em;color:var(--gold);}
+.footer-logo{font-family:‘DM Mono’,monospace;font-size:1rem;letter-spacing:.2em;color:var(–gold);}
 .footer-links{display:flex;gap:2rem;}
-.footer-links a{font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:var(--gold);}
+.footer-links a{font-size:.78rem;color:var(–muted);text-decoration:none;}
 .footer-copy{font-size:.75rem;color:rgba(255,255,255,.2);}
-.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:9999;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all .3s;animation:waPulse 2s ease infinite;}
-.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.6);}
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:9999;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:waPulse 2s ease infinite;}
 @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.7);}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-@keyframes scrollPulse{0%,100%{opacity:.4;}50%{opacity:.8;}}
-@media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.services-grid,.pack-content,.process-steps,.testimonials-grid{grid-template-columns:1fr;}.stats-inner{grid-template-columns:repeat(2,1fr);}.osteo-hero,.immo-hero{grid-template-columns:1fr;}.osteo-svcs,.garage-svcs,.traiteur-prests,.auto-formules,.immo-biens{grid-template-columns:repeat(2,1fr);}.pack-highlight{padding:2rem;}}
+@media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.services-grid,.pack-content,.process-steps,.testimonials-grid,.demen-svcs,.compta-svcs,.archi-reals,.com-svcs,.aide-svcs{grid-template-columns:repeat(2,1fr);}.demen-hero{grid-template-columns:1fr;}.stats-inner{grid-template-columns:repeat(2,1fr);}.pack-content{grid-template-columns:1fr;}.pack-highlight{padding:2rem;}}
 </style>
+
 </head>
 <body>
-
 <nav>
   <a href="#" class="nav-logo">AUTOFLOW</a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#demos">Démos</a></li>
-    <li><a href="#process">Processus</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="https://wa.me/33632505509" class="nav-cta">Démarrer →</a>
@@ -280,7 +255,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
   <div class="hero-grid"></div>
   <span class="hero-badge">Agence Web · Paris · Livraison 5 jours</span>
   <h1>Des sites qui font<br><em>rentrer des clients</em></h1>
-  <p class="hero-sub">Pour artisans et commerces locaux parisiens. Votre vitrine professionnelle, votre fiche Google, votre système de contact — tout inclus.</p>
+  <p class="hero-sub">Pour artisans et commerces locaux parisiens. Site vitrine, fiche Google, prise de contact — tout inclus.</p>
   <div class="hero-actions">
     <a href="https://wa.me/33632505509" class="btn-primary">💬 Démarrer sur WhatsApp</a>
     <a href="#demos" class="btn-outline">Voir les démos</a>
@@ -288,9 +263,8 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
   <div class="hero-price">
     <span class="price-old">2 500€</span>
     <span class="price-new"><sup style="font-size:2rem;vertical-align:top;margin-top:.6rem;display:inline-block;">€</sup>97</span>
-    <div class="price-label">Offre de lancement<br>Prix garanti · Livré en 5 jours</div>
+    <div class="price-label">Offre de lancement<br>Prix garanti · 5 jours</div>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span>Découvrir</span></div>
 </section>
 
 <div class="stats-bar">
@@ -306,13 +280,12 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
   <div class="section-inner">
     <span class="section-tag">// Ce qu'on livre</span>
     <h2 class="section-title">Tout ce dont votre<br>commerce a <em>besoin</em></h2>
-    <p class="section-sub">Trois services pensés pour les PME locales. Visibilité, crédibilité, clients.</p>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01 / 03</div>
         <span class="service-icon">🌐</span>
         <h3>Site Vitrine Professionnel</h3>
-        <p>Un site rapide, beau et adapté à votre métier. Vos clients vous trouvent, vous font confiance, vous contactent.</p>
+        <p>Un site rapide, beau, adapté à votre métier. Vos clients vous trouvent, vous font confiance, vous contactent.</p>
         <ul class="service-features">
           <li>Design sur mesure à votre image</li>
           <li>100% mobile & rapide</li>
@@ -326,7 +299,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
         <div class="service-num">02 / 03</div>
         <span class="service-icon">📍</span>
         <h3>Fiche Google Business</h3>
-        <p>Apparaissez sur Google Maps quand un client cherche votre métier près de chez lui. Le levier local le plus puissant.</p>
+        <p>Apparaissez sur Google Maps quand un client cherche votre métier près de chez lui.</p>
         <ul class="service-features">
           <li>Création & optimisation complète</li>
           <li>Photos, horaires, catégories</li>
@@ -339,8 +312,8 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
       <div class="service-card">
         <div class="service-num">03 / 03</div>
         <span class="service-icon">📅</span>
-        <h3>Système de Contact & Réservation</h3>
-        <p>Ne perdez plus de clients. Formulaire optimisé, bouton WhatsApp, prise de RDV directement depuis votre site.</p>
+        <h3>Contact & Réservation</h3>
+        <p>Formulaire optimisé, bouton WhatsApp, prise de RDV directement depuis votre site.</p>
         <ul class="service-features">
           <li>Formulaire de contact optimisé</li>
           <li>Bouton WhatsApp direct</li>
@@ -356,14 +329,12 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
       <div class="pack-content">
         <div>
           <h3 class="pack-title">Le Pack <em>Complet</em><br>à 149€</h3>
-          <p style="color:var(--muted);font-size:.9rem;">Tout ce qu'il faut pour exister en ligne, attirer des clients et ne plus en rater un seul.</p>
           <ul class="pack-list">
             <li><span class="pack-check">✓</span> Site vitrine professionnel (97€)</li>
             <li><span class="pack-check">✓</span> Fiche Google Business optimisée (+49€)</li>
             <li><span class="pack-check">✓</span> Système de réservation/contact (+30€)</li>
             <li><span class="pack-check">✓</span> Hébergement & domaine inclus 1 an</li>
             <li><span class="pack-check">✓</span> Modifications illimitées</li>
-            <li><span class="pack-check">✓</span> Support WhatsApp inclus</li>
           </ul>
         </div>
         <div class="pack-price-box">
@@ -371,7 +342,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
           <div class="pack-new"><sup>€</sup>149</div>
           <div class="pack-save">Économie de 2 651€</div>
           <a href="https://wa.me/33632505509" class="pack-cta">Démarrer maintenant →</a>
-          <p class="pack-note">💬 Un message WhatsApp suffit pour commencer</p>
+          <p class="pack-note">💬 Un message WhatsApp suffit</p>
         </div>
       </div>
     </div>
@@ -382,189 +353,133 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
   <div class="section-inner">
     <span class="section-tag">// Exemples réels</span>
     <h2 class="section-title">Votre site pourrait<br>ressembler à <em>ça</em></h2>
-    <p class="section-sub">5 démos sur mesure. Chaque design est pensé pour son secteur.</p>
     <div class="demos-tabs">
-      <button class="demo-tab active" onclick="switchDemo('osteo',this)">🧘 Ostéo / Kiné</button>
-      <button class="demo-tab" onclick="switchDemo('auto',this)">🚗 Auto-école</button>
-      <button class="demo-tab" onclick="switchDemo('traiteur',this)">🍽️ Traiteur</button>
-      <button class="demo-tab" onclick="switchDemo('garage',this)">🔧 Garage</button>
-      <button class="demo-tab" onclick="switchDemo('immo',this)">🏠 Agence Immo</button>
+      <button class="demo-tab active" onclick="switchDemo('demen',this)">🚛 Déménageur</button>
+      <button class="demo-tab" onclick="switchDemo('compta',this)">📊 Expert-Comptable</button>
+      <button class="demo-tab" onclick="switchDemo('archi',this)">🏠 Architecte d'intérieur</button>
+      <button class="demo-tab" onclick="switchDemo('com',this)">📣 Agence de com</button>
+      <button class="demo-tab" onclick="switchDemo('aide',this)">🤝 Aide à domicile</button>
     </div>
-    <div class="demo-panels">
 
 ```
-  <div class="demo-panel active" id="panel-osteo">
-    <div class="demo-osteo">
-      <nav class="osteo-nav">
-        <span class="osteo-logo">Cabinet <span>Équilibre</span></span>
-        <a href="#" onclick="openMail();return false;" class="osteo-rdv">Prendre rendez-vous</a>
-      </nav>
-      <div class="osteo-hero">
-        <div class="osteo-hero-text">
-          <span class="osteo-tag">Ostéopathie & Kinésithérapie · Paris 15e</span>
-          <h2 class="osteo-h1">Retrouvez<br><em>l'équilibre</em><br>de votre corps.</h2>
-          <p class="osteo-sub">Prise en charge personnalisée de vos douleurs. Dos, articulations, sport — nous traitons à la source.</p>
-          <a href="#" onclick="openMail();return false;" class="osteo-cta">Réserver une séance →</a>
-        </div>
-        <div class="osteo-visual">🧘</div>
+<div class="demo-panel active" id="panel-demen">
+  <div class="demo-demen">
+    <nav class="demen-nav"><span class="demen-logo">Trans<span>Express</span></span><a href="#" onclick="openMail();return false;" class="demen-cta">Devis gratuit</a></nav>
+    <div class="demen-hero">
+      <div class="demen-hero-text">
+        <span class="demen-tag">Déménagement · Paris & IDF · Depuis 2008</span>
+        <h2 class="demen-h1">Votre déménagement,<br><em>sans stress.</em></h2>
+        <p class="demen-sub">Particuliers et professionnels. Devis gratuit sous 2h. Équipe sérieuse, matériel professionnel.</p>
+        <a href="#" onclick="openMail();return false;" class="demen-btn">Demander un devis →</a>
       </div>
-      <div class="osteo-svcs">
-        <div class="osteo-svc"><div class="osteo-svc-name">Ostéopathie</div><div class="osteo-svc-desc">Manipulation douce des structures du corps</div><div class="osteo-svc-price">70€ / séance</div></div>
-        <div class="osteo-svc"><div class="osteo-svc-name">Kinésithérapie</div><div class="osteo-svc-desc">Rééducation fonctionnelle & sportive</div><div class="osteo-svc-price">45€ / séance</div></div>
-        <div class="osteo-svc"><div class="osteo-svc-name">Massage thérapeutique</div><div class="osteo-svc-desc">Détente musculaire profonde</div><div class="osteo-svc-price">60€ / 1h</div></div>
-        <div class="osteo-svc"><div class="osteo-svc-name">Bilan posture</div><div class="osteo-svc-desc">Analyse complète & programme sur mesure</div><div class="osteo-svc-price">80€ / bilan</div></div>
-      </div>
-      <div class="osteo-bar">
-        <span>📍 Paris 15e</span>
-        <span><a href="https://wa.me/33632505509">💬 WhatsApp</a></span>
-        <span style="margin-left:auto;">Lun–Sam 8h–19h</span>
-      </div>
+      <div class="demen-visual">🚛</div>
     </div>
-  </div>
-
-  <div class="demo-panel" id="panel-auto">
-    <div class="demo-auto">
-      <nav class="auto-nav">
-        <div class="auto-logo">CONDUITE<span>PLUS</span></div>
-        <a href="https://wa.me/33632505509" class="auto-phone">💬 Nous contacter</a>
-      </nav>
-      <div class="auto-banner"><span class="auto-banner-text">🎯 Places disponibles cette semaine — Inscrivez-vous maintenant</span></div>
-      <div class="auto-hero">
-        <span class="auto-tag">Auto-école · Paris 18e · Agréée depuis 2005</span>
-        <h2 class="auto-h1">Votre permis,<br><span>notre priorité.</span></h2>
-        <p class="auto-sub">Formation au permis B, conduite accompagnée et code de la route. Moniteurs certifiés, taux de réussite élevé.</p>
-        <div class="auto-btns">
-          <a href="#" onclick="openMail();return false;" class="auto-btn-main">S'inscrire maintenant</a>
-          <a href="https://wa.me/33632505509" class="auto-btn-sec">💬 WhatsApp</a>
-        </div>
-        <div class="auto-stats">
-          <div><div class="auto-stat-n">87%</div><div class="auto-stat-l">Taux de réussite</div></div>
-          <div><div class="auto-stat-n">20 ans</div><div class="auto-stat-l">D'expérience</div></div>
-          <div><div class="auto-stat-n">4.8★</div><div class="auto-stat-l">Google</div></div>
-        </div>
-      </div>
-      <div class="auto-formules">
-        <div class="auto-form"><div class="auto-form-name">Permis B</div><div class="auto-form-price">1 490€</div><div class="auto-form-desc">20h de conduite + code inclus + examen</div><div class="auto-form-badge">Le plus populaire</div></div>
-        <div class="auto-form"><div class="auto-form-name">Conduite Accompagnée</div><div class="auto-form-price">990€</div><div class="auto-form-desc">Dès 15 ans · Formation complète AAC</div></div>
-        <div class="auto-form"><div class="auto-form-name">Code en ligne</div><div class="auto-form-price">30€</div><div class="auto-form-desc">Accès illimité 3 mois · Résultats rapides</div></div>
-      </div>
-      <div class="auto-bar">
-        <a href="https://wa.me/33632505509">💬 WhatsApp direct</a>
-        <span style="margin-left:auto;">Lun–Sam 9h–19h</span>
-      </div>
+    <div class="demen-svcs">
+      <div class="demen-svc"><div class="demen-svc-icon">🏠</div><div class="demen-svc-name">Particuliers</div><div class="demen-svc-desc">Studio, appart, maison</div></div>
+      <div class="demen-svc"><div class="demen-svc-icon">🏢</div><div class="demen-svc-name">Bureaux</div><div class="demen-svc-desc">Entreprises & administrations</div></div>
+      <div class="demen-svc"><div class="demen-svc-icon">📦</div><div class="demen-svc-name">Emballage</div><div class="demen-svc-desc">Service clé en main</div></div>
+      <div class="demen-svc"><div class="demen-svc-icon">🗄️</div><div class="demen-svc-name">Garde-meubles</div><div class="demen-svc-desc">Stockage sécurisé</div></div>
     </div>
+    <div class="demen-bar"><span>📍 Paris & IDF</span><a href="https://wa.me/33632505509">💬 WhatsApp</a><span style="margin-left:auto;">Lun–Sam 8h–19h</span></div>
   </div>
-
-  <div class="demo-panel" id="panel-traiteur">
-    <div class="demo-traiteur">
-      <nav class="traiteur-nav">
-        <span class="traiteur-logo">Saveurs & Prestige</span>
-        <a href="#" onclick="openMail();return false;" class="traiteur-contact">Demander un devis</a>
-      </nav>
-      <div class="traiteur-hero">
-        <span class="traiteur-tag">Traiteur & Chef à domicile · Paris & Île-de-France</span>
-        <h2 class="traiteur-h1">L'excellence culinaire<br>à votre <em>service.</em></h2>
-        <p class="traiteur-sub">Mariages, événements d'entreprise, dîners privés. Nous créons des expériences gastronomiques sur mesure.</p>
-        <a href="#" onclick="openMail();return false;" class="traiteur-cta">Obtenir un devis gratuit →</a>
-      </div>
-      <div class="traiteur-prests">
-        <div class="traiteur-prest"><div class="traiteur-prest-icon">💍</div><div class="traiteur-prest-name">Mariages</div><div class="traiteur-prest-desc">Menu sur mesure, service complet</div></div>
-        <div class="traiteur-prest"><div class="traiteur-prest-icon">🏢</div><div class="traiteur-prest-name">Événements d'entreprise</div><div class="traiteur-prest-desc">Cocktails, buffets, séminaires</div></div>
-        <div class="traiteur-prest"><div class="traiteur-prest-icon">🍽️</div><div class="traiteur-prest-name">Dîners privés</div><div class="traiteur-prest-desc">Chef à domicile, expérience unique</div></div>
-        <div class="traiteur-prest"><div class="traiteur-prest-icon">🎉</div><div class="traiteur-prest-name">Fêtes & anniversaires</div><div class="traiteur-prest-desc">Cocktail dînatoire & buffet</div></div>
-      </div>
-      <div class="traiteur-quote">
-        <div><strong>Devis gratuit en 24h</strong><span>Décrivez votre événement · On s'adapte à votre budget</span></div>
-        <a href="#" onclick="openMail();return false;" class="traiteur-quote-btn">Demander un devis →</a>
-      </div>
-      <div class="traiteur-bar">
-        <span>📍 Paris & IDF</span>
-        <a href="https://wa.me/33632505509">💬 WhatsApp</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="demo-panel" id="panel-garage">
-    <div class="demo-garage">
-      <nav class="garage-nav">
-        <div class="garage-logo">GARAGE<span> MARTIN</span></div>
-        <a href="https://wa.me/33632505509" class="garage-phone">💬 Contact rapide</a>
-      </nav>
-      <div class="garage-banner"><span>⚡ Dépannage & remorquage 7j/7 — Intervention rapide Paris & banlieue</span></div>
-      <div class="garage-hero">
-        <span class="garage-tag">Mécanique auto · Paris 20e · Depuis 1998</span>
-        <h2 class="garage-h1">Votre voiture<br>entre <span>de bonnes mains.</span></h2>
-        <p class="garage-sub">Révision, réparation, contrôle technique. Diagnostic gratuit sur rendez-vous. Devis transparent sans surprise.</p>
-        <div class="garage-btns">
-          <a href="#" onclick="openMail();return false;" class="garage-btn-main">📅 Prendre rendez-vous</a>
-          <a href="https://wa.me/33632505509" class="garage-btn-sec">💬 WhatsApp</a>
-        </div>
-        <div class="garage-trust">
-          <div><div class="garage-trust-n">2500+</div><div class="garage-trust-l">Véhicules réparés</div></div>
-          <div><div class="garage-trust-n">25 ans</div><div class="garage-trust-l">D'expérience</div></div>
-          <div><div class="garage-trust-n">4.7★</div><div class="garage-trust-l">Google</div></div>
-        </div>
-      </div>
-      <div class="garage-svcs">
-        <div class="garage-svc"><div class="garage-svc-icon">🔧</div><div class="garage-svc-name">Révision</div><div class="garage-svc-desc">Vidange, filtres, contrôle complet</div></div>
-        <div class="garage-svc"><div class="garage-svc-icon">🛞</div><div class="garage-svc-name">Pneumatiques</div><div class="garage-svc-desc">Montage, équilibrage, géométrie</div></div>
-        <div class="garage-svc"><div class="garage-svc-icon">⚡</div><div class="garage-svc-name">Diagnostic</div><div class="garage-svc-desc">Lecture de codes, électronique</div></div>
-        <div class="garage-svc"><div class="garage-svc-icon">🚗</div><div class="garage-svc-name">Carrosserie</div><div class="garage-svc-desc">Débosselage, peinture, vitrage</div></div>
-      </div>
-      <div class="garage-bar">
-        <div class="garage-bar-l"><span>Contactez-nous</span><strong>06 32 50 55 09</strong></div>
-        <div class="garage-bar-r">
-          <a href="https://wa.me/33632505509">💬 WhatsApp</a>
-          <span>Lun–Sam 8h–18h</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="demo-panel" id="panel-immo">
-    <div class="demo-immo">
-      <nav class="immo-nav">
-        <span class="immo-logo">Prestige <span>Immobilier</span></span>
-        <div class="immo-nav-right">
-          <a href="#" class="immo-nav-link">Vendre</a>
-          <a href="#" class="immo-nav-link">Acheter</a>
-          <a href="#" class="immo-nav-link">Louer</a>
-          <a href="#" onclick="openMail();return false;" class="immo-nav-btn">Estimation gratuite</a>
-        </div>
-      </nav>
-      <div class="immo-hero">
-        <div class="immo-hero-text">
-          <span class="immo-tag">Agence immobilière · Paris & Île-de-France</span>
-          <h2 class="immo-h1">Trouvez le bien<br>qui vous <em>ressemble.</em></h2>
-          <p class="immo-sub">Achat, vente, location. Nos conseillers vous accompagnent à chaque étape de votre projet immobilier.</p>
-          <div class="immo-search">
-            <input type="text" placeholder="Quartier, ville, code postal...">
-            <button>Rechercher</button>
-          </div>
-          <div class="immo-stats">
-            <div><div class="immo-stat-n">850+</div><div class="immo-stat-l">Biens vendus</div></div>
-            <div><div class="immo-stat-n">15 ans</div><div class="immo-stat-l">D'expérience</div></div>
-            <div><div class="immo-stat-n">4.9★</div><div class="immo-stat-l">Avis Google</div></div>
-          </div>
-        </div>
-        <div class="immo-visual">🏠</div>
-      </div>
-      <div class="immo-biens">
-        <div class="immo-bien"><div class="immo-bien-type">Vente</div><div class="immo-bien-name">Appartement 3P · Paris 11e</div><div class="immo-bien-desc">65m² · 2e étage · Lumineux · Parquet</div><div class="immo-bien-price">485 000€</div></div>
-        <div class="immo-bien"><div class="immo-bien-type">Location</div><div class="immo-bien-name">Studio meublé · Paris 5e</div><div class="immo-bien-desc">28m² · Refait à neuf · Proche métro</div><div class="immo-bien-price">950€ / mois</div></div>
-        <div class="immo-bien"><div class="immo-bien-type">Vente</div><div class="immo-bien-name">Maison 5P · Vincennes</div><div class="immo-bien-desc">120m² · Jardin · Garage · Calme</div><div class="immo-bien-price">680 000€</div></div>
-      </div>
-      <div class="immo-bar">
-        <div class="immo-bar-l"><span>Contactez-nous</span><strong>06 32 50 55 09</strong></div>
-        <div class="immo-bar-r">
-          <a href="https://wa.me/33632505509">💬 WhatsApp</a>
-          <span>Lun–Sam 9h–19h</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+<div class="demo-panel" id="panel-compta">
+  <div class="demo-compta">
+    <nav class="compta-nav"><div class="compta-logo">Cabinet <span>Lefèvre</span></div><a href="#" onclick="openMail();return false;" class="compta-rdv">Consultation gratuite</a></nav>
+    <div class="compta-hero">
+      <span class="compta-tag">Expert-Comptable · Paris 8e · Freelances & PME</span>
+      <h2 class="compta-h1">Votre comptabilité,<br><span>enfin simple.</span></h2>
+      <p class="compta-sub">Bilan, liasse fiscale, création d'entreprise, paie. On gère tout pendant que vous vous concentrez sur votre activité.</p>
+      <div class="compta-btns">
+        <a href="#" onclick="openMail();return false;" class="compta-btn-main">📅 Consultation gratuite</a>
+        <a href="https://wa.me/33632505509" class="compta-btn-sec">💬 WhatsApp</a>
+      </div>
+      <div class="compta-trust">
+        <div><div class="compta-trust-n">320+</div><div class="compta-trust-l">Clients actifs</div></div>
+        <div><div class="compta-trust-n">18 ans</div><div class="compta-trust-l">D'expérience</div></div>
+        <div><div class="compta-trust-n">4.9★</div><div class="compta-trust-l">Google</div></div>
+      </div>
+    </div>
+    <div class="compta-svcs">
+      <div class="compta-svc"><div class="compta-svc-icon">📊</div><div class="compta-svc-name">Comptabilité</div><div class="compta-svc-desc">Tenue des comptes & bilan</div></div>
+      <div class="compta-svc"><div class="compta-svc-icon">📝</div><div class="compta-svc-name">Fiscalité</div><div class="compta-svc-desc">Déclarations & optimisation</div></div>
+      <div class="compta-svc"><div class="compta-svc-icon">👥</div><div class="compta-svc-name">Social & Paie</div><div class="compta-svc-desc">Fiches de paie & charges</div></div>
+      <div class="compta-svc"><div class="compta-svc-icon">🚀</div><div class="compta-svc-name">Création d'entreprise</div><div class="compta-svc-desc">SASU, SAS, SARL, AE</div></div>
+    </div>
+    <div class="compta-bar"><div><span>Contactez-nous</span><strong><a href="https://wa.me/33632505509" style="color:#5A8CDC;text-decoration:none;">💬 WhatsApp</a></strong></div><a href="#">📍 Paris 8e</a></div>
+  </div>
+</div>
+
+<div class="demo-panel" id="panel-archi">
+  <div class="demo-archi">
+    <nav class="archi-nav"><span class="archi-logo">Maison <span>Béart</span></span><a href="#" onclick="openMail();return false;" class="archi-rdv">Consultation</a></nav>
+    <div class="archi-hero">
+      <div>
+        <span class="archi-tag">Architecture d'intérieur · Paris · Sur mesure</span>
+        <h2 class="archi-h1">Votre intérieur,<br><em>réinventé.</em></h2>
+        <p class="archi-sub">Rénovation, décoration, aménagement. De la conception à la réalisation, on transforme vos espaces.</p>
+        <a href="#" onclick="openMail();return false;" class="archi-btn">Demander un rendez-vous →</a>
+      </div>
+    </div>
+    <div class="archi-reals">
+      <div class="archi-real"><div class="archi-real-icon">🏠</div><div class="archi-real-name">Rénovation complète</div><div class="archi-real-desc">De A à Z, clé en main</div></div>
+      <div class="archi-real"><div class="archi-real-icon">🎨</div><div class="archi-real-name">Décoration</div><div class="archi-real-desc">Couleurs, matières, mobilier</div></div>
+      <div class="archi-real"><div class="archi-real-icon">📐</div><div class="archi-real-name">Plans & 3D</div><div class="archi-real-desc">Visualisation avant travaux</div></div>
+      <div class="archi-real"><div class="archi-real-icon">🏢</div><div class="archi-real-name">Espaces pro</div><div class="archi-real-desc">Bureaux & commerces</div></div>
+    </div>
+    <div class="archi-bar"><div class="archi-bar-l"><span>Contactez-nous</span><strong><a href="https://wa.me/33632505509" style="color:#B48C64;text-decoration:none;">💬 WhatsApp</a></strong></div><div class="archi-bar-r"><a href="#">📍 Paris</a><a href="#">Lun–Ven 9h–19h</a></div></div>
+  </div>
+</div>
+
+<div class="demo-panel" id="panel-com">
+  <div class="demo-com">
+    <nav class="com-nav"><div class="com-logo">SPARK<span> AGENCY</span></div><a href="#" onclick="openMail();return false;" class="com-cta">Brief gratuit</a></nav>
+    <div class="com-hero">
+      <div style="position:relative;z-index:1;">
+        <span class="com-tag">Agence de Communication · Paris · Digital & Print</span>
+        <h2 class="com-h1">Votre marque,<br><em>amplifiée.</em></h2>
+        <p class="com-sub">Identité visuelle, réseaux sociaux, campagnes pub, contenu créatif. On donne de la voix à votre business.</p>
+        <a href="#" onclick="openMail();return false;" class="com-btn">Démarrer un projet →</a>
+      </div>
+    </div>
+    <div class="com-svcs">
+      <div class="com-svc"><div class="com-svc-icon">🎨</div><div class="com-svc-name">Identité visuelle</div><div class="com-svc-desc">Logo, charte, supports</div></div>
+      <div class="com-svc"><div class="com-svc-icon">📱</div><div class="com-svc-name">Réseaux sociaux</div><div class="com-svc-desc">Stratégie & contenu</div></div>
+      <div class="com-svc"><div class="com-svc-icon">📸</div><div class="com-svc-name">Contenu créatif</div><div class="com-svc-desc">Photo, vidéo, rédaction</div></div>
+      <div class="com-svc"><div class="com-svc-icon">🎯</div><div class="com-svc-name">Campagnes pub</div><div class="com-svc-desc">Google Ads, Meta, SEO</div></div>
+    </div>
+    <div class="com-bar"><div class="com-bar-l"><span>Contactez-nous</span><strong><a href="https://wa.me/33632505509" style="color:#FF50B4;text-decoration:none;">💬 WhatsApp</a></strong></div><div class="com-bar-r"><a href="#">📍 Paris</a><a href="#">Lun–Ven 9h–19h</a></div></div>
+  </div>
+</div>
+
+<div class="demo-panel" id="panel-aide">
+  <div class="demo-aide">
+    <nav class="aide-nav"><div class="aide-logo">Présence <span>Services</span></div><a href="#" onclick="openMail();return false;" class="aide-rdv">Devis gratuit</a></nav>
+    <div class="aide-hero">
+      <span class="aide-tag">Aide à domicile · Paris & banlieue · 7j/7</span>
+      <h2 class="aide-h1">Votre bien-être<br><span>à domicile.</span></h2>
+      <p class="aide-sub">Ménage, repassage, garde d'enfants, aide aux personnes âgées. Des intervenants sélectionnés et bienveillants.</p>
+      <div class="aide-btns">
+        <a href="#" onclick="openMail();return false;" class="aide-btn-main">📋 Devis gratuit</a>
+        <a href="https://wa.me/33632505509" class="aide-btn-sec">💬 WhatsApp</a>
+      </div>
+      <div class="aide-trust">
+        <div><div class="aide-trust-n">1 200+</div><div class="aide-trust-l">Familles</div></div>
+        <div><div class="aide-trust-n">10 ans</div><div class="aide-trust-l">D'expérience</div></div>
+        <div><div class="aide-trust-n">4.9★</div><div class="aide-trust-l">Google</div></div>
+      </div>
+    </div>
+    <div class="aide-svcs">
+      <div class="aide-svc"><div class="aide-svc-icon">🧹</div><div class="aide-svc-name">Ménage & repassage</div><div class="aide-svc-desc">Régulier ou ponctuel</div></div>
+      <div class="aide-svc"><div class="aide-svc-icon">👶</div><div class="aide-svc-name">Garde d'enfants</div><div class="aide-svc-desc">Nounou certifiée</div></div>
+      <div class="aide-svc"><div class="aide-svc-icon">👴</div><div class="aide-svc-name">Aide aux seniors</div><div class="aide-svc-desc">Accompagnement & assistance</div></div>
+      <div class="aide-svc"><div class="aide-svc-icon">🍳</div><div class="aide-svc-name">Aide aux repas</div><div class="aide-svc-desc">Préparation & courses</div></div>
+    </div>
+    <div class="aide-bar"><div class="aide-bar-l"><span>Contactez-nous</span><strong><a href="https://wa.me/33632505509" style="color:#50B482;text-decoration:none;">💬 WhatsApp</a></strong></div><div class="aide-bar-r"><a href="#">📍 Paris & banlieue</a><a href="#">7j/7</a></div></div>
+  </div>
+</div>
+
 <div style="text-align:center;margin-top:3rem;">
   <a href="https://wa.me/33632505509" class="btn-primary">💬 Je veux un site comme ça</a>
 </div>
@@ -573,14 +488,14 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
   </div>
 </section>
 
-<section id="process" class="process-section">
+<section id="process" style="background:var(--dark3);">
   <div class="section-inner">
     <span class="section-tag">// Comment ça marche</span>
     <h2 class="section-title">Simple, rapide,<br><em>sans prise de tête</em></h2>
     <div class="process-steps">
       <div class="process-step"><div class="step-num">01</div><span class="step-tag">Étape 01</span><h3 class="step-title">Vous nous contactez</h3><p class="step-desc">Un message WhatsApp suffit. On discute de votre activité, vos besoins, vos couleurs. 15 minutes max.</p><div class="step-time">Durée : 15 min</div></div>
       <div class="process-step"><div class="step-num">02</div><span class="step-tag">Étape 02</span><h3 class="step-title">On crée votre site</h3><p class="step-desc">Design sur mesure à votre image. Textes, photos, tarifs, formulaire de contact — on s'occupe de tout.</p><div class="step-time">Durée : 3–4 jours</div></div>
-      <div class="process-step"><div class="step-num">03</div><span class="step-tag">Étape 03</span><h3 class="step-title">Livraison en 5 jours</h3><p class="step-desc">Site en ligne, domaine configuré, fiche Google activée. Vous recevez vos premières demandes dès la mise en ligne.</p><div class="step-time">Durée : 1 jour</div></div>
+      <div class="process-step"><div class="step-num">03</div><span class="step-tag">Étape 03</span><h3 class="step-title">Livraison en 5 jours</h3><p class="step-desc">Site en ligne, domaine configuré, fiche Google activée. Vos premiers clients arrivent dès la mise en ligne.</p><div class="step-time">Durée : 1 jour</div></div>
     </div>
   </div>
 </section>
@@ -590,9 +505,9 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
     <span class="section-tag">// Ils nous font confiance</span>
     <h2 class="section-title">Ce que disent<br>nos <em>clients</em></h2>
     <div class="testimonials-grid">
-      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"Mon cabinet n'apparaissait nulle part sur Google. Depuis la mise en ligne, je reçois des demandes de nouveaux patients chaque semaine."</p><div class="testimonial-author"><strong>DR. SOPHIE M.</strong>Ostéopathe · Paris 15e</div></div>
-      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"Le formulaire de devis en ligne nous fait gagner un temps fou — les clients arrivent déjà informés. Livré en 4 jours, exactement comme promis."</p><div class="testimonial-author"><strong>THOMAS G.</strong>Traiteur · Paris & IDF</div></div>
-      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"97€ pour un résultat pareil, je pensais que c'était trop beau pour être vrai. Le site est pro, rapide, et mes clients le trouvent facilement sur Google."</p><div class="testimonial-author"><strong>RACHID B.</strong>Garagiste · Paris 20e</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"Depuis mon site, les clients me trouvent sur Google avant d'appeler la concurrence. Le devis en ligne a tout changé."</p><div class="testimonial-author"><strong>THOMAS R.</strong>Déménageur · Paris</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"Mes clients peuvent prendre rendez-vous directement depuis le site. J'ai gagné 3 nouveaux clients le premier mois."</p><div class="testimonial-author"><strong>SOPHIE L.</strong>Expert-comptable · Paris 8e</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p class="testimonial-text">"97€ pour un résultat pareil, c'est imbattable. Livré en 4 jours, exactement comme promis."</p><div class="testimonial-author"><strong>MARC D.</strong>Architecte d'intérieur · Paris</div></div>
     </div>
   </div>
 </section>
@@ -602,11 +517,10 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
     <span class="section-tag">// Questions fréquentes</span>
     <h2 class="section-title">Vous avez des<br><em>questions ?</em></h2>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Pourquoi seulement 97€ ? C'est vraiment professionnel ?<span class="faq-icon">+</span></div><div class="faq-a">Oui, 100% professionnel. On travaille vite, en direct, sans intermédiaire. C'est une offre de lancement — le prix passera à 197€ puis 297€ avec les prochains clients.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Pourquoi seulement 97€ ?<span class="faq-icon">+</span></div><div class="faq-a">C'est une offre de lancement. On travaille vite, en direct, sans intermédiaire. Le prix passera à 197€ puis 297€ avec les prochains clients.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Combien de temps ça prend vraiment ?<span class="faq-icon">+</span></div><div class="faq-a">5 jours ouvrés maximum. Dans la plupart des cas, on livre en 3–4 jours.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Qu'est-ce qui est inclus dans les 97€ ?<span class="faq-icon">+</span></div><div class="faq-a">Le site vitrine complet, l'hébergement 1 an, la configuration du nom de domaine, le formulaire de contact et les modifications illimitées.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">La fiche Google, c'est quoi exactement ?<span class="faq-icon">+</span></div><div class="faq-a">Votre fiche Google Business Profile — ce qui apparaît sur Google Maps quand quelqu'un cherche votre métier près de chez vous. On la crée et optimise pour 49€ en option.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Et après la livraison, si j'ai besoin de modifier des infos ?<span class="faq-icon">+</span></div><div class="faq-a">On gère les modifications par WhatsApp, sans frais. Nouveau tarif, photo, horaire — un message et c'est réglé sous 24h.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Si j'ai besoin de modifier des infos après ?<span class="faq-icon">+</span></div><div class="faq-a">On gère les modifications par WhatsApp, sans frais. Un message et c'est réglé sous 24h.</div></div>
     </div>
   </div>
 </section>
@@ -628,7 +542,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
       <a href="#services">Services</a>
       <a href="#demos">Démos</a>
       <a href="https://wa.me/33632505509">WhatsApp</a>
-      <a href="#" onclick="openMail();return false;">nils.autoflow&#64;gmail.com</a>
+      <a href="#" onclick="openMail();return false;">Email</a>
     </div>
     <div class="footer-copy">© 2025 AutoFlow · Sites web Paris</div>
   </div>
@@ -639,10 +553,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.1);padding:
 <script>
 function switchDemo(id,btn){document.querySelectorAll('.demo-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.demo-tab').forEach(t=>t.classList.remove('active'));document.getElementById('panel-'+id).classList.add('active');btn.classList.add('active');}
 function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
-const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1});
-document.querySelectorAll('.service-card,.testimonial,.process-step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el);});
 function openMail(){var u="nils.autoflow";var d="gmail.com";window.location="mailto:"+u+"@"+d;}
-
 </script>
 
 </body>
