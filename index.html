@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0A0A0A">
-<title>AutoFlow — Sites Professionnels Bruxelles</title>
+<title>AutoFlow — Sites Professionnels Genève</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 html, body { background: #0A0A0A !important; }
@@ -45,7 +45,6 @@ background:radial-gradient(ellipse at 50% 0%, #1a1400 0%, #0A0A0A 70%);
 .hero-badge { font-family:‘DM Mono’,monospace; font-size:0.65rem; letter-spacing:0.25em; color:var(–gold); text-transform:uppercase; margin-bottom:1.8rem; }
 .hero h1 { font-family:‘Cormorant Garamond’,serif; font-size:clamp(2.2rem,8vw,5.5rem); font-weight:300; line-height:1.1; margin-bottom:1rem; }
 .hero h1 span { color:var(–gold); font-style:italic; }
-.hero-nl { font-family:‘DM Sans’,sans-serif; font-size:clamp(1rem,2.5vw,1.3rem); font-weight:300; color:rgba(245,240,232,0.45); margin-bottom:1.5rem; }
 .hero-sub { font-size:0.95rem; color:var(–grey); max-width:480px; line-height:1.7; margin-bottom:2.5rem; }
 .gold-line { width:50px; height:1px; background:var(–gold); margin:0 auto 2.5rem; }
 
@@ -67,14 +66,14 @@ transition:all 0.3s;
 .sec-hero { min-height:55vh; display:flex; align-items:center; padding:5rem 1.5rem; }
 .avocat-bg { background:linear-gradient(135deg,#0d0a05,#1a1200,#0d0a05); }
 .medecin-bg { background:linear-gradient(135deg,#051008,#0a1f10,#051008); }
-.resto-bg { background:linear-gradient(135deg,#120505,#1f0a0a,#120505); }
-.salon-bg { background:linear-gradient(135deg,#12050d,#1f0a18,#12050d); }
+.resto-bg   { background:linear-gradient(135deg,#120505,#1f0a0a,#120505); }
+.salon-bg   { background:linear-gradient(135deg,#12050d,#1f0a18,#12050d); }
 .artisan-bg { background:linear-gradient(135deg,#050a12,#0a1520,#050a12); }
 
 .sec-content { max-width:860px; margin:0 auto; }
 .sec-tag { font-family:‘DM Mono’,monospace; font-size:0.62rem; letter-spacing:0.25em; color:var(–gold); text-transform:uppercase; margin-bottom:1.2rem; }
 .sec-title { font-family:‘Cormorant Garamond’,serif; font-size:clamp(1.8rem,5vw,3.5rem); font-weight:300; line-height:1.15; margin-bottom:0.7rem; }
-.sec-title-nl { font-family:‘DM Sans’,sans-serif; font-size:clamp(0.9rem,2vw,1.2rem); font-weight:300; color:var(–gold-light); margin-bottom:1.3rem; }
+.sec-sub { font-family:‘DM Sans’,sans-serif; font-size:clamp(0.9rem,2vw,1.1rem); font-weight:300; color:var(–gold-light); margin-bottom:1.3rem; }
 .sec-desc { color:var(–grey); line-height:1.8; max-width:520px; margin-bottom:2rem; font-size:0.9rem; }
 
 .cta-btn {
@@ -91,8 +90,7 @@ transition:all 0.3s; cursor:pointer; background:transparent;
 .card { background:var(–dark-2); padding:2rem 1.5rem; transition:background 0.3s; }
 .card:hover { background:var(–dark-3); }
 .card-icon { font-size:1.4rem; margin-bottom:0.8rem; display:block; }
-.card-name { font-family:‘Cormorant Garamond’,serif; font-size:1.2rem; margin-bottom:0.3rem; }
-.card-nl { font-family:‘DM Mono’,monospace; font-size:0.7rem; color:var(–gold); margin-bottom:0.6rem; letter-spacing:0.05em; }
+.card-name { font-family:‘Cormorant Garamond’,serif; font-size:1.2rem; margin-bottom:0.6rem; }
 .card-desc { font-size:0.82rem; color:var(–grey); line-height:1.6; }
 
 .stats { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid rgba(201,168,76,0.12); border-bottom:1px solid rgba(201,168,76,0.12); }
@@ -107,12 +105,12 @@ transition:all 0.3s; cursor:pointer; background:transparent;
 
 .contact-sec { padding:4rem 1.5rem; text-align:center; background:var(–dark-2); }
 .contact-title { font-family:‘Cormorant Garamond’,serif; font-size:clamp(1.5rem,3.5vw,2.5rem); font-weight:300; margin-bottom:0.4rem; }
-.contact-nl { font-family:‘DM Sans’,sans-serif; color:var(–gold); font-size:0.95rem; margin-bottom:1.5rem; }
+.contact-sub { font-family:‘DM Sans’,sans-serif; color:var(–gold); font-size:0.95rem; margin-bottom:1.5rem; }
 .contact-info { font-family:‘DM Mono’,monospace; font-size:0.78rem; color:var(–grey); margin-bottom:1.8rem; line-height:1.8; }
 
 .pricing { padding:4.5rem 1.5rem; background:var(–dark); }
 .pricing-title { font-family:‘Cormorant Garamond’,serif; font-size:clamp(1.5rem,3.5vw,2.3rem); font-weight:300; text-align:center; margin-bottom:0.3rem; }
-.pricing-nl { font-family:‘DM Sans’,sans-serif; color:var(–gold); text-align:center; margin-bottom:2.5rem; font-size:0.9rem; }
+.pricing-sub { font-family:‘DM Sans’,sans-serif; color:var(–gold); text-align:center; margin-bottom:2.5rem; font-size:0.9rem; }
 .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; max-width:750px; margin:0 auto; background:rgba(201,168,76,0.12); }
 .p-card { background:var(–dark-2); padding:2.5rem 1.5rem; text-align:center; position:relative; }
 .p-card.featured { background:linear-gradient(135deg,#1a1200,#0d0a05); }
@@ -134,8 +132,7 @@ background:#25D366; color:white; border-radius:50%;
 width:56px; height:56px; font-size:1.5rem;
 box-shadow:0 4px 15px rgba(37,211,102,0.4);
 display:flex; align-items:center; justify-content:center;
-transition:transform 0.3s;
-text-decoration:none;
+transition:transform 0.3s; text-decoration:none;
 }
 .wa-float:hover { transform:scale(1.1); }
 
@@ -156,10 +153,9 @@ footer { flex-direction:column; text-align:center; }
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">Sites Vitrines Professionnels — Bruxelles, Belgique</div>
+  <div class="hero-badge">Sites Vitrines Professionnels — Genève, Suisse</div>
   <h1>Votre présence<br>en ligne, <span>enfin.</span></h1>
-  <p class="hero-nl">Uw professionele website — klaar binnen 48 uur</p>
-  <p class="hero-sub">Sites vitrines sur-mesure pour les professionnels de Bruxelles. Design premium, livraison en 48h.</p>
+  <p class="hero-sub">Sites vitrines sur-mesure pour les professionnels de Genève. Design premium, livraison en 48h.</p>
   <div class="gold-line"></div>
   <div class="tabs">
     <button class="tab-btn active" onclick="show('avocat',this)">⚖️ Avocat</button>
@@ -175,32 +171,32 @@ footer { flex-direction:column; text-align:center; }
 <div class="section active" id="avocat">
   <div class="sec-hero avocat-bg">
     <div class="sec-content">
-      <div class="sec-tag">Cabinet d'Avocats — Advocatenkantoor</div>
-      <h2 class="sec-title">Maître Sophie<br>Dumont & Associés</h2>
-      <p class="sec-title-nl">Meester Sophie Dumont & Partners — Brussel</p>
-      <p class="sec-desc">Cabinet d'avocats spécialisé en droit des affaires, droit de la famille et contentieux civil à Bruxelles. Plus de 12 ans d'expérience.</p>
+      <div class="sec-tag">Cabinet d'Avocats — Genève</div>
+      <h2 class="sec-title">Maître Pierre<br>Chevalier & Associés</h2>
+      <p class="sec-sub">Cabinet d'avocats au Barreau de Genève</p>
+      <p class="sec-desc">Cabinet d'avocats spécialisé en droit des affaires, droit fiscal et contentieux international à Genève. Plus de 15 ans d'expérience.</p>
       <button class="cta-btn solid" onclick="openWA()">Prendre rendez-vous →</button>
     </div>
   </div>
   <div class="grid">
-    <div class="card"><span class="card-icon">📋</span><div class="card-name">Droit des Affaires</div><div class="card-nl">HANDELSRECHT</div><p class="card-desc">Création de sociétés, contrats commerciaux, litiges entre entreprises.</p></div>
-    <div class="card"><span class="card-icon">👨‍👩‍👧</span><div class="card-name">Droit de la Famille</div><div class="card-nl">FAMILIERECHT</div><p class="card-desc">Divorce, garde d'enfants, successions, héritage.</p></div>
-    <div class="card"><span class="card-icon">🏛️</span><div class="card-name">Contentieux Civil</div><div class="card-nl">BURGERLIJK RECHT</div><p class="card-desc">Représentation devant les tribunaux de Bruxelles.</p></div>
-    <div class="card"><span class="card-icon">🏠</span><div class="card-name">Droit Immobilier</div><div class="card-nl">VASTGOEDRECHT</div><p class="card-desc">Transactions immobilières, litiges fonciers, copropriété.</p></div>
+    <div class="card"><span class="card-icon">📋</span><div class="card-name">Droit des Affaires</div><p class="card-desc">Création de sociétés, contrats commerciaux, fusions et acquisitions.</p></div>
+    <div class="card"><span class="card-icon">💰</span><div class="card-name">Droit Fiscal</div><p class="card-desc">Optimisation fiscale, litiges avec l'administration fiscale, TVA.</p></div>
+    <div class="card"><span class="card-icon">🏛️</span><div class="card-name">Contentieux Civil</div><p class="card-desc">Représentation devant les tribunaux genevois et fédéraux.</p></div>
+    <div class="card"><span class="card-icon">🌍</span><div class="card-name">Droit International</div><p class="card-desc">Arbitrage international, droit des sociétés étrangères en Suisse.</p></div>
   </div>
   <div class="stats">
-    <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Années d'expérience</span></div>
-    <div class="stat"><span class="stat-num">400+</span><span class="stat-label">Dossiers traités</span></div>
+    <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Années d'expérience</span></div>
+    <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Dossiers traités</span></div>
     <div class="stat"><span class="stat-num">48h</span><span class="stat-label">Délai de réponse</span></div>
   </div>
   <div class="testi">
-    <p class="testi-text">"Maître Dumont a géré mon dossier avec une grande professionnalité. Je recommande vivement son cabinet à Bruxelles."</p>
-    <div class="testi-author">— Pierre M., Chef d'entreprise, Bruxelles</div>
+    <p class="testi-text">"Maître Chevalier a défendu nos intérêts avec une compétence remarquable. Un cabinet sérieux et réactif, que je recommande sans hésitation."</p>
+    <div class="testi-author">— Marc D., Directeur général, Genève</div>
   </div>
   <div class="contact-sec">
     <h3 class="contact-title">Consultez-nous</h3>
-    <p class="contact-nl">Neem contact op</p>
-    <p class="contact-info">📍 Avenue Louise, Bruxelles<br>📞 +32 X XX XX XX XX</p>
+    <p class="contact-sub">Consultation gratuite — Réponse sous 48h</p>
+    <p class="contact-info">📍 Rue du Rhône, Genève<br>📞 +41 XX XXX XX XX</p>
     <button class="cta-btn solid" onclick="openWA()">Contacter via WhatsApp</button>
   </div>
 </div>
@@ -210,32 +206,32 @@ footer { flex-direction:column; text-align:center; }
 <div class="section" id="medecin">
   <div class="sec-hero medecin-bg">
     <div class="sec-content">
-      <div class="sec-tag">Cabinet Médical — Medisch Kabinet</div>
-      <h2 class="sec-title">Dr. Claire<br>Vandenberg</h2>
-      <p class="sec-title-nl">Dr. Claire Vandenberg — Huisarts Brussel</p>
-      <p class="sec-desc">Médecin généraliste à Bruxelles, consultations sur rendez-vous 6j/7. Prise en charge INAMI, urgences le matin.</p>
+      <div class="sec-tag">Cabinet Médical — Genève</div>
+      <h2 class="sec-title">Dr. Sophie<br>Moreau</h2>
+      <p class="sec-sub">Médecin généraliste — Cabinet privé à Genève</p>
+      <p class="sec-desc">Médecin généraliste à Genève, consultations sur rendez-vous 6j/7. Conventionnée LAMal, urgences le matin.</p>
       <button class="cta-btn solid" onclick="openWA()">Prendre rendez-vous →</button>
     </div>
   </div>
   <div class="grid">
-    <div class="card"><span class="card-icon">🩺</span><div class="card-name">Médecine Générale</div><div class="card-nl">HUISARTSGENEESKUNDE</div><p class="card-desc">Consultations, bilans de santé, ordonnances, certificats médicaux.</p></div>
-    <div class="card"><span class="card-icon">🦷</span><div class="card-name">Dentisterie</div><div class="card-nl">TANDHEELKUNDE</div><p class="card-desc">Soins dentaires, détartrage, blanchiment, implants.</p></div>
-    <div class="card"><span class="card-icon">💉</span><div class="card-name">Vaccination</div><div class="card-nl">VACCINATIE</div><p class="card-desc">Vaccins voyages, grippe saisonnière, rappels adultes.</p></div>
-    <div class="card"><span class="card-icon">🏠</span><div class="card-name">Visite à domicile</div><div class="card-nl">HUISBEZOEK</div><p class="card-desc">Déplacements possibles pour personnes à mobilité réduite.</p></div>
+    <div class="card"><span class="card-icon">🩺</span><div class="card-name">Médecine Générale</div><p class="card-desc">Consultations, bilans de santé, ordonnances, certificats médicaux.</p></div>
+    <div class="card"><span class="card-icon">🦷</span><div class="card-name">Médecine Préventive</div><p class="card-desc">Check-up annuel, dépistage, vaccinations, bilan sanguin complet.</p></div>
+    <div class="card"><span class="card-icon">💉</span><div class="card-name">Vaccination</div><p class="card-desc">Vaccins voyages, grippe saisonnière, rappels adultes et enfants.</p></div>
+    <div class="card"><span class="card-icon">🏠</span><div class="card-name">Visite à domicile</div><p class="card-desc">Déplacements possibles sur Genève et communes limitrophes.</p></div>
   </div>
   <div class="stats">
-    <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Ans d'expérience</span></div>
+    <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Ans d'expérience</span></div>
     <div class="stat"><span class="stat-num">6j/7</span><span class="stat-label">Jours d'ouverture</span></div>
-    <div class="stat"><span class="stat-num">INAMI</span><span class="stat-label">Conventionné</span></div>
+    <div class="stat"><span class="stat-num">LAMal</span><span class="stat-label">Conventionnée</span></div>
   </div>
   <div class="testi">
-    <p class="testi-text">"Docteure très à l'écoute et disponible. Je consulte chez elle depuis 5 ans, je recommande vivement."</p>
-    <div class="testi-author">— Marie L., Patiente, Ixelles</div>
+    <p class="testi-text">"Docteure très professionnelle et à l'écoute. Elle prend le temps d'expliquer et d'accompagner ses patients. Je recommande vivement."</p>
+    <div class="testi-author">— Claire M., Patiente, Genève</div>
   </div>
   <div class="contact-sec">
     <h3 class="contact-title">Prendre rendez-vous</h3>
-    <p class="contact-nl">Een afspraak maken</p>
-    <p class="contact-info">📍 Ixelles, Bruxelles<br>📞 +32 X XX XX XX XX</p>
+    <p class="contact-sub">Consultation sur rendez-vous uniquement</p>
+    <p class="contact-info">📍 Eaux-Vives, Genève<br>📞 +41 XX XXX XX XX</p>
     <button class="cta-btn solid" onclick="openWA()">Contacter via WhatsApp</button>
   </div>
 </div>
@@ -245,32 +241,32 @@ footer { flex-direction:column; text-align:center; }
 <div class="section" id="resto">
   <div class="sec-hero resto-bg">
     <div class="sec-content">
-      <div class="sec-tag">Restaurant — Brussel</div>
-      <h2 class="sec-title">Brasserie<br><span style="color:var(--gold)">La Capitale</span></h2>
-      <p class="sec-title-nl">Brasserie La Capitale — Authentieke Belgische keuken</p>
-      <p class="sec-desc">Brasserie belge authentique au cœur de Bruxelles. Moules-frites, carbonnade flamande, bières artisanales. Ouvert 7j/7.</p>
+      <div class="sec-tag">Restaurant — Genève</div>
+      <h2 class="sec-title">Le Lac<br><span style="color:var(--gold)">Bleu</span></h2>
+      <p class="sec-sub">Cuisine suisse & internationale — Rive gauche, Genève</p>
+      <p class="sec-desc">Restaurant gastronomique au bord du lac Léman. Produits du terroir suisse, vins genevois, cadre exceptionnel. Ouvert 7j/7.</p>
       <button class="cta-btn solid" onclick="openWA()">Réserver une table →</button>
     </div>
   </div>
   <div class="grid">
-    <div class="card"><span class="card-icon">🍺</span><div class="card-name">Cuisine Belge</div><div class="card-nl">BELGISCHE KEUKEN</div><p class="card-desc">Moules-frites, carbonnade, vol-au-vent, waterzooi.</p></div>
-    <div class="card"><span class="card-icon">🍷</span><div class="card-name">Cave & Bières</div><div class="card-nl">BIEREN & WIJNEN</div><p class="card-desc">Sélection de bières artisanales belges et vins de qualité.</p></div>
-    <div class="card"><span class="card-icon">🎉</span><div class="card-name">Privatisation</div><div class="card-nl">PRIVATISERING</div><p class="card-desc">Réception, anniversaire, repas d'affaires, séminaire.</p></div>
-    <div class="card"><span class="card-icon">🛵</span><div class="card-name">Livraison</div><div class="card-nl">LEVERING</div><p class="card-desc">Livraison à domicile sur Bruxelles et communes limitrophes.</p></div>
+    <div class="card"><span class="card-icon">🫕</span><div class="card-name">Cuisine Suisse</div><p class="card-desc">Fondue, raclette, rösti, filet de perche du lac, spécialités genevoises.</p></div>
+    <div class="card"><span class="card-icon">🍷</span><div class="card-name">Vins Genevois</div><p class="card-desc">Sélection de vins AOC Genève, Chasselas, Gamay, Pinot noir.</p></div>
+    <div class="card"><span class="card-icon">🎉</span><div class="card-name">Privatisation</div><p class="card-desc">Réception d'affaires, anniversaire, mariage, séminaire d'entreprise.</p></div>
+    <div class="card"><span class="card-icon">🌅</span><div class="card-name">Vue sur le Lac</div><p class="card-desc">Terrasse avec vue imprenable sur le lac Léman et les Alpes.</p></div>
   </div>
   <div class="stats">
     <div class="stat"><span class="stat-num">7j/7</span><span class="stat-label">Jours d'ouverture</span></div>
-    <div class="stat"><span class="stat-num">80</span><span class="stat-label">Couverts</span></div>
-    <div class="stat"><span class="stat-num">4.8★</span><span class="stat-label">Note Google</span></div>
+    <div class="stat"><span class="stat-num">60</span><span class="stat-label">Couverts</span></div>
+    <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Note Google</span></div>
   </div>
   <div class="testi">
-    <p class="testi-text">"La meilleure brasserie de Bruxelles ! Cadre chaleureux, cuisine généreuse et service impeccable."</p>
-    <div class="testi-author">— Jean-Pierre V., Client fidèle, Bruxelles</div>
+    <p class="testi-text">"Une adresse incontournable à Genève. La vue sur le lac, la cuisine raffinée et le service impeccable font de ce restaurant un endroit unique."</p>
+    <div class="testi-author">— Thomas R., Client fidèle, Genève</div>
   </div>
   <div class="contact-sec">
     <h3 class="contact-title">Réserver une table</h3>
-    <p class="contact-nl">Een tafel reserveren</p>
-    <p class="contact-info">📍 Place Sainte-Catherine, Bruxelles<br>📞 +32 X XX XX XX XX</p>
+    <p class="contact-sub">Réservation recommandée — Terrasse disponible</p>
+    <p class="contact-info">📍 Quai du Mont-Blanc, Genève<br>📞 +41 XX XXX XX XX</p>
     <button class="cta-btn solid" onclick="openWA()">Réserver via WhatsApp</button>
   </div>
 </div>
@@ -280,32 +276,32 @@ footer { flex-direction:column; text-align:center; }
 <div class="section" id="salon">
   <div class="sec-hero salon-bg">
     <div class="sec-content">
-      <div class="sec-tag">Salon de Coiffure — Kapsalon</div>
-      <h2 class="sec-title">Salon <span style="color:var(--gold)">Élise</span><br>& Beauté</h2>
-      <p class="sec-title-nl">Kapsalon Élise — Schoonheid & Stijl Brussel</p>
-      <p class="sec-desc">Salon de coiffure premium à Bruxelles. Coupe femme & homme, coloration, soins capillaires, manucure. Sur rendez-vous.</p>
+      <div class="sec-tag">Salon de Coiffure — Genève</div>
+      <h2 class="sec-title">Salon <span style="color:var(--gold)">Élégance</span><br>Genève</h2>
+      <p class="sec-sub">Coiffure premium — Rive droite, Genève</p>
+      <p class="sec-desc">Salon de coiffure haut de gamme à Genève. Coupe femme & homme, coloration, soins capillaires, extensions. Sur rendez-vous.</p>
       <button class="cta-btn solid" onclick="openWA()">Réserver une séance →</button>
     </div>
   </div>
   <div class="grid">
-    <div class="card"><span class="card-icon">💇‍♀️</span><div class="card-name">Coiffure Femme</div><div class="card-nl">DAMESKAPSEL</div><p class="card-desc">Coupe, brushing, coloration, balayage, lissage.</p></div>
-    <div class="card"><span class="card-icon">✂️</span><div class="card-name">Coiffure Homme</div><div class="card-nl">HERENKAPSEL</div><p class="card-desc">Coupe, dégradé, barbe, rasage traditionnel.</p></div>
-    <div class="card"><span class="card-icon">💅</span><div class="card-name">Manucure & Pédicure</div><div class="card-nl">MANICURE & PEDICURE</div><p class="card-desc">Gel, semi-permanent, nail art, soin des mains.</p></div>
-    <div class="card"><span class="card-icon">✨</span><div class="card-name">Soins Beauté</div><div class="card-nl">SCHOONHEIDSBEHANDELINGEN</div><p class="card-desc">Épilation, maquillage, soin du visage, sourcils.</p></div>
+    <div class="card"><span class="card-icon">💇‍♀️</span><div class="card-name">Coiffure Femme</div><p class="card-desc">Coupe, brushing, coloration, balayage, lissage, extension.</p></div>
+    <div class="card"><span class="card-icon">✂️</span><div class="card-name">Coiffure Homme</div><p class="card-desc">Coupe, dégradé, barbe, rasage traditionnel au blaireau.</p></div>
+    <div class="card"><span class="card-icon">💅</span><div class="card-name">Manucure & Pédicure</div><p class="card-desc">Gel, semi-permanent, nail art, soin des mains et pieds.</p></div>
+    <div class="card"><span class="card-icon">✨</span><div class="card-name">Soins Beauté</div><p class="card-desc">Épilation, maquillage, soin du visage, traitement kératine.</p></div>
   </div>
   <div class="stats">
     <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Ans d'expérience</span></div>
-    <div class="stat"><span class="stat-num">300+</span><span class="stat-label">Clients fidèles</span></div>
+    <div class="stat"><span class="stat-num">400+</span><span class="stat-label">Clients fidèles</span></div>
     <div class="stat"><span class="stat-num">6j/7</span><span class="stat-label">Jours d'ouverture</span></div>
   </div>
   <div class="testi">
-    <p class="testi-text">"Le meilleur salon de Bruxelles ! Équipe talentueuse, résultat toujours parfait. Je ne vais nulle part ailleurs."</p>
-    <div class="testi-author">— Isabelle D., Cliente fidèle, Uccle</div>
+    <p class="testi-text">"Le meilleur salon de Genève ! Équipe talentueuse, ambiance chaleureuse et résultats toujours parfaits. Je ne vais nulle part ailleurs."</p>
+    <div class="testi-author">— Isabelle F., Cliente fidèle, Carouge</div>
   </div>
   <div class="contact-sec">
     <h3 class="contact-title">Réservez votre séance</h3>
-    <p class="contact-nl">Boek uw afspraak</p>
-    <p class="contact-info">📍 Uccle, Bruxelles<br>📞 +32 X XX XX XX XX</p>
+    <p class="contact-sub">Réservation en ligne disponible</p>
+    <p class="contact-info">📍 Carouge, Genève<br>📞 +41 XX XXX XX XX</p>
     <button class="cta-btn solid" onclick="openWA()">Réserver via WhatsApp</button>
   </div>
 </div>
@@ -315,32 +311,32 @@ footer { flex-direction:column; text-align:center; }
 <div class="section" id="artisan">
   <div class="sec-hero artisan-bg">
     <div class="sec-content">
-      <div class="sec-tag">Artisan — Vakman</div>
+      <div class="sec-tag">Artisan — Genève</div>
       <h2 class="sec-title">Dupont<br><span style="color:var(--gold)">Plomberie & Chauffage</span></h2>
-      <p class="sec-title-nl">Dupont Loodgieterij & Verwarming — Brussel</p>
-      <p class="sec-desc">Plombier et chauffagiste agréé à Bruxelles. Dépannage urgent 24h/24, installation, entretien chaudière. Devis gratuit.</p>
+      <p class="sec-sub">Plombier & Chauffagiste certifié — Genève</p>
+      <p class="sec-desc">Plombier et chauffagiste agréé à Genève. Dépannage urgent 24h/24, installation, entretien chaudière. Devis gratuit sous 2h.</p>
       <button class="cta-btn solid" onclick="openWA()">Demander un devis →</button>
     </div>
   </div>
   <div class="grid">
-    <div class="card"><span class="card-icon">🔧</span><div class="card-name">Plomberie</div><div class="card-nl">LOODGIETERIJ</div><p class="card-desc">Fuite, débouchage, installation sanitaire, rénovation salle de bain.</p></div>
-    <div class="card"><span class="card-icon">🔥</span><div class="card-name">Chauffage</div><div class="card-nl">VERWARMING</div><p class="card-desc">Installation et entretien chaudière, pompe à chaleur, radiateurs.</p></div>
-    <div class="card"><span class="card-icon">⚡</span><div class="card-name">Électricité</div><div class="card-nl">ELEKTRICITEIT</div><p class="card-desc">Mise aux normes, installation tableau électrique, dépannage.</p></div>
-    <div class="card"><span class="card-icon">🚨</span><div class="card-name">Urgences 24h/24</div><div class="card-nl">SPOEDGEVALLEN 24U/24</div><p class="card-desc">Intervention rapide 7j/7, week-end et jours fériés.</p></div>
+    <div class="card"><span class="card-icon">🔧</span><div class="card-name">Plomberie</div><p class="card-desc">Fuite, débouchage, installation sanitaire, rénovation salle de bain.</p></div>
+    <div class="card"><span class="card-icon">🔥</span><div class="card-name">Chauffage</div><p class="card-desc">Installation et entretien chaudière, pompe à chaleur, radiateurs.</p></div>
+    <div class="card"><span class="card-icon">⚡</span><div class="card-name">Électricité</div><p class="card-desc">Mise aux normes, installation tableau électrique, dépannage.</p></div>
+    <div class="card"><span class="card-icon">🚨</span><div class="card-name">Urgences 24h/24</div><p class="card-desc">Intervention rapide 7j/7, week-end et jours fériés inclus.</p></div>
   </div>
   <div class="stats">
     <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Ans d'expérience</span></div>
     <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Disponible</span></div>
-    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Agréé</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Certifié</span></div>
   </div>
   <div class="testi">
-    <p class="testi-text">"Intervention rapide un dimanche soir, problème résolu en moins d'une heure. Tarif honnête et travail soigné."</p>
-    <div class="testi-author">— François B., Propriétaire, Saint-Gilles</div>
+    <p class="testi-text">"Intervention rapide un dimanche soir, problème résolu en moins d'une heure. Travail soigné et tarif honnête. Je recommande vivement !"</p>
+    <div class="testi-author">— François B., Propriétaire, Carouge</div>
   </div>
   <div class="contact-sec">
     <h3 class="contact-title">Devis gratuit</h3>
-    <p class="contact-nl">Gratis offerte</p>
-    <p class="contact-info">📍 Bruxelles & communes limitrophes<br>📞 +32 X XX XX XX XX</p>
+    <p class="contact-sub">Réponse sous 2h — Intervention rapide</p>
+    <p class="contact-info">📍 Genève & canton<br>📞 +41 XX XXX XX XX</p>
     <button class="cta-btn solid" onclick="openWA()">Demander un devis via WhatsApp</button>
   </div>
 </div>
@@ -349,25 +345,25 @@ footer { flex-direction:column; text-align:center; }
 
 <div class="pricing">
   <h3 class="pricing-title">Tarifs clairs, sans surprise</h3>
-  <p class="pricing-nl">Duidelijke prijzen — geen verrassingen</p>
+  <p class="pricing-sub">Prix fixes — Livraison en 48h garantie</p>
   <div class="pricing-grid">
     <div class="p-card">
       <div class="p-label">Site Vitrine</div>
-      <div class="p-price">297€</div>
-      <div class="p-sub">livraison en 48h</div>
+      <div class="p-price">497 CHF</div>
+      <div class="p-sub">~500€ — livraison en 48h</div>
       <ul class="p-features">
-        <li>Design sur-mesure</li>
+        <li>Design sur-mesure premium</li>
         <li>Version mobile incluse</li>
         <li>Formulaire de contact</li>
         <li>Hébergement 1 an offert</li>
-        <li>Bilingue FR / NL</li>
+        <li>Optimisé Google</li>
       </ul>
       <button class="cta-btn" onclick="openWA()">Commencer →</button>
     </div>
     <div class="p-card featured">
       <div class="p-label" style="color:var(--gold);margin-top:1rem;">Pack Complet</div>
-      <div class="p-price">497€</div>
-      <div class="p-sub">livraison en 48h</div>
+      <div class="p-price">797 CHF</div>
+      <div class="p-sub">~800€ — livraison en 48h</div>
       <ul class="p-features">
         <li>Tout le pack vitrine</li>
         <li>Fiche Google Business</li>
@@ -383,7 +379,7 @@ footer { flex-direction:column; text-align:center; }
 <footer>
   <div class="footer-brand">AUTOFLOW</div>
   <div class="footer-info">
-    Sites vitrines professionnels — Bruxelles<br>
+    Sites vitrines professionnels — Genève<br>
     <span style="color:var(--gold)">nils.autoflow@gmail.com</span>
   </div>
 </footer>
